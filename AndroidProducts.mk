@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-   $(LOCAL_DIR)/pa_x3.mk
+   $(LOCAL_DIR)/x3.mk
