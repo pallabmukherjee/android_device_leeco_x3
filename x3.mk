@@ -10,7 +10,7 @@ TARGET_SCREEN_WIDTH := 1080
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := x3
-PRODUCT_NAME := pa_x3
+PRODUCT_NAME := x3
 PRODUCT_BRAND := LeEco
 PRODUCT_MODEL := LeEco x3
 PRODUCT_MANUFACTURER := LeEco
