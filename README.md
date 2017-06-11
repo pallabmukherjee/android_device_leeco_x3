@@ -1,7 +1,7 @@
 # Leeco 1s - Dirty Unicorns
 ==============
 
-This branch is device tree for building Dirty Unicorns Rom for Leeco 1S(eco).
+This branch is device tree for building Paranoid Android Rom for LeEco 1S(eco).
 
 ---
 
@@ -29,28 +29,12 @@ Camera  | Primary: 13 MP, Secondary: 5 MP
 # Build Information
 
 ## Working
-* Adjustable brightness
-* Audio
-* Auto brightness
-* MTP and Mass Storage modes
-* Vibration
-* Rotation
-* RIL
-* Video
-* Gallery
-* Fingerprint
-* Mic
-* Wi-Fi
-* Bluetooth
-* Internet
-* GPS
-* IR
-* Audio over BT
+* ???
 
 ## Broken/Bugs
-* Camera
-* Flashlight (statusbar and camera)
-* ?????
+* ???
+
+it doesn't build yet
 
 ## THANKS TO:
 

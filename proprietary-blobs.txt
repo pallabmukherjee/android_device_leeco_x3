@@ -879,5 +879,3 @@ lib/libvsim-adaptor-client.so
 lib64/libserial_port.so
 lib64/libsec_mem.so
 lib64/libvsim-adaptor-client.so
-
-
