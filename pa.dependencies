@@ -1,0 +1,20 @@
+[
+    {
+        "remote":       "github",
+        "repository":   "SscSPs/android_device_leeco_x3",
+        "target_path":  "device/leeco/x3",
+        "revision":     "nougat-pa"
+    },
+    {
+        "remote":       "github",
+        "repository":   "SscSPs/android_kernel_leeco_x3",
+        "target_path":  "kernel/leeco/x3",
+        "revision":     "master"
+    },
+    {
+        "remote":       "github",
+        "repository":   "SscSPs/proprietary_vendor_leeco",
+        "target_path":  "vendor/leeco",
+        "revision":     "n7x"
+    }
+]
