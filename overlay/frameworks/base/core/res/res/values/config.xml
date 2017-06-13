@@ -206,5 +206,5 @@
     <!-- Control whether Night display is available. -->
     <bool name="config_nightDisplayAvailable">true</bool>
 
-    <bool name="config_supportDoubleTapWake">false</bool>
+    <!--bool name="config_supportDoubleTapWake">false</bool-->
 </resources>
