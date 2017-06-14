@@ -86,7 +86,6 @@ PRODUCT_PACKAGES += \
     libaudio-resampler \
     libaudiopolicymanagerdefault \
     libtinyalsa \
-    libtinycompress \
     libtinyxml \
     audio_policy.stub \
     libtinymix \
