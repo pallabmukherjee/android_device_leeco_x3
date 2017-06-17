@@ -1,4 +1,8 @@
 # Inherit device configuration
+
+# Folder path
+LOCAL_PATH := device/leeco/x3
+
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
 # Inherit some common CM stuff.

@@ -15,21 +15,21 @@ $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-3072-hwui
 # The gps config appropriate for this device
 # $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
+# Folder path
+LOCAL_PATH := device/leeco/x3
+
 # Vendor
 $(call inherit-product, vendor/leeco/x3/x3-vendor-blobs.mk)
 
 # Overlay Folder
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
-# Folder path
-LOCAL_PATH := device/leeco/x3
-
 # Screen density
 PRODUCT_AAPT_CONFIG := normal xxhdpi
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Recovery allowed devices
-TARGET_OTA_ASSERT_DEVICE := x3,X500,X507,X509,X3,x500,x507,x509,X502,x502
+TARGET_OTA_ASSERT_DEVICE := X3,X500,X501,X502,X507,X509,x3,x500,x501,x502,x507,x509
 
 # Power
 PRODUCT_PACKAGES += \
@@ -64,10 +64,6 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.mount.fs=EXT4 \
     camera.disable_zsl_mode=1 \
     persist.sys.timezone=Europe/Warsaw
-#    dalvik.vm.dex2oat-Xms=64m \
-#    dalvik.vm.dex2oat-Xmx=64m \
-#    dalvik.vm.image-dex2oat-Xms=64m \
-#    dalvik.vm.image-dex2oat-Xmx=512m
 
 # PRODUCT_PROPERTY_OVERRIDES
 PRODUCT_PROPERTY_OVERRIDES += \

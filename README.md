@@ -34,7 +34,7 @@ Camera  | Primary: 13 MP, Secondary: 5 MP
 ## Broken/Bugs
 * ???
 
-it doesn't build yet
+it doesn't boot yet
 
 ## THANKS TO:
 
