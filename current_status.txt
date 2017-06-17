@@ -1,0 +1,773 @@
+ram console header, hw_status: 2, fiq step 0.
+    1.449228]<0> (0)[1:swapper/0]mtk_soc_voice_new
+[    1.450122]<0> (0)[1:swapper/0]mt_soc_audio_init
+[    1.450233]<0> (0)[1:swapper/0]mtk_asoc_pcm_hdmi_new
+[    1.451292]<0> (0)[1:swapper/0]mt_soc_audio_init
+[    1.451400]<0> (0)[1:swapper/0]mtk_asoc_uldlloopbackpcm_new
+[    1.452285]<0> (0)[1:swapper/0]mt_soc_audio_init
+[    1.452400]<0> (0)[1:swapper/0]mtk_asoc_pcm_i2s0_new
+[    1.453712]<0> (0)[1:swapper/0]mt_soc_audio_init
+[    1.453819]<0> (0)[1:swapper/0]mtk_asoc_pcm_mrgrx_new
+[    1.455242]<0> (0)[1:swapper/0]mt_soc_audio_init
+[    1.455355]<0> (0)[1:swapper/0]mtk_asoc_mrgrx_awb_pcm_new 
+[    1.456509]<0> (0)[1:swapper/0]mt_soc_audio_init
+[    1.456586]<0> (0)[1:swapper/0]mtk_asoc_pcm_I2S0dl1_new
+[    1.458008]<0> (0)[1:swapper/0]mt_soc_audio_init
+[    1.458083]<0> (0)[1:swapper/0]mtk_asoc_dl1_awb_pcm_new 
+[    1.459094]<0> (0)[1:swapper/0]mt_soc_audio_init
+[    1.459177]<0> (0)[1:swapper/0]mtk_soc_voice_bt_new
+[    1.460402]<0> (0)[1:swapper/0]mt_soc_audio_init
+[    1.461640]<0> (0)[1:swapper/0]mt_soc_audio_init
+[    1.461717]<0> (0)[1:swapper/0]mtk_asoc_bt_dai_pcm_new 
+[    1.462944]<0> (0)[1:swapper/0]mt_soc_audio_init
+[    1.463022]<0> (0)[1:swapper/0]mtk_asoc_capture_tdm_new 
+[    1.463993]<0> (0)[1:swapper/0]mt_soc_audio_init
+[    1.465245]<0> (0)[1:swapper/0]mt_soc_audio_init
+[    1.465319]<0> (0)[1:swapper/0]mtk_asoc_capture2_pcm_new 
+[    1.466341]<0> (0)[1:swapper/0]mt_soc_audio_init
+[    1.466418]<0> (0)[1:swapper/0]mtk_asoc_i2s0_awb_pcm_new 
+[    1.467619]<0> (0)[1:swapper/0]mt_soc_audio_init
+[    1.467732]<0> (0)[1:swapper/0]mtk_soc_voice_ext_new
+[    1.468878]<0> (0)[1:swapper/0]mt_soc_audio_init
+[    1.468954]<0> (0)[1:swapper/0]mtk_soc_voice_ext_bt_new
+[    1.470304]<0> (0)[1:swapper/0]mt_soc_audio_init
+[    1.470424]<0> (0)[1:swapper/0]mtk_soc_voice_extint_new
+[    1.471723]<0> (0)[1:swapper/0]mt_soc_audio_init
+[    1.471799]<0> (0)[1:swapper/0]mtk_soc_voice_extint_bt_new
+[    1.472862]<0> (0)[1:swapper/0]mt_soc_audio_init2
+[    1.472941]<0> (0)[1:swapper/0]mtk_asoc_routing_pcm_new
+[    1.474136]<0> (0)[1:swapper/0]mt_soc_audio_init
+[    1.474209]<0> (0)[1:swapper/0]mtk_asoc_mod_adci2s_pcm_new 
+[    1.475533]<0> (0)[1:swapper/0]mt_soc_audio_init
+[    1.475610]<0> (0)[1:swapper/0]mtk_asoc_adc2_adci2s2_pcm_new 
+[    1.476866]<0> (0)[1:swapper/0]mt_soc_audio_init
+[    1.476946]<0> (0)[1:swapper/0]mtk_asoc_io2_awb_pcm_new 
+[    1.478338]<0> (0)[1:swapper/0]mt_soc_audio_init
+[    1.479454]<0> (0)[1:swapper/0]mt_soc_audio_init
+[    1.479536]<0> (0)[1:swapper/0]mtk_asoc_mod_dai_pcm_new 
+[    1.480879]<0> (0)[1:swapper/0]mt_soc_audio_init
+[    1.487336]<0> (0)[1:swapper/0]mt_soc_snd_init dai_link = ffffffc000fd5190 
+[    1.487480]<0> (0)[1:swapper/0][cpu_ntf] <42>ffffffc000a58378 (flow_cache_cpu)
+[    1.487594]<0> (0)[1:swapper/0]Failed to load ipt action
+[    1.492026]<0> (0)[1:swapper/0]Bridge firewalling registered
+[    1.492748]<0> (0)[1:swapper/0]Registering SWP/SWPB emulation handler
+[    1.492770]<0> (0)[1:swapper/0][cpu_ntf] <43>ffffffc000084bac (fpsimd_hotplug)
+[    1.492792]<0> (0)[1:swapper/0][cpu_ntf] <44>ffffffc000a54f7c (console_cpu_notify)
+[    1.493186]<0> (0)[1:swapper/0]MediaTek touch panel driver init
+[    1.493669]<0> (0)[1:swapper/0]mtk-tpd: enter tpd_probe, 500
+[    1.493723]<0> (0)[1:swapper/0]mtk_tpd: TPD_RES_X = 1080, TPD_RES_Y = 1920
+[    1.493737]<0> (0)[1:swapper/0]mtk-tpd: synaptics I2C Touchscreen Driver (Built Dec 13 2016 @ 21:33:00)
+[    1.696282]<0> (0)[1:swapper/0]synaptics_rmi4_set_input_dev: i2c_client->addr: 0x4b
+[    1.918615]<4> (4)[1:swapper/0]eint register for 6
+[    1.918958]<5> (5)[1:swapper/0]mtk-tpd: [mtk-tpd]tpd_probe, tpd_driver_name=synaptics_tpd
+[    1.918976]<5> (5)[1:swapper/0]mtk-tpd: Cap touch panel driver
+[    1.919334]<5> (5)[1:swapper/0][Power/swap] [mt_idle_init]entry!!
+[    1.919370]<5> (5)[1:swapper/0]cpu_xgpt_register_timer:mtk_cpuxgpt0 register irq (96) ok
+[    1.919392]<5> (5)[1:swapper/0]cpu_xgpt_register_timer:mtk_cpuxgpt1 register irq (97) ok
+[    1.919414]<5> (5)[1:swapper/0]cpu_xgpt_register_timer:mtk_cpuxgpt2 register irq (98) ok
+[    1.919437]<5> (5)[1:swapper/0]cpu_xgpt_register_timer:mtk_cpuxgpt3 register irq (99) ok
+[    1.919458]<5> (5)[1:swapper/0]cpu_xgpt_register_timer:mtk_cpuxgpt4 register irq (100) ok
+[    1.919480]<5> (5)[1:swapper/0]cpu_xgpt_register_timer:mtk_cpuxgpt5 register irq (101) ok
+[    1.919502]<5> (5)[1:swapper/0]cpu_xgpt_register_timer:mtk_cpuxgpt6 register irq (102) ok
+[    1.919524]<5> (5)[1:swapper/0]cpu_xgpt_register_timer:mtk_cpuxgpt7 register irq (103) ok
+[    1.920168]<5> (5)[1:swapper/0][Power/cpufreq] @_mt_cpufreq_init: max_cpu_num: 8
+[    1.921770]<5> (5)[1:swapper/0][cpu_ntf] <45>ffffffc000a58188 (cpufreq_cpu_callback)
+[    1.921790]<5> (5)[1:swapper/0][cpu_ntf] <46>ffffffc000a57754 (turbo_mode_cpu_callback)
+[    1.921950]<5> (5)[1:swapper/0][PTPOD] ptpod_base = 0xffffff800599a000
+[    1.921977]<5> (5)[1:swapper/0][PTP] val[0]=0x13131413
+[    1.921988]<5> (5)[1:swapper/0][PTP] val[1]=0xcbcfc6d0
+[    1.921998]<5> (5)[1:swapper/0][PTP] val[2]=0x0
+[    1.922008]<5> (5)[1:swapper/0][PTP] val[3]=0x0
+[    1.922018]<5> (5)[1:swapper/0][PTP] val[4]=0x61283
+[    1.922028]<5> (5)[1:swapper/0][PTP] val[5]=0x20e6821
+[    1.922039]<5> (5)[1:swapper/0][PTP] val[6]=0x7e750b6d
+[    1.922049]<5> (5)[1:swapper/0][PTP] val[7]=0x39155e18
+[    1.922059]<5> (5)[1:swapper/0][PTP] val[7]=0x2340f434
+[    1.922069]<5> (5)[1:swapper/0][PTP] val[7]=0x574b474d
+[    1.922079]<5> (5)[1:swapper/0][PTP] p->PTPINITEN=0x1
+[    1.922090]<5> (5)[1:swapper/0][PTP] p->PTPMONEN=0x1
+[    1.922388]<5> (5)[1:swapper/0][PTP] Set PTP IRQ OK.
+[    1.925162]<5> (5)[1:swapper/0][Power/gpufreq] mt_gpufreq disabled by ptpod
+[    1.945544]<0> (0)[1:swapper/0]@ptp_probe(), hf_faxi_ck = 273000, hd_faxi_ck = 273000
+[    1.946021]<0> (0)[1:swapper/0]@ptp_init_det(), det->VBOOT = 48
+[    1.946039]<0> (0)[1:swapper/0]@ptp_init_det(), det->VBOOT = 48
+[    1.946048]<0> (0)[1:swapper/0]@ptp_init_det(), det->VBOOT = 48
+[    1.946062]<0> (0)[1:swapper/0]@ptp_init_det(), det->VBOOT = 68
+[    1.946532]<0> (0)[1:swapper/0]@ptp_init01(),vboot = 48,  det->VBOOT = 48
+[    1.947002]<0>-(0)[1:swapper/0][PTP] base_ops_init01(PTP_DET_CPU) start (ptp_level = 0x00000000).
+[    1.947016]<0>-(0)[1:swapper/0][PTP] base_ops_set_phase(PTP_DET_CPU) start (phase = 0).
+[    1.947030]<0> (0)[1:swapper/0]@ptp_init01(),vboot = 48,  det->VBOOT = 48
+[    1.947043]<0>-(0)[1:swapper/0][PTP] base_ops_init01(PTP_DET_LTE) start (ptp_level = 0x00000000).
+[    1.947055]<0>-(0)[1:swapper/0][PTP] base_ops_set_phase(PTP_DET_LTE) start (phase = 0).
+[    1.947064]<0> (0)[1:swapper/0]@ptp_init01(),vboot = 48,  det->VBOOT = 48
+[    1.947073]<0>-(0)[1:swapper/0][PTP] base_ops_init01(PTP_DET_GPU) start (ptp_level = 0x00000000).
+[    1.947085]<0>-(0)[1:swapper/0][PTP] base_ops_set_phase(PTP_DET_GPU) start (phase = 0).
+[    1.947098]<0> (0)[1:swapper/0]@ptp_init01(),vboot = 68,  det->VBOOT = 68
+[    1.947109]<0>-(0)[1:swapper/0][PTP] [PTP_DET_CPU]
+[    1.947117]<0>-(0)[1:swapper/0][PTP] PTPINTSTS = 0x00000001
+[    1.947124]<0>-(0)[1:swapper/0][PTP] PTP_PTPEN = 0x00000001
+[    1.947133]<0>-(0)[1:swapper/0][PTP] *(ffffff800599a240) = 0x01FC0130
+[    1.947141]<0>-(0)[1:swapper/0][PTP] *(ffffff800599a27c) = 0x01F401FB
+[    1.947149]<0>-(0)[1:swapper/0][PTP] @ handle_init01_isr(PTP_DET_CPU)
+[    1.947160]<0>-(0)[1:swapper/0][PTP] base_ops_init02(PTP_DET_CPU) start (ptp_level = 0x00000000).
+[    1.947168]<0>-(0)[1:swapper/0][PTP] DCVOFFSETIN = 0xFFFFFED0
+[    1.947176]<0>-(0)[1:swapper/0][PTP] AGEVOFFSETIN = 0x00000000
+[    1.947187]<0>-(0)[1:swapper/0][PTP] base_ops_set_phase(PTP_DET_CPU) start (phase = 1).
+[    1.947197]<0>-(0)[1:swapper/0][PTP] [PTP_DET_LTE]
+[    1.947204]<0>-(0)[1:swapper/0][PTP] PTPINTSTS = 0x00000001
+[    1.947211]<0>-(0)[1:swapper/0][PTP] PTP_PTPEN = 0x00000001
+[    1.947220]<0>-(0)[1:swapper/0][PTP] *(ffffff800599a240) = 0x0204024C
+[    1.947228]<0>-(0)[1:swapper/0][PTP] *(ffffff800599a27c) = 0x01FD0201
+[    1.947236]<0>-(0)[1:swapper/0][PTP] @ handle_init01_isr(PTP_DET_LTE)
+[    1.947246]<0>-(0)[1:swapper/0][PTP] base_ops_init02(PTP_DET_LTE) start (ptp_level = 0x00000000).
+[    1.947254]<0>-(0)[1:swapper/0][PTP] DCVOFFSETIN = 0xFFFFFDB4
+[    1.947261]<0>-(0)[1:swapper/0][PTP] AGEVOFFSETIN = 0x00000000
+[    1.947273]<0>-(0)[1:swapper/0][PTP] base_ops_set_phase(PTP_DET_LTE) start (phase = 1).
+[    1.947283]<0>-(0)[1:swapper/0][PTP] [PTP_DET_GPU]
+[    1.947290]<0>-(0)[1:swapper/0][PTP] PTPINTSTS = 0x00000001
+[    1.947297]<0>-(0)[1:swapper/0][PTP] PTP_PTPEN = 0x00000001
+[    1.947305]<0>-(0)[1:swapper/0][PTP] *(ffffff800599a240) = 0x01FC0174
+[    1.947314]<0>-(0)[1:swapper/0][PTP] *(ffffff800599a27c) = 0x01FD01FD
+[    1.947321]<0>-(0)[1:swapper/0][PTP] @ handle_init01_isr(PTP_DET_GPU)
+[    1.947332]<0>-(0)[1:swapper/0][PTP] base_ops_init02(PTP_DET_GPU) start (ptp_level = 0x00000000).
+[    1.947339]<0>-(0)[1:swapper/0][PTP] DCVOFFSETIN = 0xFFFFFE8C
+[    1.947347]<0>-(0)[1:swapper/0][PTP] AGEVOFFSETIN = 0x00000000
+[    1.947358]<0>-(0)[1:swapper/0][PTP] base_ops_set_phase(PTP_DET_GPU) start (phase = 1).
+[    1.947370]<0>-(0)[1:swapper/0][PTP] [PTP_DET_CPU]
+[    1.947377]<0>-(0)[1:swapper/0][PTP] PTPINTSTS = 0x00000001
+[    1.947384]<0>-(0)[1:swapper/0][PTP] PTP_PTPEN = 0x00000005
+[    1.947392]<0>-(0)[1:swapper/0][PTP] *(ffffff800599a240) = 0x01FCFED0
+[    1.947401]<0>-(0)[1:swapper/0][PTP] *(ffffff800599a27c) = 0x01F401FB
+[    1.947408]<0>-(0)[1:swapper/0][PTP] @ handle_init02_isr(PTP_DET_CPU)
+[    1.947419]<0>-(0)[1:swapper/0][PTP] ptp_detectors[PTP_DET_CPU].volt_tbl[0] = 0x00000041 (110625)
+[    1.947428]<0>-(0)[1:swapper/0][PTP] ptp_detectors[PTP_DET_CPU].volt_tbl[1] = 0x0000003B (106875)
+[    1.947436]<0>-(0)[1:swapper/0][PTP] ptp_detectors[PTP_DET_CPU].volt_tbl[2] = 0x00000036 (103750)
+[    1.947445]<0>-(0)[1:swapper/0][PTP] ptp_detectors[PTP_DET_CPU].volt_tbl[3] = 0x00000031 (100625)
+[    1.947454]<0>-(0)[1:swapper/0][PTP] ptp_detectors[PTP_DET_CPU].volt_tbl[4] = 0x0000002D (98125)
+[    1.947463]<0>-(0)[1:swapper/0][PTP] ptp_detectors[PTP_DET_CPU].volt_tbl[5] = 0x00000029 (95625)
+[    1.947471]<0>-(0)[1:swapper/0][PTP] ptp_detectors[PTP_DET_CPU].volt_tbl[6] = 0x00000020 (90000)
+[    1.947480]<0>-(0)[1:swapper/0][PTP] ptp_detectors[PTP_DET_CPU].volt_tbl[7] = 0x00000020 (90000)
+[    1.947487]<0>-(0)[1:swapper/0][PTP] ptp_level = 0x00000000
+[    1.947495]<0>-(0)[1:swapper/0][PTP] ptp_set_ptp_volt cur_temp = 47000
+[    1.947510]<0>-(0)[1:swapper/0][PTP] base_ops_mon_mode(PTP_DET_CPU) start (ptp_level = 0x00000000).
+[    1.947519]<0>-(0)[1:swapper/0][PTP] [PTP_DET_CPU]
+[    1.947526]<0>-(0)[1:swapper/0][PTP] PTPINITEN = 0x00000001
+[    1.947533]<0>-(0)[1:swapper/0][PTP] PTPMONEN = 0x00000001
+[    1.947541]<0>-(0)[1:swapper/0][PTP] MDES = 0x0000005E
+[    1.947548]<0>-(0)[1:swapper/0][PTP] BDES = 0x000000F4
+[    1.947555]<0>-(0)[1:swapper/0][PTP] DCMDET = 0x00000014
+[    1.947562]<0>-(0)[1:swapper/0][PTP] DCCONFIG = 0x00555555
+[    1.947570]<0>-(0)[1:swapper/0][PTP] DCBDET = 0x000000C6
+[    1.947577]<0>-(0)[1:swapper/0][PTP] AGECONFIG = 0x00555555
+[    1.947584]<0>-(0)[1:swapper/0][PTP] AGEM = 0x00000000
+[    1.947592]<0>-(0)[1:swapper/0][PTP] AGEDELTA = 0x00000000
+[    1.947599]<0>-(0)[1:swapper/0][PTP] DVTFIXED = 0x00000006
+[    1.947606]<0>-(0)[1:swapper/0][PTP] MTDES = 0x00000047
+[    1.947613]<0>-(0)[1:swapper/0][PTP] VCO = 0x00000010
+[    1.947621]<0>-(0)[1:swapper/0][PTP] DETWINDOW = 0x00000A28
+[    1.947628]<0>-(0)[1:swapper/0][PTP] VMAX = 0x00000048
+[    1.947636]<0>-(0)[1:swapper/0][PTP] VMIN = 0x00000020
+[    1.947643]<0>-(0)[1:swapper/0][PTP] DTHI = 0x00000001
+[    1.947650]<0>-(0)[1:swapper/0][PTP] DTLO = 0x000000FE
+[    1.947657]<0>-(0)[1:swapper/0][PTP] VBOOT = 0x00000030
+[    1.947664]<0>-(0)[1:swapper/0][PTP] DETMAX = 0x0000FFFF
+[    1.947672]<0>-(0)[1:swapper/0][PTP] DCVOFFSETIN = 0xFFFFFED0
+[    1.947679]<0>-(0)[1:swapper/0][PTP] AGEVOFFSETIN = 0x00000000
+[    1.947686]<0>-(0)[1:swapper/0][PTP] MTS = 0x000001FC
+[    1.947693]<0>-(0)[1:swapper/0][PTP] BTS = 0x000006CE
+[    1.947700]<0>-(0)[1:swapper/0][PTP] num_freq_tbl = 8
+[    1.947707]<0>-(0)[1:swapper/0][PTP] freq_tbl[0] = 93
+[    1.947715]<0>-(0)[1:swapper/0][PTP] freq_tbl[1] = 84
+[    1.947722]<0>-(0)[1:swapper/0][PTP] freq_tbl[2] = 78
+[    1.947729]<0>-(0)[1:swapper/0][PTP] freq_tbl[3] = 71
+[    1.947737]<0>-(0)[1:swapper/0][PTP] freq_tbl[4] = 65
+[    1.947744]<0>-(0)[1:swapper/0][PTP] freq_tbl[5] = 60
+[    1.947751]<0>-(0)[1:swapper/0][PTP] freq_tbl[6] = 41
+[    1.947758]<0>-(0)[1:swapper/0][PTP] freq_tbl[7] = 21
+[    1.947766]<0>-(0)[1:swapper/0][PTP] volt_tbl[0] = 65
+[    1.947773]<0>-(0)[1:swapper/0][PTP] volt_tbl[1] = 59
+[    1.947780]<0>-(0)[1:swapper/0][PTP] volt_tbl[2] = 54
+[    1.947787]<0>-(0)[1:swapper/0][PTP] volt_tbl[3] = 49
+[    1.947795]<0>-(0)[1:swapper/0][PTP] volt_tbl[4] = 45
+[    1.947802]<0>-(0)[1:swapper/0][PTP] volt_tbl[5] = 41
+[    1.947809]<0>-(0)[1:swapper/0][PTP] volt_tbl[6] = 32
+[    1.947816]<0>-(0)[1:swapper/0][PTP] volt_tbl[7] = 32
+[    1.947824]<0>-(0)[1:swapper/0][PTP] volt_tbl_init2[0] = 65
+[    1.947831]<0>-(0)[1:swapper/0][PTP] volt_tbl_init2[1] = 59
+[    1.947838]<0>-(0)[1:swapper/0][PTP] volt_tbl_init2[2] = 54
+[    1.947845]<0>-(0)[1:swapper/0][PTP] volt_tbl_init2[3] = 49
+[    1.947853]<0>-(0)[1:swapper/0][PTP] volt_tbl_init2[4] = 45
+[    1.947861]<0>-(0)[1:swapper/0][PTP] volt_tbl_init2[5] = 41
+[    1.947869]<0>-(0)[1:swapper/0][PTP] volt_tbl_init2[6] = 32
+[    1.947877]<0>-(0)[1:swapper/0][PTP] volt_tbl_init2[7] = 32
+[    1.947884]<0>-(0)[1:swapper/0][PTP] volt_tbl_pmic[0] = 65
+[    1.947892]<0>-(0)[1:swapper/0][PTP] volt_tbl_pmic[1] = 59
+[    1.947900]<0>-(0)[1:swapper/0][PTP] volt_tbl_pmic[2] = 54
+[    1.947908]<0>-(0)[1:swapper/0][PTP] volt_tbl_pmic[3] = 49
+[    1.947915]<0>-(0)[1:swapper/0][PTP] volt_tbl_pmic[4] = 45
+[    1.947923]<0>-(0)[1:swapper/0][PTP] volt_tbl_pmic[5] = 41
+[    1.947931]<0>-(0)[1:swapper/0][PTP] volt_tbl_pmic[6] = 32
+[    1.947938]<0>-(0)[1:swapper/0][PTP] volt_tbl_pmic[7] = 32
+[    1.947951]<0>-(0)[1:swapper/0][PTP] base_ops_set_phase(PTP_DET_CPU) start (phase = 2).
+[    1.947960]<0>-(0)[1:swapper/0][PTP] [PTP_DET_LTE]
+[    1.947967]<0>-(0)[1:swapper/0][PTP] PTPINTSTS = 0x00000001
+[    1.947975]<0>-(0)[1:swapper/0][PTP] PTP_PTPEN = 0x00000005
+[    1.947983]<0>-(0)[1:swapper/0][PTP] *(ffffff800599a240) = 0x0204FDB4
+[    1.947991]<0>-(0)[1:swapper/0][PTP] *(ffffff800599a27c) = 0x01FD0201
+[    1.947999]<0>-(0)[1:swapper/0][PTP] @ handle_init02_isr(PTP_DET_LTE)
+[    1.948009]<0>-(0)[1:swapper/0][PTP] ptp_detectors[PTP_DET_LTE].volt_tbl[0] = 0x0000002C (97500)
+[    1.948019]<0>-(0)[1:swapper/0][PTP] ptp_detectors[PTP_DET_LTE].volt_tbl[1] = 0x00000020 (90000)
+[    1.948028]<0>-(0)[1:swapper/0][PTP] ptp_detectors[PTP_DET_LTE].volt_tbl[2] = 0x00000020 (90000)
+[    1.948037]<0>-(0)[1:swapper/0][PTP] ptp_detectors[PTP_DET_LTE].volt_tbl[3] = 0x00000020 (90000)
+[    1.948046]<0>-(0)[1:swapper/0][PTP] ptp_detectors[PTP_DET_LTE].volt_tbl[4] = 0x00000020 (90000)
+[    1.948056]<0>-(0)[1:swapper/0][PTP] ptp_detectors[PTP_DET_LTE].volt_tbl[5] = 0x00000020 (90000)
+[    1.948065]<0>-(0)[1:swapper/0][PTP] ptp_detectors[PTP_DET_LTE].volt_tbl[6] = 0x00000020 (90000)
+[    1.948075]<0>-(0)[1:swapper/0][PTP] ptp_detectors[PTP_DET_LTE].volt_tbl[7] = 0x00000020 (90000)
+[    1.948082]<0>-(0)[1:swapper/0][PTP] ptp_level = 0x00000000
+[    1.948090]<0>-(0)[1:swapper/0][PTP] ptp_set_ptp_volt cur_temp = 44300
+[    1.948103]<0>-(0)[1:swapper/0][PTP] det PTP_DET_LTE has no MON mode
+[    1.948112]<0>-(0)[1:swapper/0][PTP] [PTP_DET_GPU]
+[    1.948119]<0>-(0)[1:swapper/0][PTP] PTPINTSTS = 0x00000001
+[    1.948126]<0>-(0)[1:swapper/0][PTP] PTP_PTPEN = 0x00000005
+[    1.948134]<0>-(0)[1:swapper/0][PTP] *(ffffff800599a240) = 0x01FCFE8C
+[    1.948143]<0>-(0)[1:swapper/0][PTP] *(ffffff800599a27c) = 0x01FD01FD
+[    1.948150]<0>-(0)[1:swapper/0][PTP] @ handle_init02_isr(PTP_DET_GPU)
+[    1.948160]<0>-(0)[1:swapper/0][PTP] ptp_detectors[PTP_DET_GPU].volt_tbl[0] = 0x0000002D (98125)
+[    1.948169]<0>-(0)[1:swapper/0][PTP] ptp_detectors[PTP_DET_GPU].volt_tbl[1] = 0x0000002B (96875)
+[    1.948178]<0>-(0)[1:swapper/0][PTP] ptp_detectors[PTP_DET_GPU].volt_tbl[2] = 0x0000002A (96250)
+[    1.948187]<0>-(0)[1:swapper/0][PTP] ptp_detectors[PTP_DET_GPU].volt_tbl[3] = 0x00000028 (95000)
+[    1.948195]<0>-(0)[1:swapper/0][PTP] ptp_detectors[PTP_DET_GPU].volt_tbl[4] = 0x00000027 (94375)
+[    1.948204]<0>-(0)[1:swapper/0][PTP] ptp_detectors[PTP_DET_GPU].volt_tbl[5] = 0x00000025 (93125)
+[    1.948213]<0>-(0)[1:swapper/0][PTP] ptp_detectors[PTP_DET_GPU].volt_tbl[6] = 0x00000025 (93125)
+[    1.948221]<0>-(0)[1:swapper/0][PTP] ptp_detectors[PTP_DET_GPU].volt_tbl[7] = 0x00000025 (93125)
+[    1.948229]<0>-(0)[1:swapper/0][PTP] ptp_level = 0x00000000
+[    1.948236]<0>-(0)[1:swapper/0][PTP] ptp_set_ptp_volt cur_temp = 43700
+[    1.948250]<0>-(0)[1:swapper/0][PTP] base_ops_mon_mode(PTP_DET_GPU) start (ptp_level = 0x00000000).
+[    1.948258]<0>-(0)[1:swapper/0][PTP] [PTP_DET_GPU]
+[    1.948265]<0>-(0)[1:swapper/0][PTP] PTPINITEN = 0x00000001
+[    1.948272]<0>-(0)[1:swapper/0][PTP] PTPMONEN = 0x00000001
+[    1.948279]<0>-(0)[1:swapper/0][PTP] MDES = 0x00000015
+[    1.948286]<0>-(0)[1:swapper/0][PTP] BDES = 0x00000040
+[    1.948294]<0>-(0)[1:swapper/0][PTP] DCMDET = 0x00000013
+[    1.948301]<0>-(0)[1:swapper/0][PTP] DCCONFIG = 0x00555555
+[    1.948308]<0>-(0)[1:swapper/0][PTP] DCBDET = 0x000000CF
+[    1.948316]<0>-(0)[1:swapper/0][PTP] AGECONFIG = 0x00555555
+[    1.948323]<0>-(0)[1:swapper/0][PTP] AGEM = 0x00000000
+[    1.948330]<0>-(0)[1:swapper/0][PTP] AGEDELTA = 0x00000000
+[    1.948337]<0>-(0)[1:swapper/0][PTP] DVTFIXED = 0x00000004
+[    1.948344]<0>-(0)[1:swapper/0][PTP] MTDES = 0x0000004B
+[    1.948351]<0>-(0)[1:swapper/0][PTP] VCO = 0x00000025
+[    1.948358]<0>-(0)[1:swapper/0][PTP] DETWINDOW = 0x00000A28
+[    1.948365]<0>-(0)[1:swapper/0][PTP] VMAX = 0x00000044
+[    1.948373]<0>-(0)[1:swapper/0][PTP] VMIN = 0x00000025
+[    1.948380]<0>-(0)[1:swapper/0][PTP] DTHI = 0x00000001
+[    1.948387]<0>-(0)[1:swapper/0][PTP] DTLO = 0x000000FE
+[    1.948394]<0>-(0)[1:swapper/0][PTP] VBOOT = 0x00000030
+[    1.948401]<0>-(0)[1:swapper/0][PTP] DETMAX = 0x0000FFFF
+[    1.948408]<0>-(0)[1:swapper/0][PTP] DCVOFFSETIN = 0xFFFFFE8C
+[    1.948416]<0>-(0)[1:swapper/0][PTP] AGEVOFFSETIN = 0x00000000
+[    1.948423]<0>-(0)[1:swapper/0][PTP] MTS = 0x000001FC
+[    1.948430]<0>-(0)[1:swapper/0][PTP] BTS = 0x000006C9
+[    1.948437]<0>-(0)[1:swapper/0][PTP] num_freq_tbl = 5
+[    1.948444]<0>-(0)[1:swapper/0][PTP] freq_tbl[0] = 78
+[    1.948451]<0>-(0)[1:swapper/0][PTP] freq_tbl[1] = 64
+[    1.948459]<0>-(0)[1:swapper/0][PTP] freq_tbl[2] = 56
+[    1.948466]<0>-(0)[1:swapper/0][PTP] freq_tbl[3] = 43
+[    1.948473]<0>-(0)[1:swapper/0][PTP] freq_tbl[4] = 37
+[    1.948480]<0>-(0)[1:swapper/0][PTP] volt_tbl[0] = 45
+[    1.948488]<0>-(0)[1:swapper/0][PTP] volt_tbl[1] = 43
+[    1.948495]<0>-(0)[1:swapper/0][PTP] volt_tbl[2] = 42
+[    1.948503]<0>-(0)[1:swapper/0][PTP] volt_tbl[3] = 40
+[    1.948510]<0>-(0)[1:swapper/0][PTP] volt_tbl[4] = 39
+[    1.948518]<0>-(0)[1:swapper/0][PTP] volt_tbl_init2[0] = 45
+[    1.948525]<0>-(0)[1:swapper/0][PTP] volt_tbl_init2[1] = 43
+[    1.948533]<0>-(0)[1:swapper/0][PTP] volt_tbl_init2[2] = 42
+[    1.948540]<0>-(0)[1:swapper/0][PTP] volt_tbl_init2[3] = 40
+[    1.948548]<0>-(0)[1:swapper/0][PTP] volt_tbl_init2[4] = 39
+[    1.948555]<0>-(0)[1:swapper/0][PTP] volt_tbl_pmic[0] = 45
+[    1.948562]<0>-(0)[1:swapper/0][PTP] volt_tbl_pmic[1] = 43
+[    1.948570]<0>-(0)[1:swapper/0][PTP] volt_tbl_pmic[2] = 42
+[    1.948577]<0>-(0)[1:swapper/0][PTP] volt_tbl_pmic[3] = 40
+[    1.948584]<0>-(0)[1:swapper/0][PTP] volt_tbl_pmic[4] = 39
+[    1.948596]<0>-(0)[1:swapper/0][PTP] base_ops_set_phase(PTP_DET_GPU) start (phase = 2).
+[    1.948618]<0>-(0)[1:swapper/0][PTP] base_ops_init01(PTP_DET_SOC) start (ptp_level = 0x00000000).
+[    1.948630]<0>-(0)[1:swapper/0][PTP] base_ops_set_phase(PTP_DET_SOC) start (phase = 0).
+[    1.948719]<0>-(0)[1:swapper/0][PTP] [PTP_DET_SOC]
+[    1.948726]<0>-(0)[1:swapper/0][PTP] PTPINTSTS = 0x00000001
+[    1.948733]<0>-(0)[1:swapper/0][PTP] PTP_PTPEN = 0x00000001
+[    1.948741]<0>-(0)[1:swapper/0][PTP] *(ffffff800599a240) = 0x0278FFA8
+[    1.948750]<0>-(0)[1:swapper/0][PTP] *(ffffff800599a27c) = 0x02710277
+[    1.948758]<0>-(0)[1:swapper/0][PTP] @ handle_init01_isr(PTP_DET_SOC)
+[    1.948769]<0>-(0)[1:swapper/0][PTP] base_ops_init02(PTP_DET_SOC) start (ptp_level = 0x00000000).
+[    1.948776]<0>-(0)[1:swapper/0][PTP] DCVOFFSETIN = 0xFFFF0058
+[    1.948784]<0>-(0)[1:swapper/0][PTP] AGEVOFFSETIN = 0x00000000
+[    1.948795]<0>-(0)[1:swapper/0][PTP] base_ops_set_phase(PTP_DET_SOC) start (phase = 1).
+[    1.948807]<0>-(0)[1:swapper/0][PTP] [PTP_DET_SOC]
+[    1.948814]<0>-(0)[1:swapper/0][PTP] PTPINTSTS = 0x00000001
+[    1.948822]<0>-(0)[1:swapper/0][PTP] PTP_PTPEN = 0x00000005
+[    1.948830]<0>-(0)[1:swapper/0][PTP] *(ffffff800599a240) = 0x02780058
+[    1.948838]<0>-(0)[1:swapper/0][PTP] *(ffffff800599a27c) = 0x02710277
+[    1.948846]<0>-(0)[1:swapper/0][PTP] @ handle_init02_isr(PTP_DET_SOC)
+[    1.948856]<0>-(0)[1:swapper/0][PTP] ptp_detectors[PTP_DET_SOC].volt_tbl[0] = 0x00000042 (111250)
+[    1.948865]<0>-(0)[1:swapper/0][PTP] ptp_detectors[PTP_DET_SOC].volt_tbl[1] = 0x0000003B (106875)
+[    1.948874]<0>-(0)[1:swapper/0][PTP] ptp_detectors[PTP_DET_SOC].volt_tbl[2] = 0x0000002C (97500)
+[    1.948883]<0>-(0)[1:swapper/0][PTP] ptp_detectors[PTP_DET_SOC].volt_tbl[3] = 0x00000025 (93125)
+[    1.948892]<0>-(0)[1:swapper/0][PTP] ptp_detectors[PTP_DET_SOC].volt_tbl[4] = 0x00000025 (93125)
+[    1.948900]<0>-(0)[1:swapper/0][PTP] ptp_detectors[PTP_DET_SOC].volt_tbl[5] = 0x00000025 (93125)
+[    1.948909]<0>-(0)[1:swapper/0][PTP] ptp_detectors[PTP_DET_SOC].volt_tbl[6] = 0x00000025 (93125)
+[    1.948917]<0>-(0)[1:swapper/0][PTP] ptp_detectors[PTP_DET_SOC].volt_tbl[7] = 0x00000025 (93125)
+[    1.948925]<0>-(0)[1:swapper/0][PTP] ptp_level = 0x00000000
+[    1.948933]<0>-(0)[1:swapper/0][PTP] ptp_set_ptp_volt cur_temp = 46700
+[    1.948945]<0>-(0)[1:swapper/0][PTP] det PTP_DET_SOC has no MON mode
+[    1.948957]<4> (4)[205:PTP_CTRL_SOC][PTP] [base_ops_set_volt] default func
+[    1.968657]<0> (0)[1:swapper/0]@ptp_probe(), hf_faxi_ck = 273000, hd_faxi_ck = 273000
+[    1.968700]<0> (0)[1:swapper/0][Power/gpufreq] mt_gpufreq enabled by ptpod
+[    1.971459]<4> (4)[1:swapper/0][cpu_ntf] <47>ffffffc000400820 (cpu_hotplug_handler)
+[    1.972364]<4> (4)[1:swapper/0]need_multi_autok
+[    1.972537]<0> (0)[1:swapper/0]<HWMSEN> hwmsen_init
+[    1.972970]<0> (0)[1:swapper/0]<HWMSEN> hwmsen_probe
+[    1.972983]<0> (0)[1:swapper/0]<HWMSEN> hwmsen_alloc_object
+[    1.973504]<1> (1)[1:swapper/0]<HWMSEN> hwmsen_create_attr
+[    1.973612]<1> (1)[1:swapper/0]<BATCHDEV> batch_init
+[    1.973969]<1> (1)[1:swapper/0]<BATCHDEV> +++++++++++++batch_probe!!
+[    1.973982]<1> (1)[1:swapper/0]<BATCHDEV> batch_context_alloc_object++++
+[    1.973993]<1> (1)[1:swapper/0]<BATCHDEV> batch_context_alloc_object----
+[    1.974003]<1> (1)[1:swapper/0]<BATCHDEV>  batch_real_driver_init +
+[    1.974014]<1> (1)[1:swapper/0]<BATCHDEV>  i=0
+[    1.974023]<1> (1)[1:swapper/0]<BATCHDEV>  i=1
+[    1.974033]<1> (1)[1:swapper/0]<BATCHDEV>  i=2
+[    1.974043]<1> (1)[1:swapper/0]<BATCHDEV>  i=3
+[    1.974053]<1> (1)[1:swapper/0]<BATCHDEV>  i=4
+[    1.974063]<1> (1)[1:swapper/0]<BATCHDEV>  batch_real_driver_init fail
+[    1.974074]<1> (1)[1:swapper/0]<BATCHDEV> batch_probe 1024 : batch real driver init fail
+[    1.974085]<1> (1)[1:swapper/0]<BATCHDEV> ----batch_probe fail !!!
+[    1.974104]<1> (1)[1:swapper/0]m_batch_pl: probe of m_batch_pl.49 failed with error -1
+[    1.974160]<1> (1)[1:swapper/0]<ALS/PS> alsps_init
+[    1.974444]<1> (1)[1:swapper/0]<ALS/PS> +++++++++++++alsps_probe!!
+[    1.974456]<1> (1)[1:swapper/0]<ALS/PS> alsps_context_alloc_object++++
+[    1.974467]<1> (1)[1:swapper/0]<ALS/PS> alsps_context_alloc_object----
+[    1.974478]<1> (1)[1:swapper/0]<ALS/PS> Node of '/dev/als_ps' has already existed!
+[    1.974490]<1> (1)[1:swapper/0]<ALS/PS> alsps_probe 1153 : alsps factory device already registed
+[    1.974660]<1> (1)[1:swapper/0]<ALS/PS>  alsps_real_driver_init +
+[    1.974671]<1> (1)[1:swapper/0]<ALS/PS> alsps_real_driver_init i=0
+[    1.974682]<1> (1)[1:swapper/0]<ALS/PS>  alsps try to init driver ltr579
+[    1.974858]<1> (1)[1:swapper/0]<ALS/PS> alsps register data path vender_div: 100
+[    1.974870]<1> (1)[1:swapper/0]<ALS/PS> alsps register data path vender_div: 100
+[    1.975407]<0>-(0)[0:swapper/0][PTP] [PTP_DET_CPU]
+[    1.975420]<0>-(0)[0:swapper/0][PTP] PTPINTSTS = 0x003F0000
+[    1.975431]<0>-(0)[0:swapper/0][PTP] PTP_PTPEN = 0x00000002
+[    1.975443]<0>-(0)[0:swapper/0][PTP] *(ffffff800599a240) = 0x01FCFED0
+[    1.975455]<0>-(0)[0:swapper/0][PTP] *(ffffff800599a27c) = 0x01F401FB
+[    1.975466]<0>-(0)[0:swapper/0][PTP] @ handle_mon_mode_isr(PTP_DET_CPU)
+[    1.975478]<0>-(0)[0:swapper/0][PTP] ca7_temp=47000, c17_temp=44300 gpu_temp=43700
+[    1.975494]<0>-(0)[0:swapper/0][PTP] ptp_detectors[PTP_DET_CPU].volt_tbl[0] = 0x0000003E (108750)
+[    1.975508]<0>-(0)[0:swapper/0][PTP] ptp_detectors[PTP_DET_CPU].volt_tbl[1] = 0x00000037 (104375)
+[    1.975521]<0>-(0)[0:swapper/0][PTP] ptp_detectors[PTP_DET_CPU].volt_tbl[2] = 0x00000032 (101250)
+[    1.975534]<0>-(0)[0:swapper/0][PTP] ptp_detectors[PTP_DET_CPU].volt_tbl[3] = 0x0000002D (98125)
+[    1.975547]<0>-(0)[0:swapper/0][PTP] ptp_detectors[PTP_DET_CPU].volt_tbl[4] = 0x00000028 (95000)
+[    1.975560]<0>-(0)[0:swapper/0][PTP] ptp_detectors[PTP_DET_CPU].volt_tbl[5] = 0x00000024 (92500)
+[    1.975573]<0>-(0)[0:swapper/0][PTP] ptp_detectors[PTP_DET_CPU].volt_tbl[6] = 0x00000020 (90000)
+[    1.975586]<0>-(0)[0:swapper/0][PTP] ptp_detectors[PTP_DET_CPU].volt_tbl[7] = 0x00000020 (90000)
+[    1.975597]<0>-(0)[0:swapper/0][PTP] ptp_level = 0x00000000
+[    1.975608]<0>-(0)[0:swapper/0][PTP] ptp_set_ptp_volt cur_temp = 47000
+[    1.975627]<0>-(0)[0:swapper/0][PTP] [PTP_DET_GPU]
+[    1.975637]<0>-(0)[0:swapper/0][PTP] PTPINTSTS = 0x001F0000
+[    1.975648]<0>-(0)[0:swapper/0][PTP] PTP_PTPEN = 0x00000002
+[    1.975659]<0>-(0)[0:swapper/0][PTP] *(ffffff800599a240) = 0x01FCFE8C
+[    1.975670]<0>-(0)[0:swapper/0][PTP] *(ffffff800599a27c) = 0x01FD01FD
+[    1.975681]<0>-(0)[0:swapper/0][PTP] @ handle_mon_mode_isr(PTP_DET_GPU)
+[    1.975692]<0>-(0)[0:swapper/0][PTP] ca7_temp=47000, c17_temp=44300 gpu_temp=43700
+[    1.975708]<0>-(0)[0:swapper/0][PTP] ptp_detectors[PTP_DET_GPU].volt_tbl[0] = 0x0000002A (96250)
+[    1.975721]<0>-(0)[0:swapper/0][PTP] ptp_detectors[PTP_DET_GPU].volt_tbl[1] = 0x00000027 (94375)
+[    1.975734]<0>-(0)[0:swapper/0][PTP] ptp_detectors[PTP_DET_GPU].volt_tbl[2] = 0x00000026 (93750)
+[    1.975747]<0>-(0)[0:swapper/0][PTP] ptp_detectors[PTP_DET_GPU].volt_tbl[3] = 0x00000025 (93125)
+[    1.975760]<0>-(0)[0:swapper/0][PTP] ptp_detectors[PTP_DET_GPU].volt_tbl[4] = 0x00000025 (93125)
+[    1.975773]<0>-(0)[0:swapper/0][PTP] ptp_detectors[PTP_DET_GPU].volt_tbl[5] = 0x00000025 (93125)
+[    1.975786]<0>-(0)[0:swapper/0][PTP] ptp_detectors[PTP_DET_GPU].volt_tbl[6] = 0x00000025 (93125)
+[    1.975798]<0>-(0)[0:swapper/0][PTP] ptp_detectors[PTP_DET_GPU].volt_tbl[7] = 0x00000025 (93125)
+[    1.975810]<0>-(0)[0:swapper/0][PTP] ptp_level = 0x00000000
+[    1.975820]<0>-(0)[0:swapper/0][PTP] ptp_set_ptp_volt cur_temp = 43700
+[    1.985753]<0> (0)[185:bat_routine_thr]step A2 : Standard USB Host!
+[    1.985871]<0> (0)[185:bat_routine_thr][BAT_thread]Cable in, CHR_Type_num=1
+[    1.987365]<0> (0)[185:bat_routine_thr][PMIC_IMM_GetOneChannelValue] usb E2
+[    1.987710]<0> (0)[184:kworker/0:1][PMIC_IMM_GetOneChannelValue] usb E2
+[    1.988421]<0> (0)[185:bat_routine_thr][charging_get_charger_det_status][JJP][20140401] CHRDET status = 1
+[    1.998851]<0> (0)[185:bat_routine_thr][PMIC_IMM_GetOneChannelValue] usb E2
+[    2.000460]<0> (0)[185:bat_routine_thr][read_adc_v_charger] AUX_VUSB_AP = 5056 AUX_VCHRIN_AP=5000
+[    2.000484]<0> (0)[185:bat_routine_thr][PMIC_IMM_GetOneChannelValue] usb E2
+[    2.002038]<0> (0)[185:bat_routine_thr][read_adc_v_charger] AUX_VUSB_AP = 5056 AUX_VCHRIN_AP=5007
+[    2.002806]<0> (0)[185:bat_routine_thr][force_get_tbat] 590,591,0,189,10,37
+[    2.003052]<0> (0)[185:bat_routine_thr]AvgVbat=(3979),bat_vol=(3979),AvgI=(483),I=(0),VChr=(5056),AvgT=(37),T=(37),pre_SOC=(-1),SOC=(0),ZCV=(0), adcChannel=(3), adcChannelVol=(2632), batteryId=(0)
+[    2.006132]<3> (3)[185:bat_routine_thr][BATTERY] BATTERY_NOTIFY_CASE_0002_VBATTEMP (0)
+[    2.006139]<3> (3)[185:bat_routine_thr][BATTERY] BATTERY_NOTIFY_CASE_0005_TOTAL_CHARGINGTIME (0)
+[    2.006145]<3> (3)[185:bat_routine_thr][BATTERY] support JEITA, temperature=37
+[    2.006152][BATTERY] Battery Normal Temperature between 15 and 45 !!
+[    2.006216]<0> (0)[184:kworker/0:1][charging_get_charger_det_status][JJP][20140401] CHRDET status = 1
+
+[    2.007069]<4> (4)[185:bat_routine_thr][BATTERY] Pre-CC mode charge, timer=0 on 0 !!
+[    2.007069]<4>[    2.007585]<4> (4)[185:bat_routine_thr][BATTERY] bq_charge_type= 1, BMT_status.charger_type=1
+[    2.008081]<4> (4)[185:bat_routine_thr][battery]bq2589x_auto_dpdm_detect:adapter plugged in
+[    2.008092]<4> (4)[185:bat_routine_thr]bq2589x_auto_dpdm_detect mtk_charger_type = 1 enable = 1, bq2589x_dpdm_detect=1
+[    2.008098][battery][bq2589x] 
+[    2.008611]<4> (4)[185:bat_routine_thr][battery][0x0]=0x48 
+[    2.009588]<4> (4)[188:kworker/4:1][battery]set current = 512
+[    2.010089]<5> (5)[185:bat_routine_thr][battery][0x1]=0x6 
+[    2.016788]<4> (4)[188:kworker/4:1][battery]set current = 512
+[    2.017287]<5> (5)[185:bat_routine_thr][battery][0x2]=0xdc 
+[    2.025701]<4> (4)[188:kworker/4:1][battery]bq2589x_adapter_in_workfunc:Charger 2 enter Hiz mode successfully
+[    2.025707]<4> (4)[188:kworker/4:1][battery]set current = 512
+[    2.026212]<5> (5)[185:bat_routine_thr][battery][0x3]=0x1a 
+[    2.028393]<5> (5)[185:bat_routine_thr][battery][0x4]=0x8 
+[    2.028892]<5> (5)[185:bat_routine_thr][battery][0x5]=0x11 
+[    2.029393]<5> (5)[185:bat_routine_thr][battery][0x6]=0x8e 
+[    2.029891]<5> (5)[185:bat_routine_thr][battery][0x7]=0x95 
+[    2.030391]<5> (5)[185:bat_routine_thr][battery][0x8]=0x3 
+[    2.030891]<5> (5)[185:bat_routine_thr][battery][0x9]=0x44 
+[    2.031389]<5> (5)[185:bat_routine_thr][battery][0xa]=0x73 
+[    2.031889]<5> (5)[185:bat_routine_thr][battery][0xb]=0x36 
+[    2.032389]<5> (5)[185:bat_routine_thr][battery][0xc]=0x0 
+[    2.032887]<5> (5)[185:bat_routine_thr][battery][0xd]=0x94 
+[    2.033387]<5> (5)[185:bat_routine_thr][battery][0xe]=0x54 
+[    2.033887]<5> (5)[185:bat_routine_thr][battery][0xf]=0x52 
+[    2.034385]<5> (5)[185:bat_routine_thr][battery][0x10]=0x3d 
+[    2.034886]<5> (5)[185:bat_routine_thr][battery][0x11]=0x97 
+[    2.035384]<5> (5)[185:bat_routine_thr][battery][0x12]=0x0 
+[    2.035885]<5> (5)[185:bat_routine_thr][battery][0x13]=0x48 
+[    2.036385]<5> (5)[185:bat_routine_thr][battery][0x14]=0x1d 
+[    2.036391]<5> (5)[185:bat_routine_thr][battery]
+[    2.036397]<5> (5)[185:bat_routine_thr][BATTERY] JEITA set charging current : 50000, 50000
+[    2.036403]<5> (5)[185:bat_routine_thr][BATTERY] Default CC mode charging : 50000, input current = 50000
+[    2.036421]<5> (5)[185:bat_routine_thr][mt_kpoc_power_off_check] , chr_vol=5056, boot_mode=2
+[    2.036427]<5> (5)[185:bat_routine_thr]wait event 1
+[    2.206671]<0> (0)[109:hps_main]CPU7: shutdown
+[    2.207086]<0> (0)[109:hps_main][HPS] (0200)(7)action end(100)(100)(0)(1) (8)(8)(8)(8)(1) (0)(0)(0) (4358)(16)(0) (0)(100)(16)(0)(100)
+[    2.325671]<0> (0)[0:swapper/0]Power/WMT_Thermal[wmt_cal_stats] cur_time(2) < pre_time
+[    2.359099]<5> (5)[185:bat_routine_thr][Battery] mt_battery_update_duration_time , last_time=1 current_time=2 duration=1
+[    2.359164]<5> (5)[185:bat_routine_thr][PMIC_IMM_GetOneChannelValue] usb E2
+[    2.359916]<5> (5)[185:bat_routine_thr][charging_get_charger_det_status][JJP][20140401] CHRDET status = 1
+[    2.359924]<5> (5)[185:bat_routine_thr][BAT_thread]Cable in, CHR_Type_num=1
+[    2.361484]<5> (5)[185:bat_routine_thr][PMIC_IMM_GetOneChannelValue] usb E2
+[    2.362241]<5> (5)[185:bat_routine_thr][charging_get_charger_det_status][JJP][20140401] CHRDET status = 1
+[    2.372691]<5> (5)[185:bat_routine_thr][PMIC_IMM_GetOneChannelValue] usb E2
+[    2.374376]<5> (5)[185:bat_routine_thr][read_adc_v_charger] AUX_VUSB_AP = 5057 AUX_VCHRIN_AP=5007
+[    2.374400]<5> (5)[185:bat_routine_thr][PMIC_IMM_GetOneChannelValue] usb E2
+[    2.376023]<5> (5)[185:bat_routine_thr][read_adc_v_charger] AUX_VUSB_AP = 5054 AUX_VCHRIN_AP=5000
+[    2.376799]<5> (5)[185:bat_routine_thr][force_get_tbat] 590,591,0,191,10,37
+[    2.377044]<5> (5)[185:bat_routine_thr]AvgVbat=(3978),bat_vol=(3965),AvgI=(466),I=(0),VChr=(5054),AvgT=(37),T=(37),pre_SOC=(-1),SOC=(0),ZCV=(0), adcChannel=(3), adcChannelVol=(2632), batteryId=(0)
+[    2.380112]<5> (5)[185:bat_routine_thr][BATTERY] BATTERY_NOTIFY_CASE_0002_VBATTEMP (0)
+[    2.380118]<5> (5)[185:bat_routine_thr][BATTERY] BATTERY_NOTIFY_CASE_0005_TOTAL_CHARGINGTIME (0)
+[    2.380124]<5> (5)[185:bat_routine_thr][BATTERY] support JEITA, temperature=37
+[    2.380129][BATTERY] Battery Normal Temperature between 15 and 45 !!
+
+[    2.381480]<5> (5)[185:bat_routine_thr][BATTERY] bq_charge_type= 1, BMT_status.charger_type=1
+[    2.381488]<5> (5)[185:bat_routine_thr][BATTERY] JEITA set charging current : 50000, 50000
+[    2.381495]<5> (5)[185:bat_routine_thr][BATTERY] Default CC mode charging : 50000, input current = 50000
+[    2.382005]<5> (5)[185:bat_routine_thr][BATTERY] charging_full_check, status = 0
+[    2.382011]<5> (5)[185:bat_routine_thr][mt_kpoc_power_off_check] , chr_vol=5054, boot_mode=2
+[    2.382016]<5> (5)[185:bat_routine_thr]wait event 1
+[    2.585889]<1> (1)[1:swapper/0][ALS/PS] ltr579_ps_set_thres
+[    2.588708]<1> (1)[1:swapper/0][ALS/PS] ltr579_dynamic_calibrate
+[    2.700628]<1> (1)[1:swapper/0][ALS/PS] ltr579_ps_set_thres
+[    2.752921]<1> (1)[1:swapper/0]ps_report_interrupt_data value=5, cxt->is_get_valid_ps_data_after_enable = 0
+[    2.752929]<1> (1)[1:swapper/0]cxt->is_ps_batch_enable = 0
+[    2.752935]<1> (1)[1:swapper/0]+ps_data_report! 5, 3
+[    2.764428]<1> (1)[1:swapper/0][ALS/PS] ltr579_setup_eint
+[    2.764442]<1> (1)[1:swapper/0]eint register for 8
+[    2.764451]<1> (1)[1:swapper/0][ALS/PS] ltr579_devinit 1352 : init dev: 0
+[    2.764501]<1> (1)[1:swapper/0]<ALS/PS>  alsps real driver ltr579 probe ok
+[    2.764506]<1> (1)[1:swapper/0]<ALS/PS> ----alsps_probe OK !!
+[    2.764608]<1> (1)[1:swapper/0]<ACCELEROMETER> acc_init
+[    2.764984]<1> (1)[1:swapper/0]<ACCELEROMETER> +++++++++++++accel_probe!!
+[    2.764991]<1> (1)[1:swapper/0]<ACCELEROMETER> acc_context_alloc_object++++
+[    2.765097]<4> (4)[1:swapper/0]<ACCELEROMETER> acc_context_alloc_object----
+[    2.765104]<4> (4)[1:swapper/0]<ACCELEROMETER>  acc_real_driver_init +
+[    2.765109]<4> (4)[1:swapper/0]<ACCELEROMETER>  i=0
+[    2.765115]<4> (4)[1:swapper/0]<ACCELEROMETER>  acc try to init driver BMA250
+[    2.765120]<4> (4)[1:swapper/0]jason add bma250 local init enter!
+[    2.765169]<4> (4)[1:swapper/0]jason add bma250_i2c_probe enter!
+[    2.765176]<4> (4)[1:swapper/0]bma250_init_client 
+[    2.766169]BMA250_CheckDeviceID 3 pass!
+ BMA250_CheckDeviceID ok 
+[    2.766995]<0> (0)[1:swapper/0]BMA250_SetBWRate OK!
+[    2.767817]<0> (0)[1:swapper/0]BMA250_SetDataFormat OK!
+[    2.768492]<0> (0)[1:swapper/0]BMA250 disable interrupt ...
+[    2.768497]<0> (0)[1:swapper/0]BMA250 disable interrupt function!
+[    2.789320]<0> (0)[1:swapper/0]BMA250_SetPowerMode OK!
+[    2.789326]<0> (0)[1:swapper/0]bma250_init_client OK!
+[    2.809393]<0> (0)[1:swapper/0]acc_register_control_path sucess
+[    2.809400]<0> (0)[1:swapper/0]<ACCELEROMETER> acc register data path vender_div: 1000
+[    2.809405]<0> (0)[1:swapper/0]acc_register_data_path sucess
+[    2.809411]<0> (0)[1:swapper/0]batch_register_support_info sucess
+[    2.809420]<0> (0)[1:swapper/0]jason add bma250_i2c_probe success!
+[    2.809444]<0> (0)[1:swapper/0]i2c-core: driver [BMA250] using legacy suspend method
+[    2.809449]<0> (0)[1:swapper/0]i2c-core: driver [BMA250] using legacy resume method
+[    2.809464]<0> (0)[1:swapper/0]jason add bma250_local_init exit!
+[    2.809470]<0> (0)[1:swapper/0]<ACCELEROMETER>  acc real driver BMA250 probe ok
+[    2.809476]<0> (0)[1:swapper/0]<ACCELEROMETER> Node of '/dev/gsensor' has already existed!
+[    2.809482]<0> (0)[1:swapper/0]<ACCELEROMETER> acc_probe 702 : acc factory device already registed
+[    2.809583]<0> (0)[1:swapper/0]<ACCELEROMETER> ----accel_probe OK !!
+[    2.809636]<0> (0)[1:swapper/0]<MAGNETIC> mag_init
+[    2.809945]<0> (0)[1:swapper/0]<MAGNETIC> +++++++++++++mag_probe!!
+[    2.809951]<0> (0)[1:swapper/0]<MAGNETIC> mag_context_alloc_object++++
+[    2.810052]<1> (1)[1:swapper/0]<MAGNETIC> mag_context_alloc_object----
+[    2.810058]<1> (1)[1:swapper/0]<MAGNETIC>  mag_real_driver_init +
+[    2.810063]<1> (1)[1:swapper/0]<MAGNETIC>  i=0
+[    2.810068]<1> (1)[1:swapper/0]<MAGNETIC>  mag try to init driver mxg2320
+[    2.810075]<1> (1)[1:swapper/0][MSENSOR] mxg2320_local_init 2567 : mxg2320_local_init enter 
+[    2.810102]<1> (1)[1:swapper/0][MSENSOR] mxg2320_i2c_probe 2375 : mxg2320_i2c_probe enter
+[    2.812556]<1> (1)[1:swapper/0][MSENSOR] magmetic coef[0] : 40
+[    2.812562]<1> (1)[1:swapper/0][MSENSOR] magmetic coef[1] : 40
+[    2.812568]<1> (1)[1:swapper/0][MSENSOR] magmetic coef[2] : 35
+[    2.812573]<1> (1)[1:swapper/0][MSENSOR] information[0] : 0x20
+[    2.812578]<1> (1)[1:swapper/0][MSENSOR] information[1] : 0x05
+[    2.812649]<1> (1)[1:swapper/0]<MAGNETIC> mag register data path div_o: 65536
+[    2.812655]<1> (1)[1:swapper/0]<MAGNETIC> mag register data path div_m: 1000
+[    2.812661]<1> (1)[1:swapper/0][MSENSOR] mxg2320_i2c_probe: OK
+[    2.812683]<1> (1)[1:swapper/0][MSENSOR] mxg2320_local_init 2580 : mxg2320_local_init exit 
+[    2.812689]<1> (1)[1:swapper/0]<MAGNETIC>  mag real driver mxg2320 probe ok
+[    2.812694]<1> (1)[1:swapper/0]<MAGNETIC> Node of '/dev/msensor' has already existed!
+[    2.812700]<1> (1)[1:swapper/0]<MAGNETIC> mag_probe 1044 : mag_factory_device_init fail
+[    2.812791]<1> (1)[1:swapper/0]<MAGNETIC> ----magel_probe OK !!
+[    2.812845]<1>-(1)[1:swapper/0]mtk_rtc_hal_common: RTC_IRQ_EN = 0xc, RTC_PDN1 = 0x200
+[    2.812853]<1>-(1)[1:swapper/0]mtk_rtc_hal_common: rtc_spare_reg[12] = {16432, 1, 6}
+[    2.812862]<1> (1)[1:swapper/0]mtk_rtc_common: There is Crystal
+[    2.813348]<1> (1)[1:swapper/0]------------[ cut here ]------------
+[    2.813363]<1> (1)[1:swapper/0]WARNING: at drivers/misc/mediatek/wdk/wd_common_drv.c:214 wk_start_kick_cpu+0xc8/0xfc()
+[    2.813372]<1> (1)[1:swapper/0]CPU: 1 PID: 1 Comm: swapper/0 Tainted: G        W    3.10.72+ #1
+[    2.813379]<1> (1)[1:swapper/0]Call trace:
+[    2.813389]<1> (1)[1:swapper/0][<ffffffc000088d50>] dump_backtrace+0x0/0x16c
+[    2.813397]<1> (1)[1:swapper/0][<ffffffc000088ecc>] show_stack+0x10/0x1c
+[    2.813406]<1> (1)[1:swapper/0][<ffffffc000a5a4c8>] dump_stack+0x1c/0x28
+[    2.813415]<1> (1)[1:swapper/0][<ffffffc0000998b4>] warn_slowpath_common+0x70/0x9c
+[    2.813421]<1> (1)[1:swapper/0][<ffffffc0000999d0>] warn_slowpath_null+0x14/0x20
+[    2.813428]<1> (1)[1:swapper/0][<ffffffc000645bc0>] wk_start_kick_cpu+0xc4/0xfc
+[    2.813437]<1> (1)[1:swapper/0][<ffffffc000ef1efc>] init_wk+0x11c/0x254
+[    2.813446]<1> (1)[1:swapper/0][<ffffffc000ec584c>] do_one_initcall+0xd0/0x1e0
+[    2.813453]<1> (1)[1:swapper/0][<ffffffc000ec5a98>] kernel_init_freeable+0x13c/0x1e0
+[    2.813462]<1> (1)[1:swapper/0][<ffffffc000a51a1c>] kernel_init+0x14/0x14c
+[    2.813468]<1> (1)[1:swapper/0]---[ end trace 1b75b31a2719ed24 ]---
+[    2.813513]<1> (1)[1:swapper/0][cpu_ntf] <48>ffffffc000a580d0 (wk_cpu_callback)
+[    2.813543]<1> (1)[1:swapper/0][WDK]init_wk done late_initcall cpus_kick_bit=0x7f -----
+[    2.813646]<1> (1)[1:swapper/0]mtk_xhci_eint_iddig_init(699): iddig gpio num, 16
+[    2.814760]<1> (1)[1:swapper/0]mtk_xhci_eint_iddig_init(726): external iddig register done, irqnum = 304, gpio_mode(1), gpio_pull_enable(1), gpio_pull_select(1)
+[    2.814781]<1> (1)[1:swapper/0]mtk_xhci_switch_init(515): switch_dev register success
+[    2.814838]<1> (1)[1:swapper/0][g_android][USB]android_init_functions: f->dev_name = f_ffs, f->name = ffs
+[    2.814872]<1> (1)[1:swapper/0][g_android][USB]android_init_functions: init ffs success!!
+[    2.814881]<1> (1)[1:swapper/0][g_android][USB]android_init_functions: f->dev_name = f_adb, f->name = adb
+[    2.814916]<1> (1)[1:swapper/0][g_android][USB]android_init_functions: init adb success!!
+[    2.814923]<1> (1)[1:swapper/0][g_android][USB]android_init_functions: f->dev_name = f_acm, f->name = acm
+[    2.815024]<1> (1)[1:swapper/0][g_android][USB]android_init_functions: init acm success!!
+[    2.815033]<1> (1)[1:swapper/0][g_android][USB]android_init_functions: f->dev_name = f_mtp, f->name = mtp
+[    2.815140]<4> (4)[1:swapper/0][g_android][USB]android_init_functions: init mtp success!!
+[    2.815148]<4> (4)[1:swapper/0][g_android][USB]android_init_functions: f->dev_name = f_ptp, f->name = ptp
+[    2.815169]<4> (4)[1:swapper/0][g_android][USB]android_init_functions: init ptp success!!
+[    2.815176]<4> (4)[1:swapper/0][g_android][USB]android_init_functions: f->dev_name = f_ecm, f->name = ecm
+[    2.815197]<4> (4)[1:swapper/0][g_android][USB]android_init_functions: init ecm success!!
+[    2.815204]<4> (4)[1:swapper/0][g_android][USB]android_init_functions: f->dev_name = f_eem, f->name = eem
+[    2.815223]<4> (4)[1:swapper/0][g_android][USB]android_init_functions: init eem success!!
+[    2.815233]<4> (4)[1:swapper/0][g_android][USB]android_init_functions: f->dev_name = f_gser, f->name = gser
+[    2.815322]<4> (4)[1:swapper/0][g_android][USB]android_init_functions: init gser success!!
+[    2.815330]<4> (4)[1:swapper/0][g_android][USB]android_init_functions: f->dev_name = f_rndis, f->name = rndis
+[    2.815350]<4> (4)[1:swapper/0][g_android][USB]android_init_functions: init rndis success!!
+[    2.815361]<4> (4)[1:swapper/0][g_android][USB]android_init_functions: f->dev_name = f_mass_storage, f->name = mass_storage
+[    2.815459]<4> (4)[1:swapper/0][g_android][USB]android_init_functions: init mass_storage success!!
+[    2.815468]<4> (4)[1:swapper/0][g_android][USB]android_init_functions: f->dev_name = f_accessory, f->name = accessory
+[    2.815507]<4> (4)[1:swapper/0][g_android][USB]android_init_functions: init accessory success!!
+[    2.815515]<4> (4)[1:swapper/0][g_android][USB]android_init_functions: f->dev_name = f_audio_source, f->name = audio_source
+[    2.815543]<4> (4)[1:swapper/0][g_android][USB]android_init_functions: init audio_source success!!
+[    2.815552]<4> (4)[1:swapper/0][g_android][USB]android_init_functions: f->dev_name = f_midi, f->name = midi
+[    2.815570]<4> (4)[1:swapper/0][g_android][USB]android_init_functions: init midi success!!
+[    2.815671]<1>-(1)[0:swapper/1][printk_delayed:start]
+[    2.815678]<1>-(1)[0:swapper/1]SCHED: intersects new_mask: 128, cpu_active_mask: 127
+[    2.815683]<1>-(1)[0:swapper/1][printk_delayed:done]
+[    2.815751]<0> (0)[184:kworker/0:1][PMIC_IMM_GetOneChannelValue] usb E2
+[    2.816438]<0>-(0)[0:swapper/0][Power/swap] CNT(dpidle,rgidle): [0] = (0,334), [1] = (0,62), [2] = (0,15), [3] = (0,13), [4] = (0,128), [5] = (0,149), [6] = (0,9), [7] = (0,10), 
+[    2.816449]<0>-(0)[0:swapper/0][Power/swap] dpidle_block_cnt: [by_cpu] = 0, [by_clk] = 0, [by_tmr] = 0, [by_oth] = 0, [by_vtg] = 725, 
+[    2.816460]<0>-(0)[0:swapper/0][Power/swap] dpidle_block_mask: 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 
+[    2.816568]<4> (4)[1:swapper/0][VcoreFS] feature_en = 1, is_fhd = 1
+[    2.816577]<4> (4)[1:swapper/0][VcoreFS] 0 kick (0): index = 2 (0x30,1333000), curr = 1 (1)(0x44,1466000)
+[    2.816621]<4>-(4)[1:swapper/0][DFS]dfs_dummy_buffer va: 0xffffffc001125000, pa: 0x41125000, size: 1024
+[    2.816660]<0> (0)[184:kworker/0:1][charging_get_charger_det_status][JJP][20140401] CHRDET status = 1
+[    2.817618]<4> (4)[1:swapper/0][sdio_stop_transfer] mtk_msdc_host[1] = NULL
+[    2.817624]<4> (4)[1:swapper/0][sdio_stop_transfer] mtk_msdc_host[2] = NULL
+[    2.817631]<4> (4)[1:swapper/0][sdio_stop_transfer] msdc3 prev. online tuning done, host->ot_work.chg_volt = 0
+[    2.819189]<4> (4)[1:swapper/0][sdio_start_ot_transfer] mtk_msdc_host[1] = NULL
+[    2.819195]<4> (4)[1:swapper/0][sdio_start_ot_transfer] mtk_msdc_host[2] = NULL
+[    2.819200]<4> (4)[1:swapper/0][sdio_start_ot_transfer] msdc3 Check vcore
+[    2.819209]<4> (4)[1:swapper/0][AUTO_K][autok_get_current_vcore_offset] vcore_uv = 1000000uV
+[    2.819216]<4> (4)[1:swapper/0][AUTO_K][autok_get_current_vcore_offset] Current Vcore = 1000000uV(0x30)
+[    2.819224]<4> (4)[1:swapper/0][AUTO_K]Cur Vcore:1000000uV, Sel Vcore:1187500uV
+[    2.819411]<4> (4)[1:swapper/0]SLEEP_EN = 0x1
+[    2.819482]<0> (0)[1:swapper/0][HIB/TOI] [toi_start_anything()]hibernate_or_resume(0x0000000a), resume_file=""
+[    2.819493]<0> (0)[1:swapper/0][HIB/TOI] [try_to_open_resume_device()]commandline=""
+[    2.819499]<0> (0)[1:swapper/0][HIB/TOI] [try_to_open_resume_device()]skip scanning for image...
+[    2.819648]<0> (0)[1:swapper/0]BOOTPROF:      2819.645153:Kernel_init_done
+[    2.821661]<1> (1)[1:init]init: init started!
+[    2.936423]<0> (0)[199:synaptics-tpd]tpd int
+[    2.941078]<1> (1)[6:kworker/u16:0]synaptics_rmi4_f54_set_ctrl: start!
+[    2.941120]<1> (1)[6:kworker/u16:0]synaptics_rmi4_f54_set_ctr: end
+[    2.968299]<1> (1)[1:init]type=1403 audit(1497453894.640:2): policy loaded auid=4294967295 ses=4294967295
+[    2.969375]<1> (1)[1:init]init: (Initializing SELinux non-enforcing took 0.15s.)
+[    2.987971]<0> (0)[1:init]init: init second stage started!
+[    2.988201]<0> (0)[1:init]init: property_set("ro.boot.selinux", "permissive") failed
+[    3.006724]<0> (0)[109:hps_main]CPU6: shutdown
+[    3.006908]<0> (0)[109:hps_main][WDK]cpu 6 plug off, kick wdt
+[    3.008096]<0> (0)[109:hps_main]CPU5: shutdown
+[    3.008268]<0> (0)[109:hps_main][WDK]cpu 5 plug off, kick wdt
+[    3.009398]<0> (0)[109:hps_main]CPU4: shutdown
+[    3.009614]<0> (0)[109:hps_main][WDK]cpu 4 plug off, kick wdt
+[    3.010856]<0> (0)[109:hps_main]CPU3: shutdown
+[    3.011039]<0> (0)[109:hps_main][WDK]cpu 3 plug off, kick wdt
+[    3.012228]<0> (0)[109:hps_main]CPU2: shutdown
+[    3.012407]<0> (0)[109:hps_main][WDK]cpu 2 plug off, kick wdt
+[    3.013891]<0> (0)[109:hps_main][HPS] (0200)(2)action end(111)(62)(0)(1) (8)(8)(8)(8)(1) (144)(8)(0) (759)(8)(0) (0)(62)(8)(0)(62)
+[    3.026969]<0> (0)[199:synaptics-tpd]tpd int
+[    3.030500]<0> (0)[199:synaptics-tpd]tpd int
+[    3.056530]<0> (0)[199:synaptics-tpd]tpd int
+[    3.267103]<1> (1)[1:init]init: waitpid failed: No child processes
+[    3.267415]<1> (1)[1:init]init: (Loading properties from /default.prop took 0.00s.)
+[    3.267915]<1> (1)[1:init]init: /init.rc: 72: invalid command 'load_all_props'
+[    3.268035]<1> (1)[1:init]init: (Parsing /init.recovery.mt6795.rc took 0.00s.)
+[    3.268049]<1> (1)[1:init]init: (Parsing /init.rc took 0.00s.)
+[    3.268147]<1> (1)[1:init]type=1400 audit(1497453894.940:3): avc:  denied  { setcheckreqprot } for  pid=1 comm="init" scontext=u:r:init:s0 tcontext=u:object_r:kernel:s0 tclass=security permissive=1
+[    3.268198]<1> (1)[1:init]type=1400 audit(1497453894.940:4): avc:  denied  { setcurrent } for  pid=1 comm="init" scontext=u:r:init:s0 tcontext=u:r:init:s0 tclass=process permissive=1
+[    3.268218]<1> (1)[1:init]type=1400 audit(1497453894.940:5): avc:  denied  { dyntransition } for  pid=1 comm="init" scontext=u:r:init:s0 tcontext=u:r:init:s0 tclass=process permissive=1
+[    3.268267]<1> (1)[1:init]init: Starting service 'ueventd'...
+[    3.268489]<1> (1)[1:init]init: Starting service 'healthd'...
+[    3.268653]<1> (1)[1:init]init: Waiting for /dev/.coldboot_done...
+[    3.269718]<0> (0)[234:ueventd]ueventd: ueventd started!
+[    3.359372]<0> (0)[187:mtk charger_hv_][PMIC_IMM_GetOneChannelValue] usb E2
+[    3.360274]<0> (0)[187:mtk charger_hv_][charging_get_charger_det_status][JJP][20140401] CHRDET status = 1
+[    3.406842]<0> (0)[234:ueventd]power_supply bq2589x-usb: driver failed to report `disable_quick_charge' property: -22
+[    3.505954]<1> (1)[6:kworker/u16:0]free_control_mem:time=0 
+[    3.505967]<1> (1)[6:kworker/u16:0]free_control_mem: start free! 
+[    3.505976]<1> (1)[6:kworker/u16:0]control.reg_86=          (null)
+[    3.505982]<1> (1)[6:kworker/u16:0]control.reg_86 freed
+[    3.505987]<1> (1)[6:kworker/u16:0]free_control_mem: end free! 
+[    3.515898]<0> (0)[6:kworker/u16:0]synaptics_rmi4_f54_set_ctrl: start!
+[    3.515918]<0> (0)[6:kworker/u16:0]synaptics_rmi4_f54_set_ctr: end
+[    3.519121]<0> (0)[6:kworker/u16:0]eint register for 6
+[    3.914446]<0> (0)[234:ueventd]ueventd: Coldboot took 0.63s.
+[    3.914776]<0> (0)[1:init]init: Waiting for /dev/.coldboot_done took 0.65s.
+[    3.914815]<0> (0)[1:init]init: /dev/hw_random not found
+[    3.914947]<0> (0)[1:init]SLEEP_EN = 0x1
+[    3.916986]<0> (0)[1:init]init: /dev/hw_random not found
+[    3.917457]<1> (1)[236:init]fs_mgr: Warning: unknown flag resize
+[    3.922116]<0>-(0)[0:swapper/0][sd]msdc0 -> XXX CMD<18> Arg<0x00614000> MSDC_INT_DATCRCERR, SDC_DCRC_STS<0xff> <- msdc_irq() : L<9793> PID<swapper/0><0x0>
+[    3.922153]<1> (1)[191:mmcqd/0]mmcblk0: error -5 transferring data, sector 6373376, nr 256, cmd response 0x900, card status 0x0
+[    3.922163]<1> (1)[191:mmcqd/0][sd]msdc0 -> XXX CMD<18><0x614000> Error<0> Resp<0x900> <- msdc_dump_trans_error() : L<8029> PID<mmcqd/0><0xbf>
+[    3.922192]<1> (1)[191:mmcqd/0][sd]msdc0 -> HS400_TUNE: orig_ds_dly1<0xb>, orig_ds_dly3<0x1a>, cur_ds_dly1<0xa>, cur_ds_dly3<0x1a> <- emmc_hs400_tune_rw() : L<7560> PID<mmcqd/0><0xbf>
+[    3.922209]<1> (1)[191:mmcqd/0][sd]msdc0 -> check card state<4> <- msdc_abort_data() : L<2649> PID<mmcqd/0><0xbf>
+[    3.922375]<0>-(0)[0:swapper/0][sd]msdc0 -> XXX CMD<18> Arg<0x00614000> MSDC_INT_DATCRCERR, SDC_DCRC_STS<0xff00> <- msdc_irq() : L<9793> PID<swapper/0><0x0>
+[    3.922398]<1> (1)[191:mmcqd/0][sd]msdc0 -> XXX CMD<18><0x614000> Error<0> Resp<0x900> <- msdc_dump_trans_error() : L<8029> PID<mmcqd/0><0xbf>
+[    3.922424]<1> (1)[191:mmcqd/0][sd]msdc0 -> HS400_TUNE: orig_ds_dly1<0xa>, orig_ds_dly3<0x1a>, cur_ds_dly1<0x9>, cur_ds_dly3<0x1a> <- emmc_hs400_tune_rw() : L<7560> PID<mmcqd/0><0xbf>
+[    3.922439]<1> (1)[191:mmcqd/0][sd]msdc0 -> check card state<4> <- msdc_abort_data() : L<2649> PID<mmcqd/0><0xbf>
+[    3.922623]<0>-(0)[0:swapper/0][sd]msdc0 -> XXX CMD<18> Arg<0x00614000> MSDC_INT_DATCRCERR, SDC_DCRC_STS<0xff> <- msdc_irq() : L<9793> PID<swapper/0><0x0>
+[    3.922647]<1> (1)[191:mmcqd/0][sd]msdc0 -> XXX CMD<18><0x614000> Error<0> Resp<0x900> <- msdc_dump_trans_error() : L<8029> PID<mmcqd/0><0xbf>
+[    3.922672]<1> (1)[191:mmcqd/0][sd]msdc0 -> HS400_TUNE: orig_ds_dly1<0x9>, orig_ds_dly3<0x1a>, cur_ds_dly1<0x8>, cur_ds_dly3<0x1a> <- emmc_hs400_tune_rw() : L<7560> PID<mmcqd/0><0xbf>
+[    3.922686]<1> (1)[191:mmcqd/0][sd]msdc0 -> check card state<4> <- msdc_abort_data() : L<2649> PID<mmcqd/0><0xbf>
+[    3.922890]<0>-(0)[0:swapper/0][sd]msdc0 -> XXX CMD<18> Arg<0x00614000> MSDC_INT_DATCRCERR, SDC_DCRC_STS<0xffff> <- msdc_irq() : L<9793> PID<swapper/0><0x0>
+[    3.922913]<1> (1)[191:mmcqd/0][sd]msdc0 -> XXX CMD<18><0x614000> Error<0> Resp<0x900> <- msdc_dump_trans_error() : L<8029> PID<mmcqd/0><0xbf>
+[    3.922938]<1> (1)[191:mmcqd/0][sd]msdc0 -> HS400_TUNE: orig_ds_dly1<0x8>, orig_ds_dly3<0x1a>, cur_ds_dly1<0x7>, cur_ds_dly3<0x1a> <- emmc_hs400_tune_rw() : L<7560> PID<mmcqd/0><0xbf>
+[    3.922953]<1> (1)[191:mmcqd/0][sd]msdc0 -> check card state<4> <- msdc_abort_data() : L<2649> PID<mmcqd/0><0xbf>
+[    3.923170]<0>-(0)[0:swapper/0][sd]msdc0 -> XXX CMD<18> Arg<0x00614000> MSDC_INT_DATCRCERR, SDC_DCRC_STS<0xff00> <- msdc_irq() : L<9793> PID<swapper/0><0x0>
+[    3.923193]<1> (1)[191:mmcqd/0][sd]msdc0 -> XXX CMD<18><0x614000> Error<0> Resp<0x900> <- msdc_dump_trans_error() : L<8029> PID<mmcqd/0><0xbf>
+[    3.923218]<1> (1)[191:mmcqd/0][sd]msdc0 -> HS400_TUNE: orig_ds_dly1<0x7>, orig_ds_dly3<0x1a>, cur_ds_dly1<0x6>, cur_ds_dly3<0x1a> <- emmc_hs400_tune_rw() : L<7560> PID<mmcqd/0><0xbf>
+[    3.923233]<1> (1)[191:mmcqd/0][sd]msdc0 -> check card state<4> <- msdc_abort_data() : L<2649> PID<mmcqd/0><0xbf>
+[    3.923640]<0>-(0)[0:swapper/0][sd]msdc0 -> XXX CMD<18> Arg<0x00614000> MSDC_INT_DATCRCERR, SDC_DCRC_STS<0xff00> <- msdc_irq() : L<9793> PID<swapper/0><0x0>
+[    3.923662]<1> (1)[191:mmcqd/0][sd]msdc0 -> XXX CMD<18><0x614000> Error<0> Resp<0x900> <- msdc_dump_trans_error() : L<8029> PID<mmcqd/0><0xbf>
+[    3.923687]<1> (1)[191:mmcqd/0][sd]msdc0 -> HS400_TUNE: orig_ds_dly1<0x6>, orig_ds_dly3<0x1a>, cur_ds_dly1<0x5>, cur_ds_dly3<0x1a> <- emmc_hs400_tune_rw() : L<7560> PID<mmcqd/0><0xbf>
+[    3.923702]<1> (1)[191:mmcqd/0][sd]msdc0 -> check card state<4> <- msdc_abort_data() : L<2649> PID<mmcqd/0><0xbf>
+[    3.923885]<0>-(0)[0:swapper/0][sd]msdc0 -> XXX CMD<18> Arg<0x00614000> MSDC_INT_DATCRCERR, SDC_DCRC_STS<0xff> <- msdc_irq() : L<9793> PID<swapper/0><0x0>
+[    3.923908]<1> (1)[191:mmcqd/0][sd]msdc0 -> XXX CMD<18><0x614000> Error<0> Resp<0x900> <- msdc_dump_trans_error() : L<8029> PID<mmcqd/0><0xbf>
+[    3.923933]<1> (1)[191:mmcqd/0][sd]msdc0 -> HS400_TUNE: orig_ds_dly1<0x5>, orig_ds_dly3<0x1a>, cur_ds_dly1<0x4>, cur_ds_dly3<0x1a> <- emmc_hs400_tune_rw() : L<7560> PID<mmcqd/0><0xbf>
+[    3.923948]<1> (1)[191:mmcqd/0][sd]msdc0 -> check card state<4> <- msdc_abort_data() : L<2649> PID<mmcqd/0><0xbf>
+[    3.924214]<0>-(0)[0:swapper/0][sd]msdc0 -> XXX CMD<18> Arg<0x00614000> MSDC_INT_DATCRCERR, SDC_DCRC_STS<0xffff> <- msdc_irq() : L<9793> PID<swapper/0><0x0>
+[    3.924236]<1> (1)[191:mmcqd/0][sd]msdc0 -> XXX CMD<18><0x614000> Error<0> Resp<0x900> <- msdc_dump_trans_error() : L<8029> PID<mmcqd/0><0xbf>
+[    3.924261]<1> (1)[191:mmcqd/0][sd]msdc0 -> HS400_TUNE: orig_ds_dly1<0x4>, orig_ds_dly3<0x1a>, cur_ds_dly1<0x3>, cur_ds_dly3<0x1a> <- emmc_hs400_tune_rw() : L<7560> PID<mmcqd/0><0xbf>
+[    3.924275]<1> (1)[191:mmcqd/0][sd]msdc0 -> check card state<4> <- msdc_abort_data() : L<2649> PID<mmcqd/0><0xbf>
+[    3.924364]<0>-(0)[0:swapper/0][sd]msdc0 -> XXX CMD<18> Arg<0x00614000> MSDC_INT_DATCRCERR, SDC_DCRC_STS<0xff00> <- msdc_irq() : L<9793> PID<swapper/0><0x0>
+[    3.924387]<1> (1)[191:mmcqd/0][sd]msdc0 -> XXX CMD<18><0x614000> Error<0> Resp<0x900> <- msdc_dump_trans_error() : L<8029> PID<mmcqd/0><0xbf>
+[    3.924413]<1> (1)[191:mmcqd/0][sd]msdc0 -> HS400_TUNE: orig_ds_dly1<0x3>, orig_ds_dly3<0x1a>, cur_ds_dly1<0x2>, cur_ds_dly3<0x1a> <- emmc_hs400_tune_rw() : L<7560> PID<mmcqd/0><0xbf>
+[    3.924427]<1> (1)[191:mmcqd/0][sd]msdc0 -> check card state<4> <- msdc_abort_data() : L<2649> PID<mmcqd/0><0xbf>
+[    3.924534]<0>-(0)[0:swapper/0][sd]msdc0 -> XXX CMD<18> Arg<0x00614000> MSDC_INT_DATCRCERR, SDC_DCRC_STS<0xff00> <- msdc_irq() : L<9793> PID<swapper/0><0x0>
+[    3.924556]<1> (1)[191:mmcqd/0][sd]msdc0 -> XXX CMD<18><0x614000> Error<0> Resp<0x900> <- msdc_dump_trans_error() : L<8029> PID<mmcqd/0><0xbf>
+[    3.924582]<1> (1)[191:mmcqd/0][sd]msdc0 -> HS400_TUNE: orig_ds_dly1<0x2>, orig_ds_dly3<0x1a>, cur_ds_dly1<0x1>, cur_ds_dly3<0x1a> <- emmc_hs400_tune_rw() : L<7560> PID<mmcqd/0><0xbf>
+[    3.924597]<1> (1)[191:mmcqd/0][sd]msdc0 -> check card state<4> <- msdc_abort_data() : L<2649> PID<mmcqd/0><0xbf>
+[    3.924761]<0>-(0)[0:swapper/0][sd]msdc0 -> XXX CMD<18> Arg<0x00614000> MSDC_INT_DATCRCERR, SDC_DCRC_STS<0xff00> <- msdc_irq() : L<9793> PID<swapper/0><0x0>
+[    3.924784]<1> (1)[191:mmcqd/0][sd]msdc0 -> XXX CMD<18><0x614000> Error<0> Resp<0x900> <- msdc_dump_trans_error() : L<8029> PID<mmcqd/0><0xbf>
+[    3.924809]<1> (1)[191:mmcqd/0][sd]msdc0 -> HS400_TUNE: orig_ds_dly1<0x1>, orig_ds_dly3<0x1a>, cur_ds_dly1<0x0>, cur_ds_dly3<0x1a> <- emmc_hs400_tune_rw() : L<7560> PID<mmcqd/0><0xbf>
+[    3.924824]<1> (1)[191:mmcqd/0][sd]msdc0 -> check card state<4> <- msdc_abort_data() : L<2649> PID<mmcqd/0><0xbf>
+[    3.925368]<1> (1)[191:mmcqd/0][sd]msdc0 -> TUNE HS400 Times(11) <- msdc_reset_crc_tune_counter() : L<1701> PID<mmcqd/0><0xbf>
+[    3.925796]<0> (0)[236:init]type=1400 audit(1497453895.590:6): avc:  denied  { create } for  pid=236 comm="init" name="blkid.tab" scontext=u:r:init:s0 tcontext=u:object_r:rootfs:s0 tclass=file permissive=1
+[    3.925836]<0> (0)[236:init]type=1400 audit(1497453895.600:7): avc:  denied  { write } for  pid=236 comm="init" path="/etc/blkid.tab" dev="rootfs" ino=7350 scontext=u:r:init:s0 tcontext=u:object_r:rootfs:s0 tclass=file permissive=1
+[    3.925908]<1> (1)[6:kworker/u16:0]fwu_start_reflash: Start of reflash process
+[    3.926186]<0> (0)[236:init]EXT4-fs (mmcblk0p23): Ignoring removed nomblk_io_submit option
+[    3.930448]<0>-(0)[0:swapper/0][sd]msdc0 -> XXX CMD<18> Arg<0x00695050> MSDC_INT_DATCRCERR, SDC_DCRC_STS<0xffff> <- msdc_irq() : L<9793> PID<swapper/0><0x0>
+[    3.930487]<1> (1)[191:mmcqd/0]mmcblk0: error -5 transferring data, sector 6901840, nr 192, cmd response 0x900, card status 0x0
+[    3.930497]<1> (1)[191:mmcqd/0][sd]msdc0 -> XXX CMD<18><0x695050> Error<0> Resp<0x900> <- msdc_dump_trans_error() : L<8029> PID<mmcqd/0><0xbf>
+[    3.930526]<1> (1)[191:mmcqd/0][sd]msdc0 -> HS400_TUNE: orig_ds_dly1<0x0>, orig_ds_dly3<0x1a>, cur_ds_dly1<0x11>, cur_ds_dly3<0x1b> <- emmc_hs400_tune_rw() : L<7560> PID<mmcqd/0><0xbf>
+[    3.930542]<1> (1)[191:mmcqd/0][sd]msdc0 -> check card state<4> <- msdc_abort_data() : L<2649> PID<mmcqd/0><0xbf>
+[    3.930640]<0>-(0)[0:swapper/0][sd]msdc0 -> XXX CMD<18> Arg<0x00695050> MSDC_INT_DATCRCERR, SDC_DCRC_STS<0xff40> <- msdc_irq() : L<9793> PID<swapper/0><0x0>
+[    3.930664]<1> (1)[191:mmcqd/0][sd]msdc0 -> XXX CMD<18><0x695050> Error<0> Resp<0x900> <- msdc_dump_trans_error() : L<8029> PID<mmcqd/0><0xbf>
+[    3.930689]<1> (1)[191:mmcqd/0][sd]msdc0 -> HS400_TUNE: orig_ds_dly1<0x11>, orig_ds_dly3<0x1b>, cur_ds_dly1<0x10>, cur_ds_dly3<0x1b> <- emmc_hs400_tune_rw() : L<7560> PID<mmcqd/0><0xbf>
+[    3.930704]<1> (1)[191:mmcqd/0][sd]msdc0 -> check card state<4> <- msdc_abort_data() : L<2649> PID<mmcqd/0><0xbf>
+[    3.930801]<0>-(0)[0:swapper/0][sd]msdc0 -> XXX CMD<18> Arg<0x00695050> MSDC_INT_DATCRCERR, SDC_DCRC_STS<0xffe7> <- msdc_irq() : L<9793> PID<swapper/0><0x0>
+[    3.930824]<1> (1)[191:mmcqd/0][sd]msdc0 -> XXX CMD<18><0x695050> Error<0> Resp<0x900> <- msdc_dump_trans_error() : L<8029> PID<mmcqd/0><0xbf>
+[    3.930849]<1> (1)[191:mmcqd/0][sd]msdc0 -> HS400_TUNE: orig_ds_dly1<0x10>, orig_ds_dly3<0x1b>, cur_ds_dly1<0xf>, cur_ds_dly3<0x1b> <- emmc_hs400_tune_rw() : L<7560> PID<mmcqd/0><0xbf>
+[    3.930864]<1> (1)[191:mmcqd/0][sd]msdc0 -> check card state<4> <- msdc_abort_data() : L<2649> PID<mmcqd/0><0xbf>
+[    3.930962]<0>-(0)[0:swapper/0][sd]msdc0 -> XXX CMD<18> Arg<0x00695050> MSDC_INT_DATCRCERR, SDC_DCRC_STS<0xff86> <- msdc_irq() : L<9793> PID<swapper/0><0x0>
+[    3.930985]<1> (1)[191:mmcqd/0][sd]msdc0 -> XXX CMD<18><0x695050> Error<0> Resp<0x900> <- msdc_dump_trans_error() : L<8029> PID<mmcqd/0><0xbf>
+[    3.931011]<1> (1)[191:mmcqd/0][sd]msdc0 -> HS400_TUNE: orig_ds_dly1<0xf>, orig_ds_dly3<0x1b>, cur_ds_dly1<0xe>, cur_ds_dly3<0x1b> <- emmc_hs400_tune_rw() : L<7560> PID<mmcqd/0><0xbf>
+[    3.931025]<1> (1)[191:mmcqd/0][sd]msdc0 -> check card state<4> <- msdc_abort_data() : L<2649> PID<mmcqd/0><0xbf>
+[    3.931124]<0>-(0)[0:swapper/0][sd]msdc0 -> XXX CMD<18> Arg<0x00695050> MSDC_INT_DATCRCERR, SDC_DCRC_STS<0x7fff> <- msdc_irq() : L<9793> PID<swapper/0><0x0>
+[    3.931147]<1> (1)[191:mmcqd/0][sd]msdc0 -> XXX CMD<18><0x695050> Error<0> Resp<0x900> <- msdc_dump_trans_error() : L<8029> PID<mmcqd/0><0xbf>
+[    3.931172]<1> (1)[191:mmcqd/0][sd]msdc0 -> HS400_TUNE: orig_ds_dly1<0xe>, orig_ds_dly3<0x1b>, cur_ds_dly1<0xd>, cur_ds_dly3<0x1b> <- emmc_hs400_tune_rw() : L<7560> PID<mmcqd/0><0xbf>
+[    3.931186]<1> (1)[191:mmcqd/0][sd]msdc0 -> check card state<4> <- msdc_abort_data() : L<2649> PID<mmcqd/0><0xbf>
+[    3.931286]<0>-(0)[0:swapper/0][sd]msdc0 -> XXX CMD<18> Arg<0x00695050> MSDC_INT_DATCRCERR, SDC_DCRC_STS<0x10> <- msdc_irq() : L<9793> PID<swapper/0><0x0>
+[    3.931309]<1> (1)[191:mmcqd/0][sd]msdc0 -> XXX CMD<18><0x695050> Error<0> Resp<0x900> <- msdc_dump_trans_error() : L<8029> PID<mmcqd/0><0xbf>
+[    3.931334]<1> (1)[191:mmcqd/0][sd]msdc0 -> HS400_TUNE: orig_ds_dly1<0xd>, orig_ds_dly3<0x1b>, cur_ds_dly1<0xc>, cur_ds_dly3<0x1b> <- emmc_hs400_tune_rw() : L<7560> PID<mmcqd/0><0xbf>
+[    3.931348]<1> (1)[191:mmcqd/0][sd]msdc0 -> check card state<4> <- msdc_abort_data() : L<2649> PID<mmcqd/0><0xbf>
+[    3.931485]<0>-(0)[0:swapper/0][sd]msdc0 -> XXX CMD<18> Arg<0x00695050> MSDC_INT_DATCRCERR, SDC_DCRC_STS<0x10> <- msdc_irq() : L<9793> PID<swapper/0><0x0>
+[    3.931508]<1> (1)[191:mmcqd/0][sd]msdc0 -> XXX CMD<18><0x695050> Error<0> Resp<0x900> <- msdc_dump_trans_error() : L<8029> PID<mmcqd/0><0xbf>
+[    3.931533]<1> (1)[191:mmcqd/0][sd]msdc0 -> HS400_TUNE: orig_ds_dly1<0xc>, orig_ds_dly3<0x1b>, cur_ds_dly1<0xb>, cur_ds_dly3<0x1b> <- emmc_hs400_tune_rw() : L<7560> PID<mmcqd/0><0xbf>
+[    3.931548]<1> (1)[191:mmcqd/0][sd]msdc0 -> check card state<4> <- msdc_abort_data() : L<2649> PID<mmcqd/0><0xbf>
+[    3.932560]<1> (1)[191:mmcqd/0][sd]msdc0 -> TUNE HS400 Times(7) <- msdc_reset_crc_tune_counter() : L<1701> PID<mmcqd/0><0xbf>
+[    3.971352]<0> (0)[243:e2fsck]type=1400 audit(1497453895.640:8): avc:  denied  { getattr } for  pid=243 comm="e2fsck" path="/dev/block/mmcblk0p23" dev="tmpfs" ino=7329 scontext=u:r:fsck:s0 tcontext=u:object_r:block_device:s0 tclass=blk_file permissive=1
+[    3.971498]<0> (0)[243:e2fsck]type=1400 audit(1497453895.640:9): avc:  denied  { read } for  pid=243 comm="e2fsck" name="mmcblk0p23" dev="tmpfs" ino=7329 scontext=u:r:fsck:s0 tcontext=u:object_r:block_device:s0 tclass=blk_file permissive=1
+[    3.971526]<0> (0)[243:e2fsck]type=1400 audit(1497453895.640:10): avc:  denied  { open } for  pid=243 comm="e2fsck" path="/dev/block/mmcblk0p23" dev="tmpfs" ino=7329 scontext=u:r:fsck:s0 tcontext=u:object_r:block_device:s0 tclass=blk_file permissive=1
+[    3.975806]<1> (1)[207:rpmb_open][emmcrpmb] emmc_rpmb_open_session, mc_open_device failed: 15
+[    4.011112]<1> (1)[236:init]EXT4-fs (mmcblk0p22): Ignoring removed nomblk_io_submit option
+[    4.069689]<0> (0)[1:init][g_android][USB]enable_store: device_attr->attr.name: enable
+[    4.069701]<0> (0)[1:init][g_android]android_usb: already disabled
+[    4.069765]<0> (0)[1:init][PMIC_IMM_GetOneChannelValue] usb E2
+[    4.070669]<0> (0)[1:init][charging_get_charger_det_status][JJP][20140401] CHRDET status = 1
+[    4.070770]<0> (0)[1:init][g_android][USB]functions_store
+[    4.070777]<0> (0)[1:init][g_android][USB]functions_store: name = mtp 
+[    4.070796]<0> (0)[1:init][g_android][USB]android_enable_function: name = mtp, f->name=ffs 
+[    4.070802]<0> (0)[1:init][g_android][USB]android_enable_function: name = mtp, f->name=adb 
+[    4.070808]<0> (0)[1:init][g_android][USB]android_enable_function: name = mtp, f->name=acm 
+[    4.070814]<0> (0)[1:init][g_android][USB]android_enable_function: name = mtp, f->name=mtp 
+[    4.070820]<0> (0)[1:init][g_android][USB]functions_store: name = adb 
+[    4.070825]<0> (0)[1:init][g_android][USB]android_enable_function: name = ffs, f->name=ffs 
+[   11.858105]<0> (0)[109:hps_main][WDK]cpu 1 plug off, kick wdt
+[   15.958075]<0> (0)[109:hps_main][WDK]cpu 1 plug on kick wdt
+[   16.758120]<0> (0)[109:hps_main][WDK]cpu 1 plug off, kick wdt
+[   34.558079]<0> (0)[109:hps_main][WDK]cpu 1 plug on kick wdt
+[   35.358040]<0> (0)[109:hps_main][WDK]cpu 1 plug off, kick wdt
+[   69.168061]<0> (0)[109:hps_main][WDK]cpu 1 plug on kick wdt
+[   70.068166]<0> (0)[109:hps_main][WDK]cpu 1 plug off, kick wdt
+[  175.668190]<0> (0)[109:hps_main][WDK]cpu 1 plug on kick wdt
+[  176.468064]<0> (0)[109:hps_main][WDK]cpu 1 plug off, kick wdt
+[  176.668121]<0> (0)[109:hps_main][WDK]cpu 1 plug on kick wdt
+[  177.866777]<0> (0)[109:hps_main][WDK]cpu 1 plug off, kick wdt
+[  177.968231]<0> (0)[109:hps_main][WDK]cpu 1 plug on kick wdt
+[  178.768154]<0> (0)[109:hps_main][WDK]cpu 1 plug off, kick wdt
+[  180.068104]<0> (0)[109:hps_main][WDK]cpu 1 plug on kick wdt
+[  180.868078]<0> (0)[109:hps_main][WDK]cpu 1 plug off, kick wdt
+[  181.168102]<0> (0)[109:hps_main][WDK]cpu 1 plug on kick wdt
+[  182.068223]<0> (0)[109:hps_main][WDK]cpu 1 plug off, kick wdt
+[  182.368074]<0> (0)[109:hps_main][WDK]cpu 1 plug on kick wdt
+[  187.167172]SysRq : Emergency Remount R/O
+[  187.796713]<0> (0)[109:hps_main][WDK]cpu 1 plug off, kick wdt
+[  187.886364]<0> (0)[1:init]Restarting system with command ''.
