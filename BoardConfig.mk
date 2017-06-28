@@ -169,8 +169,8 @@ BOARD_MEDIATEK_USES_GPS := true
 TARGET_SYSTEM_PROP := $(LOCAL_PATH)/system.prop
 
 # SELinux
-BOARD_SEPOLICY_DIRS := \
-    device/leeco/x3/sepolicy
+BOARD_SEPOLICY_DIRS += \
+    $(LOCAL_PATH)/sepolicy
 
 # Seccomp Filter
 BOARD_SECCOMP_POLICY := \
