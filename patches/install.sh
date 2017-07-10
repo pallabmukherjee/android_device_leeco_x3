@@ -2,13 +2,13 @@ echo $1
 rootdirectory="$PWD"
 # ---------------------------------
 
-dirs="bionic frameworks/av frameworks/base frameworks/native hardware/libhardware packages/apps/Settings system/core system/netd system/sepolicy"
+dirs="bionic frameworks/av frameworks/base packages/apps/Settings system/core"
 
 for dir in $dirs ; do
 	cd $rootdirectory
 	cd $dir
 	echo "Applying $dir patches..."
-	git apply $rootdirectory/device/LeTV/x500/patches/$dir/*.patch
+	git apply $rootdirectory/device/leeco/x3/patches/$dir/*.patch
 	echo " "
 done
 
