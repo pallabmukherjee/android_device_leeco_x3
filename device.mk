@@ -82,12 +82,11 @@ PRODUCT_PACKAGES += \
     hostapd \
     wpa_supplicant
 
-# Media	
+# Media
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
-
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
@@ -99,10 +98,11 @@ PRODUCT_PACKAGES += \
     resize2fs \
     setup_fs \
     ext4_resize \
-    superumount 
+    superumount
 
 PRODUCT_TAGS += dalvik.gc.type-precise
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
+
 # Var patch
 ifneq ($(TARGET_BUILD_VARIANT),user,userdebug,eng)
   ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=0
@@ -122,8 +122,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ramdisk/init.volte.rc:root/init.volte.rc \
     $(LOCAL_PATH)/ramdisk/init.mal.rc:root/init.mal.rc \
     $(LOCAL_PATH)/ramdisk/init.usb.configfs:root/init.usb.configfs.rc \
-    $(LOCAL_PATH)/ramdisk/init.trustonic.rc:root/init.trustonic.rc \
-
+		$(LOCAL_PATH)/ramdisk/init.trustonic.rc:root/init.trustonic.rc 
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
@@ -200,7 +199,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/keylayout/mtk-tpd.kl:system/usr/keylayout/mtk-tpd.kl\
     $(LOCAL_PATH)/configs/keylayout/synaptics_dsx_i2c.kl:system/usr/keylayout/synaptics_dsx_i2c.kl\
     $(LOCAL_PATH)/configs/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl
-    
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/ril_conf/apns-conf.xml:system/etc/apns-conf.xml \
     $(LOCAL_PATH)/configs/ril_conf/ecc_list.xml:system/etc/ecc_list.xml \
@@ -221,7 +220,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wide-dhcpv6/dhcp6c.script:system/etc/wide-dhcpv6/dhcp6c.script \
     $(LOCAL_PATH)/configs/wide-dhcpv6/dhcp6cctlkey:system/etc/wide-dhcpv6/dhcp6cctlkey \
     $(LOCAL_PATH)/configs/wide-dhcpv6/dhcp6cDNS.conf:system/etc/wide-dhcpv6/dhcp6cDNS.conf \
-    $(LOCAL_PATH)/configs/wide-dhcpv6/dhcp6s.conf:system/etc/wide-dhcpv6/dhcp6s.conf 
+    $(LOCAL_PATH)/configs/wide-dhcpv6/dhcp6s.conf:system/etc/wide-dhcpv6/dhcp6s.conf
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/radvd/radvd.conf:system/etc/radvd/radvd.conf
@@ -237,10 +236,10 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/agps_profiles_conf2.xml:system/etc/agps_profiles_conf2.xml
-    
+
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:system/etc/permissions/android.hardware.fingerprint.xml
-    
+
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/hostapd/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
@@ -263,7 +262,7 @@ PRODUCT_PACKAGES += \
    libgui_ext \
    libui_ext
 
-# MTK Helpers 
+# MTK Helpers
 PRODUCT_PACKAGES += \
    libccci_util   \
    libwvmsym
