@@ -1,6 +1,6 @@
--include vendor/LeTV/x500/BoardConfigVendor.mk
+-include vendor/leeco/x3/BoardConfigVendor.mk
 
-LOCAL_PATH := device/LeTV/x500
+LOCAL_PATH := device/leeco/x3
 
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 
@@ -72,10 +72,9 @@ BOARD_GLOBAL_CFLAGS += -DCAMERA_VENDOR_L_COMPAT
 BOARD_DISABLE_HW_ID_MATCH_CHECK := true;
 
 # Kernel
-
 TARGET_USES_64_BIT_BINDER := true
 TARGET_IS_64_BIT := true
-BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 androidboot.selinux=permissive androidboot.verifiedbootstate=green
 BOARD_KERNEL_BASE := 0x40078000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := \
@@ -85,11 +84,11 @@ BOARD_MKBOOTIMG_ARGS := \
 	--ramdisk_offset 0x03f88000 \
 	--second_offset 0x00e88000 \
 	--tags_offset 0x0df88000 \
-	--board WisniaPL
+	--board SscSPs
 #prebuilt
-TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilt/kernel
+#TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilt/kernel
 #source
-TARGET_KERNEL_SOURCE := kernel/LeTV/x500
+TARGET_KERNEL_SOURCE := kernel/leeco/x3
 TARGET_KERNEL_CONFIG := x500_defconfig
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
@@ -118,8 +117,6 @@ USE_MINIKIN := true
 
 # Charger
 BOARD_CHARGER_SHOW_PERCENTAGE := true
-
-# Offline charging
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/BOOT/BOOT/boot/boot_mode
 
 # Fonts
@@ -132,7 +129,7 @@ USE_XML_AUDIO_POLICY_CONF := 1
 
 # RIL
 #BOARD_PROVIDES_RILD := true
-BOARD_RIL_CLASS := ../../../device/LeTV/x500/ril
+BOARD_RIL_CLASS := ../../../$(LOCAL_PATH)/ril
 BOARD_CONNECTIVITY_MODULE := conn_soc
 
 # Display
@@ -184,8 +181,8 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storag
 TARGET_SYSTEM_PROP := $(LOCAL_PATH)/system.prop
 
 # SELinux
-BOARD_SEPOLICY_DIRS := \
-    device/LeTV/x500/sepolicy
+BOARD_SEPOLICY_DIRS += \
+    $(LOCAL_PATH)/sepolicy
 
 # Seccomp Filter
 BOARD_SECCOMP_POLICY := \
@@ -203,8 +200,7 @@ BOARD_MEDIATEK_USES_GPS := true
 #TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 
 #Hack for prebuilt kernel
-ifeq ($(TARGET_DEVICE),x500)
-$(shell mkdir -p $(OUT)/obj/KERNEL_OBJ/usr)
-$(shell touch $(OUT)/obj/KERNEL_OBJ/usr/export_includes)
-endif
-
+#ifeq ($(TARGET_DEVICE),x3)
+#$(shell mkdir -p $(OUT)/obj/KERNEL_OBJ/usr)
+#$(shell touch $(OUT)/obj/KERNEL_OBJ/usr/export_includes)
+#endif

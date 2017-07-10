@@ -12,17 +12,14 @@ $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-3072-dalv
 # Call hwui memory config
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-3072-hwui-memory.mk)
 
-# The gps config appropriate for this device 
-$(call inherit-product, device/common/gps/gps_us_supl.mk) 
-
 # Vendor
-$(call inherit-product, vendor/LeTV/x500/x500-vendor-blobs.mk)
+$(call inherit-product, vendor/leeco/x3/x3-vendor-blobs.mk)
+
+# Folder path
+LOCAL_PATH := device/leeco/x3
 
 # Overlay Folder
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
-
-# Folder path
-LOCAL_PATH := device/LeTV/x500
 
 # Screen density
 PRODUCT_AAPT_CONFIG := normal xxhdpi
@@ -38,7 +35,7 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    Snap 
+    Snap
 
 # Charger
 PRODUCT_PACKAGES += \
@@ -59,10 +56,6 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.allow.mock.location=0 \
     ro.debuggable=1 \
     ro.zygote=zygote64_32 \
-    dalvik.vm.dex2oat-Xms=64m \
-    dalvik.vm.dex2oat-Xmx=64m \
-    dalvik.vm.image-dex2oat-Xms=64m \
-    dalvik.vm.image-dex2oat-Xmx=512m \
     ro.dalvik.vm.native.bridge=0 \
     persist.sys.usb.config=mtp \
     ro.mount.fs=EXT4 \
@@ -308,5 +301,4 @@ PRODUCT_PACKAGES += \
 
 # Mediaserver with system group
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/etc/init/mediaserver.rc:system/etc/init/mediaserver.rc 
-
+    $(LOCAL_PATH)/etc/init/mediaserver.rc:system/etc/init/mediaserver.rc
