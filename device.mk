@@ -51,16 +51,14 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.dalvik.vm.native.bridge=0 \
     persist.sys.usb.config=mtp \
     ro.mount.fs=EXT4 \
-    camera.disable_zsl_mode=1 \
-    persist.sys.timezone=Europe/Warsaw
+    camera.disable_zsl_mode=1
 
 # PRODUCT_PROPERTY_OVERRIDES
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.kernel.android.checkjni=0 \
     ro.telephony.ril.config=fakeiccid  \
     persist.call_recording.enabled=true \
-    persist.call_recording.src=1  \
-    ro.sys.fw.bg_apps_limits=5
+    persist.call_recording.src=1
 
 # Audio
 PRODUCT_PACKAGES += \
