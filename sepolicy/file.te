@@ -231,3 +231,7 @@ type perf_control_sysfs, fs_type, sysfs_type;
 type fuelgauge_data_file, file_type, data_file_type;
 
 type sysfs_bootmode, fs_type, sysfs_type;
+
+# Additions for AOSP
+type fuseblk, sdcard_type, fs_type, mlstrustedobject;
+type persist_property_file, file_type;
