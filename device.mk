@@ -292,7 +292,3 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	libbwc \
 	libm4u
-
-# Engineering mode
-PRODUCT_PACKAGES += \
-	EngineerMode
