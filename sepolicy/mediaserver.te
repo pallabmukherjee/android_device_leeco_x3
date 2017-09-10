@@ -19,6 +19,8 @@ allow mediaserver camera_pipemgr_device:chr_file { read ioctl open };
 allow mediaserver kd_camera_flashlight_device:chr_file { read write ioctl open };
 allow mediaserver lens_device:chr_file { read write ioctl open };
 allow mediaserver self:capability sys_nice;
+allow mediaserver camera_device:chr_file rw_file_perms;
+allow mediaserver sysfs_devinfo:file { open read write };
 
 
 # Date : WK14.32
