@@ -214,7 +214,7 @@
     <!-- Control whether Night display is available. -->
     <bool name="config_nightDisplayAvailable">false</bool>
 
-    <bool name="config_supportDoubleTapWake">false</bool>
+    <bool name="config_supportDoubleTapWake">true</bool>
     <bool name="config_networkSamplingWakesDevice">false</bool>
      <bool name="config_wifi_batched_scan_supported">false</bool>
  <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
