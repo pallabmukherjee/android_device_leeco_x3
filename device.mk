@@ -283,6 +283,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	gps.mt6795 \
 	libcurl
+	YGPS
 
 # Mediaserver with system group
 PRODUCT_COPY_FILES += \
