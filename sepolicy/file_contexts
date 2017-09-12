@@ -572,3 +572,5 @@
 /data/\.tp\.settings                                            u:object_r:thermal_manager_data_file:s0
 /data/fuelgauge_datalog.txt                                     u:object_r:fuelgauge_data_file:s0
 /sys/class/BOOT/BOOT/boot/boot_mode                             u:object_r:sysfs_bootmode:s0
+/sys/devices/soc/soc:touch@/smartwake_active                    u:object_r:smartwake_sysfs:s0
+/sys/devices/soc/soc:touch@/wakeup_gesture                  	u:object_r:smartwake_sysfs:s0
