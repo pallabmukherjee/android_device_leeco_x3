@@ -1,13 +1,13 @@
-# LeEco Le 1s (x3) - LineageOS 14.1
+# LeEco Le 1s (x3)-Joshi
 ==============
 
-This branch is device tree for building LineageOS 14.1 Rom for Leeco 1S(eco).
+This branch is device tree for building Roms for Leeco 1S(eco).
 
 ---
 
 # Build Information
 
 ## Broken/Bugs
-* Camera
-* Flashlight (statusbar and camera)
-* ?????
+* Camera (HDR and Low Light cam with flash)
+* Flashlight ---------  fixed now
+* 1080 60fps ------- 720p 60fps fixed
