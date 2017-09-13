@@ -39,7 +39,10 @@ PRODUCT_PACKAGES += \
 # Torch
 PRODUCT_PACKAGES += \
 	Torch
-
+# Doze
+PRODUCT_PACKAGES += \
+     MeizuDoze
+     
 # Other
 PRODUCT_PACKAGES += \
 	librs_jni \
@@ -248,10 +251,6 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/configs/agps_profiles_conf2.xml:system/etc/agps_profiles_conf2.xml
-
-# Fingerprint
-PRODUCT_PACKAGES += \
-    fingerprintd
 
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.fingerprint.xml:system/etc/permissions/android.hardware.fingerprint.xml
