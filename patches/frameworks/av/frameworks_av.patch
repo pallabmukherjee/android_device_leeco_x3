@@ -583,9 +583,9 @@ index df4e4b6..77d73e3 100644
 +LOCAL_CFLAGS += -DMTK_MEDIA_PROFILES
 +endif
 +
- ifeq ($(BOARD_USES_MTK_HARDWARE),true)
- LOCAL_SRC_FILES += \
-     mtkaudio_stubs.cpp
+LOCAL_CFLAGS += -Werror -Wno-error=deprecated-declarations -Wall
+LOCAL_CLANG := true
+LOCAL_SANITIZE := unsigned-integer-overflow signed-integer-overflow
 
 diff --git a/media/libmedia/MediaProfiles.cpp b/media/libmedia/MediaProfiles.cpp
 index dd72c16..d5b331e 100644
