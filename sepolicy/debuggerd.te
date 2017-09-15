@@ -210,4 +210,4 @@ allow debuggerd sysfs_devices_system_cpu:file { getattr read open };
 allow debuggerd self:unix_stream_socket { create setopt bind listen read };
 allow debuggerd self:process fork;
 allow debuggerd self:unix_dgram_socket { create connect };
- +allow debuggerd log_tag_prop:file { getattr read open }; 
+allow debuggerd log_tag_prop:file { getattr read open }; 
