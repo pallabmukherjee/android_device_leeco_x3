@@ -256,6 +256,5 @@
  <!-- If enabled, capacitive keys will only light up when user presses the keys.
  Otherwise, the buttons will light up whenever the user interacts with the device. -->
  <bool name="config_buttonLightOnKeypressOnly">true</bool>
- <!-- Is the device capable of fingerprint actions -->
-    <bool name="config_fingerprintActions">true</bool>
+ 
 </resources>
