@@ -39,9 +39,6 @@ PRODUCT_PACKAGES += \
 # Torch
 PRODUCT_PACKAGES += \
 	Torch
-# Doze
-PRODUCT_PACKAGES += \
-     MeizuDoze
      
 # Other
 PRODUCT_PACKAGES += \
