@@ -290,6 +290,10 @@ PRODUCT_PACKAGES += \
 # Mediaserver with system group
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/etc/init/mediaserver.rc:system/etc/init/mediaserver.rc
+	$(LOCAL_PATH)/etc/init/cameraserver.rc:system/etc/init/cameraserver.rc
+	$(LOCAL_PATH)/etc/init/drmserver.rc:system/etc/init/drmserver.rc
+	$(LOCAL_PATH)/etc/init/mediacodec.rc:system/etc/init/mediacodec.rc
+	$(LOCAL_PATH)/etc/init/mediadrmserver.rc:system/etc/init/mediadrmserver.rc
 
 # camera legacy
 PRODUCT_PACKAGES += \
@@ -302,9 +306,3 @@ PRODUCT_PACKAGES += \
 # Engineering mode
 PRODUCT_PACKAGES += \
 	EngineerMode
-
-# Vulkan
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.vulkan.level-0.xml:system/etc/permissions/android.hardware.vulkan.level.xml \
-    frameworks/native/data/etc/android.hardware.vulkan.version-1_0_3.xml:system/etc/permissions/android.hardware.vulkan.version.xml
-
