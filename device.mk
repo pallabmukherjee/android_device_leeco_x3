@@ -286,17 +286,17 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	gps.mt6795 \
 	libcurl
-	
+
 # Mediaserver with system group
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/etc/init/mediaserver.rc:system/etc/init/mediaserver.rc
-PRODUCT_COPY_FILES += \	
+PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/etc/init/cameraserver.rc:system/etc/init/cameraserver.rc
-PRODUCT_COPY_FILES += \	
+PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/etc/init/drmserver.rc:system/etc/init/drmserver.rc
-PRODUCT_COPY_FILES += \	
+PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/etc/init/mediacodec.rc:system/etc/init/mediacodec.rc
-PRODUCT_COPY_FILES += \	
+PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/etc/init/mediadrmserver.rc:system/etc/init/mediadrmserver.rc
 
 # camera legacy
