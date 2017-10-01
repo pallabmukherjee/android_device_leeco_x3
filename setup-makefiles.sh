@@ -96,5 +96,6 @@ ifeq (\$(TARGET_DEVICE),x3)
 	ln -sf libMcGatekeeper.so \$(TARGET_OUT)/lib64/hw/gatekeeper.x500.so; \\
 	ln -sf libMcGatekeeper.so \$(TARGET_OUT)/lib/hw/gatekeeper.mt6795.so; \\
 	ln -sf libMcGatekeeper.so \$(TARGET_OUT)/lib/hw/gatekeeper.x500.so; )
+USE_CAMERA_STUB := false
 endif
 EOF
