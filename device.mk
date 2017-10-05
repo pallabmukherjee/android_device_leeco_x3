@@ -310,3 +310,5 @@ PRODUCT_PACKAGES += \
 # Engineering mode
 PRODUCT_PACKAGES += \
 	EngineerMode
+
+include device/leeco/x3/camera.mk
