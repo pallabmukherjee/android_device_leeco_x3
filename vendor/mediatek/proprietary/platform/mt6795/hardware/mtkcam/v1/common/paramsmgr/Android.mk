@@ -48,8 +48,8 @@ MTKCAM_HAVE_SENSOR_HAL          := '1'      # built-in if '1' ; otherwise not bu
 MTKCAM_HAVE_3A_HAL              := '1'      # built-in if '1' ; otherwise not built-in
 
 #-----------------------------------------------------------
--include $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/mtkcam.mk
--include $(TOP)/vendor/mediatek/proprietary/hardware/mtkcam/v1/paramsmgr.mk
+-include $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/mtkcam.mk
+-include $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/mtkcam/v1/paramsmgr.mk
 
 #-----------------------------------------------------------
 LOCAL_SRC_FILES += 
@@ -57,8 +57,8 @@ LOCAL_SRC_FILES +=
 #-----------------------------------------------------------
 LOCAL_C_INCLUDES += $(MTKCAM_C_INCLUDES)
 LOCAL_C_INCLUDES += $(PARAMSMGR_C_INCLUDES)
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/include
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/include
 #
 
 #-----------------------------------------------------------

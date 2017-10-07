@@ -4,7 +4,7 @@
 ################################################################################
 #
 ################################################################################
-MTK_PATH_CUSTOM_PLATFORM := vendor/mediatek/proprietary/custom/$(shell echo $(MTK_PLATFORM) | tr '[A-Z]' '[a-z]')
+MTK_PATH_CUSTOM_PLATFORM := device/leeco/x3/vendor/mediatek/proprietary/custom/$(shell echo $(MTK_PLATFORM) | tr '[A-Z]' '[a-z]')
 
 
 #########

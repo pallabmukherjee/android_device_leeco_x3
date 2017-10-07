@@ -55,11 +55,11 @@ LOCAL_SRC_FILES := ./Cmd_test_service.cpp \
 
 #-----------------------------------------------------------
 LOCAL_C_INCLUDES += \
-    $(TOP)/vendor/mediatek/proprietary/frameworks/av/include/ \
-    $(TOP)/vendor/mediatek/proprietary/hardware/include/ \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/frameworks/av/include/ \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include/ \
     $(TOP)/system/media/camera/include
 
-LOCAL_C_INCLUDES += vendor/mediatek/proprietary/platform/mt6795/hardware/include #remove later
+LOCAL_C_INCLUDES += device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/include #remove later
 
 #-----------------------------------------------------------
 LOCAL_MODULE := mmsdktest

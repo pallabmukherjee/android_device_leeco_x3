@@ -33,7 +33,7 @@
 # applicable license agreements with MediaTek Inc.
 
 # Use project first
-ifeq ($(wildcard vendor/mediatek/proprietary/custom/mt6795/hal/camera),)
+ifeq ($(wildcard device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/camera),)
 
 ################################################################################
 #
@@ -70,20 +70,20 @@ LOCAL_SRC_FILES += \
   camera_custom_mvhdr.cpp
   
 #-----------------------------------------------------------
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/include \
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/custom/mt6795/hal/inc \
-                    $(TOP)/vendor/mediatek/proprietary/custom/mt6795/hal/inc/isp_tuning \
-                    $(TOP)/vendor/mediatek/proprietary/custom/mt6795/hal/inc/aaa \
-                    $(TOP)/vendor/mediatek/proprietary/custom/mt6795/hal/inc/lomo \
-                    $(TOP)/vendor/mediatek/proprietary/custom/mt6795/hal/inc/lomo_jni \
-                    $(TOP)/vendor/mediatek/proprietary/custom/mt6795/hal/camera/inc \
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include \
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/inc \
+                    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/inc/isp_tuning \
+                    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/inc/aaa \
+                    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/inc/lomo \
+                    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/inc/lomo_jni \
+                    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/camera/inc \
 
 #
 LOCAL_C_INCLUDES += $(TOP)/$(MTK_PATH_CUSTOM_PLATFORM)/hal/inc/aaa \
 LOCAL_C_INCLUDES += $(TOP)/$(MTK_PATH_CUSTOM_PLATFORM)/hal/inc \
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/custom/common/kernel/imgsensor/inc
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/custom/common/hal/inc/camera_feature
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/custom/common/hal/inc
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/custom/common/kernel/imgsensor/inc
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/custom/common/hal/inc/camera_feature
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/custom/common/hal/inc
 LOCAL_C_INCLUDES += $(TOP)/$(MTK_PATH_CUSTOM_PLATFORM)/hal/inc
 
 #-----------------------------------------------------------

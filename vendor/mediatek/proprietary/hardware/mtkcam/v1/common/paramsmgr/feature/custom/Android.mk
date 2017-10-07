@@ -44,136 +44,136 @@ include $(CLEAR_VARS)
 #-----------------------------------------------------------
 MY_CUST_FTABLE_PATH := $(LOCAL_PATH)/config/matv
 #
-#ifeq ($(wildcard vendor/mediatek/proprietary/custom/mt6795/hal/imgsensor),)
+#ifeq ($(wildcard device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/imgsensor),)
 #MY_CUST_FTABLE_PATH += $(MTK_PATH_CUSTOM_PLATFORM)/hal/imgsensor
 #MY_CUST_FTABLE_PATH += $(MTK_PATH_CUSTOM_PLATFORM)/hal/imgsensor_src
 #else
-#MY_CUST_FTABLE_PATH += vendor/mediatek/proprietary/custom/mt6795/hal/imgsensor
-#MY_CUST_FTABLE_PATH += vendor/mediatek/proprietary/custom/mt6795/hal/imgsensor_src
+#MY_CUST_FTABLE_PATH += device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/imgsensor
+#MY_CUST_FTABLE_PATH += device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/imgsensor_src
 #endif
 #
 #For flavor project to read its own feature table
-ifneq ($(wildcard vendor/mediatek/proprietary/custom/$(strip $(MTK_TARGET_PROJECT))/hal/sendepfeature),)
-MY_CUST_FTABLE_PATH += vendor/mediatek/proprietary/custom/$(strip $(MTK_TARGET_PROJECT))/hal/sendepfeature
+ifneq ($(wildcard device/leeco/x3/vendor/mediatek/proprietary/custom/$(strip $(MTK_TARGET_PROJECT))/hal/sendepfeature),)
+MY_CUST_FTABLE_PATH += device/leeco/x3/vendor/mediatek/proprietary/custom/$(strip $(MTK_TARGET_PROJECT))/hal/sendepfeature
 else
-ifeq ($(wildcard vendor/mediatek/proprietary/custom/mt6795/hal/sendepfeature),)
+ifeq ($(wildcard device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/sendepfeature),)
 MY_CUST_FTABLE_PATH += $(MTK_PATH_CUSTOM_PLATFORM)/hal/sendepfeature
 else
-MY_CUST_FTABLE_PATH += vendor/mediatek/proprietary/custom/mt6795/hal/sendepfeature
+MY_CUST_FTABLE_PATH += device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/sendepfeature
 endif
 #
 ifeq ($(strip $(TARGET_BOARD_PLATFORM)),mt6735)
-ifeq ($(wildcard vendor/mediatek/proprietary/custom/mt6795/hal/sendepfeature),)
+ifeq ($(wildcard device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/sendepfeature),)
 MY_CUST_FTABLE_PATH += $(MTK_PATH_CUSTOM_PLATFORM)/hal/D1/sendepfeature
 else
-MY_CUST_FTABLE_PATH += vendor/mediatek/proprietary/custom/mt6795/hal/sendepfeature
+MY_CUST_FTABLE_PATH += device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/sendepfeature
 endif
 endif
 
 ifeq ($(strip $(TARGET_BOARD_PLATFORM)),mt6753)
-ifeq ($(wildcard vendor/mediatek/proprietary/custom/mt6795/hal/sendepfeature),)
+ifeq ($(wildcard device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/sendepfeature),)
 MY_CUST_FTABLE_PATH += $(MTK_PATH_CUSTOM_PLATFORM)/hal/D1/sendepfeature
 else
-MY_CUST_FTABLE_PATH += vendor/mediatek/proprietary/custom/mt6795/hal/sendepfeature
+MY_CUST_FTABLE_PATH += device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/sendepfeature
 endif
 endif
 #
 ifeq ($(strip $(TARGET_BOARD_PLATFORM)),mt6735m)
-ifeq ($(wildcard vendor/mediatek/proprietary/custom/mt6795/hal/sendepfeature),)
+ifeq ($(wildcard device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/sendepfeature),)
 MY_CUST_FTABLE_PATH += $(MTK_PATH_CUSTOM_PLATFORM)/hal/D2/sendepfeature
 else
-MY_CUST_FTABLE_PATH += vendor/mediatek/proprietary/custom/mt6795/hal/sendepfeature
+MY_CUST_FTABLE_PATH += device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/sendepfeature
 endif
 endif
 endif
 #
-ifeq ($(wildcard vendor/mediatek/proprietary/custom/mt6795/hal/flashlight),)
+ifeq ($(wildcard device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/flashlight),)
 MY_CUST_FTABLE_PATH += $(MTK_PATH_CUSTOM_PLATFORM)/hal/flashlight
 else
-MY_CUST_FTABLE_PATH += vendor/mediatek/proprietary/custom/mt6795/hal/flashlight
+MY_CUST_FTABLE_PATH += device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/flashlight
 endif
 #
 ifeq ($(strip $(TARGET_BOARD_PLATFORM)),mt6735)
-ifeq ($(wildcard vendor/mediatek/proprietary/custom/mt6795/hal/flashlight),)
+ifeq ($(wildcard device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/flashlight),)
 MY_CUST_FTABLE_PATH += $(MTK_PATH_CUSTOM_PLATFORM)/hal/D1/flashlight
 else
-MY_CUST_FTABLE_PATH += vendor/mediatek/proprietary/custom/mt6795/hal/flashlight
+MY_CUST_FTABLE_PATH += device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/flashlight
 endif
 endif
 #
 ifeq ($(strip $(TARGET_BOARD_PLATFORM)),mt6753)
-ifeq ($(wildcard vendor/mediatek/proprietary/custom/mt6795/hal/flashlight),)
+ifeq ($(wildcard device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/flashlight),)
 MY_CUST_FTABLE_PATH += $(MTK_PATH_CUSTOM_PLATFORM)/hal/D1/flashlight
 else
-MY_CUST_FTABLE_PATH += vendor/mediatek/proprietary/custom/mt6795/hal/flashlight
+MY_CUST_FTABLE_PATH += device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/flashlight
 endif
 endif
 #
 ifeq ($(strip $(TARGET_BOARD_PLATFORM)),mt6735m)
-ifeq ($(wildcard vendor/mediatek/proprietary/custom/mt6795/hal/flashlight),)
+ifeq ($(wildcard device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/flashlight),)
 MY_CUST_FTABLE_PATH += $(MTK_PATH_CUSTOM_PLATFORM)/hal/D2/flashlight
 else
-MY_CUST_FTABLE_PATH += vendor/mediatek/proprietary/custom/mt6795/hal/flashlight
+MY_CUST_FTABLE_PATH += device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/flashlight
 endif
 endif
 #
-ifeq ($(wildcard vendor/mediatek/proprietary/custom/mt6795/hal/camerashot),)
+ifeq ($(wildcard device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/camerashot),)
 MY_CUST_FTABLE_PATH += $(MTK_PATH_CUSTOM_PLATFORM)/hal/camerashot
 else
-MY_CUST_FTABLE_PATH += vendor/mediatek/proprietary/custom/mt6795/hal/camerashot
+MY_CUST_FTABLE_PATH += device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/camerashot
 endif
 #
 ifeq ($(strip $(TARGET_BOARD_PLATFORM)),mt6735)
-ifeq ($(wildcard vendor/mediatek/proprietary/custom/mt6795/hal/camerashot),)
+ifeq ($(wildcard device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/camerashot),)
 MY_CUST_FTABLE_PATH += $(MTK_PATH_CUSTOM_PLATFORM)/hal/D1/camerashot
 else
-MY_CUST_FTABLE_PATH += vendor/mediatek/proprietary/custom/mt6795/hal/camerashot
+MY_CUST_FTABLE_PATH += device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/camerashot
 endif
 endif
 #
 ifeq ($(strip $(TARGET_BOARD_PLATFORM)),mt6753)
-ifeq ($(wildcard vendor/mediatek/proprietary/custom/mt6795/hal/camerashot),)
+ifeq ($(wildcard device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/camerashot),)
 MY_CUST_FTABLE_PATH += $(MTK_PATH_CUSTOM_PLATFORM)/hal/D1/camerashot
 else
-MY_CUST_FTABLE_PATH += vendor/mediatek/proprietary/custom/mt6795/hal/camerashot
+MY_CUST_FTABLE_PATH += device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/camerashot
 endif
 endif
 #
 ifeq ($(strip $(TARGET_BOARD_PLATFORM)),mt6735m)
-ifeq ($(wildcard vendor/mediatek/proprietary/custom/mt6795/hal/camerashot),)
+ifeq ($(wildcard device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/camerashot),)
 MY_CUST_FTABLE_PATH += $(MTK_PATH_CUSTOM_PLATFORM)/hal/D2/camerashot
 else
-MY_CUST_FTABLE_PATH += vendor/mediatek/proprietary/custom/mt6795/hal/camerashot
+MY_CUST_FTABLE_PATH += device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/camerashot
 endif
 endif
 #
-ifeq ($(wildcard vendor/mediatek/proprietary/custom/mt6795/hal/senindepfeature),)
+ifeq ($(wildcard device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/senindepfeature),)
 MY_CUST_FTABLE_PATH += $(MTK_PATH_CUSTOM_PLATFORM)/hal/senindepfeature
 else
-MY_CUST_FTABLE_PATH += vendor/mediatek/proprietary/custom/mt6795/hal/senindepfeature
+MY_CUST_FTABLE_PATH += device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/senindepfeature
 endif
 #
 ifeq ($(strip $(TARGET_BOARD_PLATFORM)),mt6735)
-ifeq ($(wildcard vendor/mediatek/proprietary/custom/mt6795/hal/senindepfeature),)
+ifeq ($(wildcard device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/senindepfeature),)
 MY_CUST_FTABLE_PATH += $(MTK_PATH_CUSTOM_PLATFORM)/hal/D1/senindepfeature
 else
-MY_CUST_FTABLE_PATH += vendor/mediatek/proprietary/custom/mt6795/hal/senindepfeature
+MY_CUST_FTABLE_PATH += device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/senindepfeature
 endif
 endif
 #
 ifeq ($(strip $(TARGET_BOARD_PLATFORM)),mt6753)
-ifeq ($(wildcard vendor/mediatek/proprietary/custom/mt6795/hal/senindepfeature),)
+ifeq ($(wildcard device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/senindepfeature),)
 MY_CUST_FTABLE_PATH += $(MTK_PATH_CUSTOM_PLATFORM)/hal/D1/senindepfeature
 else
-MY_CUST_FTABLE_PATH += vendor/mediatek/proprietary/custom/mt6795/hal/senindepfeature
+MY_CUST_FTABLE_PATH += device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/senindepfeature
 endif
 endif
 #
 ifeq ($(strip $(TARGET_BOARD_PLATFORM)),mt6735m)
-ifeq ($(wildcard vendor/mediatek/proprietary/custom/mt6795/hal/senindepfeature),)
+ifeq ($(wildcard device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/senindepfeature),)
 MY_CUST_FTABLE_PATH += $(MTK_PATH_CUSTOM_PLATFORM)/hal/D2/senindepfeature
 else
-MY_CUST_FTABLE_PATH += vendor/mediatek/proprietary/custom/mt6795/hal/senindepfeature
+MY_CUST_FTABLE_PATH += device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/senindepfeature
 endif
 endif
 
@@ -194,14 +194,14 @@ LOCAL_SRC_FILES += $(call all-c-cpp-files-under, .)
 #-----------------------------------------------------------
 LOCAL_C_INCLUDES += $(MTKCAM_C_INCLUDES)
 LOCAL_C_INCLUDES += $(PARAMSMGR_C_INCLUDES)
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include
 #
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/frameworks/av/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/frameworks/av/include
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../inc
 LOCAL_C_INCLUDES += $(TOP)
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/config/matv
-LOCAL_C_INCLUDES += vendor/mediatek/proprietary/custom/mt6795/hal/inc/aaa
-LOCAL_C_INCLUDES += vendor/mediatek/proprietary/custom/mt6795/hal/inc
+LOCAL_C_INCLUDES += device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/inc/aaa
+LOCAL_C_INCLUDES += device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/inc
 LOCAL_C_INCLUDES += $(MTK_PATH_CUSTOM_PLATFORM)/hal/inc/aaa
 LOCAL_C_INCLUDES += $(MTK_PATH_CUSTOM_PLATFORM)/hal/inc
 

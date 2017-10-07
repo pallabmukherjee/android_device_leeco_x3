@@ -51,14 +51,14 @@ LOCAL_SRC_FILES += \
 
 #-----------------------------------------------------------
 LOCAL_C_INCLUDES += $(MTKCAM_C_INCLUDES)
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/include
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/include
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/include
 #
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/frameworks/av/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/frameworks/av/include
 #
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/..
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/v1/adapter
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/v1/adapter
 #
 LOCAL_C_INCLUDES += $(TOP)/system/media/camera/include
 

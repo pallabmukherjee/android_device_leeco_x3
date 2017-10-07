@@ -11,7 +11,7 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 #-----------------------------------------------------------
-sinclude $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/mtkcam.mk
+sinclude $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/mtkcam.mk
 
 #-----------------------------------------------------------
 LOCAL_SRC_FILES += $(call all-c-cpp-files-under, cam)
@@ -20,20 +20,20 @@ LOCAL_SRC_FILES += $(call all-c-cpp-files-under, mdp)
 
 #-----------------------------------------------------------
 LOCAL_C_INCLUDES += $(MTKCAM_C_INCLUDES)
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/include
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/include
 #
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/kernel/include
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/platform/mt6795/external/ldvt/include
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/platform/mt6795/kernel/core/include/mach
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/kernel/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/external/ldvt/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/kernel/core/include/mach
 #
 LOCAL_C_INCLUDES += $(TOP)/bionic
 LOCAL_C_INCLUDES += $(TOP)/external/stlport/stlport
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/inc
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/../inc
 #
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/dpframework/inc
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/m4u
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/dpframework/inc
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/m4u
 # systrace
 LOCAL_C_INCLUDES += $(TOP)/system/core/include
 

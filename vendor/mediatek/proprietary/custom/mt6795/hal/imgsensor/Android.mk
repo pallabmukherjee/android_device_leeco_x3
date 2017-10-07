@@ -34,7 +34,7 @@
 
 
 # Use project imgsensor first
-ifeq ($(wildcard vendor/mediatek/proprietary/custom/mt6795/hal/imgsensor),)
+ifeq ($(wildcard device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/imgsensor),)
 
 
 define all-c-cpp-under
@@ -66,15 +66,15 @@ include $(CLEAR_VARS)
 LOCAL_SRC_FILES += $(foreach f, $(CUSTOM_HAL_IMGSENSOR), $(call all-c-cpp-under, $(strip $(f))))
 
 #-----------------------------------------------------------
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/custom/mt6795/hal/inc/aaa
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/custom/mt6795/hal/inc/camera_feature
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/inc/aaa
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/inc/camera_feature
 #
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/custom/mt6795/hal/camera
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/camera
 #
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/custom/common/kernel/imgsensor/inc
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/custom/mt6795/kernel/eeprom/inc
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/custom/mt6795/kernel/cam_cal/inc
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/custom/mt6795/hal/inc \
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/custom/common/kernel/imgsensor/inc
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/kernel/eeprom/inc
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/kernel/cam_cal/inc
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/inc \
 
 LOCAL_C_INCLUDES += $(TOP)/$(MTK_PATH_CUSTOM_PLATFORM)/hal/inc
 
@@ -96,7 +96,7 @@ LOCAL_MODULE := libcameracustom.imgsensor
 
 #
 # Start of common part ------------------------------------
-sinclude $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/mtkcam.mk
+sinclude $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/mtkcam.mk
 
 #-----------------------------------------------------------
 LOCAL_CFLAGS += $(MTKCAM_CFLAGS)
@@ -105,8 +105,8 @@ LOCAL_CFLAGS += $(MTKCAM_CFLAGS)
 LOCAL_C_INCLUDES += $(MTKCAM_C_INCLUDES)
 
 #-----------------------------------------------------------
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/include
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/include
 
 # End of common part ---------------------------------------
 #

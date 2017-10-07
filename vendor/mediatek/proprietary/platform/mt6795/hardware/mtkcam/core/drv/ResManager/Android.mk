@@ -3,16 +3,16 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 #-----------------------------------------------------------
-sinclude $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/mtkcam.mk
+sinclude $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/mtkcam.mk
 
 #-----------------------------------------------------------
 LOCAL_SRC_FILES += ResManager.cpp
 
 #-----------------------------------------------------------
 LOCAL_C_INCLUDES += $(MTKCAM_C_INCLUDES)
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/include
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/include
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/platform/mt6795/external/ldvt/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/external/ldvt/include
 #
 
 #-----------------------------------------------------------

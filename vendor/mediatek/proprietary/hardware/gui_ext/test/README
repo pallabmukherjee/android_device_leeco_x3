@@ -17,7 +17,7 @@ and the following libs from MediaTek:
 1.  libgui_ext.so
 
 All source/dependency modules of this module are already put in
-'vendor/mediatek/proprietary/hardware/gui_ext/' folder.
+'device/leeco/x3/vendor/mediatek/proprietary/hardware/gui_ext/' folder.
 
 
 HOW TO USE IT?

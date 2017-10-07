@@ -10,4 +10,4 @@ libcam3_pipeline.so
 HOW TO USE IT?
 ==============
 Refer to the interfaces defined as below:
-$(TOP)/vendor/mediatek/proprietary/hardware/include/mtkcam/v3/pipeline/
+$(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include/mtkcam/v3/pipeline/

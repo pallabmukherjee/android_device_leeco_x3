@@ -12,4 +12,4 @@ libcam.device3.common.a
 HOW TO USE IT?
 ==============
 Refer to the interfaces defined as below:
-$(TOP)/vendor/mediatek/proprietary/hardware/include/mtkcam/device/
+$(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include/mtkcam/device/

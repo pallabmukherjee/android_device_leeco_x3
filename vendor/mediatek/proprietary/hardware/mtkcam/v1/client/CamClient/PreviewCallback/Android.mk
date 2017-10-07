@@ -55,13 +55,13 @@ LOCAL_SRC_FILES += ImgBufManager.cpp
 
 #-----------------------------------------------------------
 LOCAL_C_INCLUDES += $(MTKCAM_C_INCLUDES)
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include
 LOCAL_C_INCLUDES += $(TOP)/system/media/camera/include
 LOCAL_C_INCLUDES += $(TOP)/system/core/libion/include
 #
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/frameworks/av/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/frameworks/av/include
 #
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/external/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/external/include
 
 #-----------------------------------------------------------
 LOCAL_CFLAGS += $(MTKCAM_CFLAGS)

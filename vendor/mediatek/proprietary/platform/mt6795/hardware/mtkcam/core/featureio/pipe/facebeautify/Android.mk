@@ -47,9 +47,9 @@ include $(CLEAR_VARS)
 LOCAL_SRC_FILES += $(call all-c-cpp-files-under, .)
 
 #-----------------------------------------------------------
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/inc
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/include/mtkcam/algorithm/libfb
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/inc
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/include/mtkcam/algorithm/libfb
 #-----------------------------------------------------------
 LOCAL_WHOLE_STATIC_LIBRARIES += 
 #
@@ -65,7 +65,7 @@ LOCAL_MODULE := libcam.featureio.pipe.facebeauty
 
 #
 # Start of common part ------------------------------------
-sinclude $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/mtkcam.mk
+sinclude $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/mtkcam.mk
 
 #-----------------------------------------------------------
 LOCAL_CFLAGS += $(MTKCAM_CFLAGS)
@@ -74,8 +74,8 @@ LOCAL_CFLAGS += $(MTKCAM_CFLAGS)
 LOCAL_C_INCLUDES += $(MTKCAM_C_INCLUDES)
 
 #-----------------------------------------------------------
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/include
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/include
 
 # End of common part ---------------------------------------
 #

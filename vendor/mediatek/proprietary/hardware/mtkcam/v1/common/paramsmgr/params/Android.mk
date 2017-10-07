@@ -47,16 +47,16 @@ LOCAL_SRC_FILES += $(call all-c-cpp-files-under, .)
 #-----------------------------------------------------------
 LOCAL_C_INCLUDES += $(MTKCAM_C_INCLUDES)
 LOCAL_C_INCLUDES += $(PARAMSMGR_C_INCLUDES)
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include
 #
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/..
 #
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/frameworks/av/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/frameworks/av/include
 #
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/custom/mt6795/hal/inc
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/custom/common/hal/inc
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/inc
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/custom/common/hal/inc
 LOCAL_C_INCLUDES += $(TOP)/$(MTK_PATH_CUSTOM_PLATFORM)/hal/inc
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/custom/common/kernel/imgsensor/inc
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/custom/common/kernel/imgsensor/inc
 #
 $(info $(LOCAL_C_INCLUDES))
 

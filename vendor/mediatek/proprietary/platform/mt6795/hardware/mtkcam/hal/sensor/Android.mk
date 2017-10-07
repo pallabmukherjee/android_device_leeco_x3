@@ -45,7 +45,7 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 #-----------------------------------------------------------
-sinclude $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/mtkcam.mk
+sinclude $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/mtkcam.mk
 
 #-----------------------------------------------------------
 MTKCAM_USE_LEGACY_SENSOR_HAL    := '0'
@@ -65,18 +65,18 @@ LOCAL_SRC_FILES := \
     seninf_drv.cpp
 #-----------------------------------------------------------
 LOCAL_C_INCLUDES += $(MTKCAM_C_INCLUDES)
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/include
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/include
 #
 
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/custom/mt6795/kernel/sensor/inc
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/custom/common/kernel/imgsensor/inc
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/kernel/sensor/inc
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/custom/common/kernel/imgsensor/inc
 LOCAL_C_INCLUDES += $(TOP)/$(MTK_PATH_CUSTOM_PLATFORM)/hal/inc
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/custom/mt6795/hal/inc
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/external/cameraprofile
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/external/camera/cameraprofile
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/platform/mt6795/external/ldvt/include
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/custom/mt6795/hal/inc/debug_exif/cam
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/inc
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/external/cameraprofile
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/external/camera/cameraprofile
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/external/ldvt/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/inc/debug_exif/cam
 #
 LOCAL_C_INCLUDES += $(TOP)/bionic
 LOCAL_C_INCLUDES += $(TOP)/external/stlport/stlport

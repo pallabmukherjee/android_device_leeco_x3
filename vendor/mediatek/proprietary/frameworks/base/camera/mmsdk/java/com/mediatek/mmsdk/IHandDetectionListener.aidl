@@ -22,7 +22,7 @@ import com.mediatek.mmsdk.IHandDetectionListener;
 interface IHandDetectionListener
 {
     /**
-     * Keep up-to-date with vendor/mediatek/proprietary/frameworks/av/include/mmsdk/IHandDetectionListener.h	
+     * Keep up-to-date with device/leeco/x3/vendor/mediatek/proprietary/frameworks/av/include/mmsdk/IHandDetectionListener.h	
      */
     void onHandDetected(out HandDetectionEvent event);
 }

@@ -39,8 +39,8 @@ LOCAL_SRC_FILES += CpuCtrl.cpp
 #------------------------------------------------------------------------------
 LOCAL_C_INCLUDES += $(TOP)/bionic
 LOCAL_C_INCLUDES += $(TOP)/external/stlport/stlport
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/include
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/frameworks/base/perfservice/perfservicenative
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/frameworks/base/perfservice/perfservicenative
 #------------------------------------------------------------------------------
 LOCAL_SHARED_LIBRARIES += liblog
 LOCAL_SHARED_LIBRARIES += libcutils

@@ -23,6 +23,6 @@ HOW TO USE IT?
 ==============
 
 Provide api for mpo file decoding.
-all api interface are at (vendor/mediatek/proprietary/external/mpo/mpodecoder)
+all api interface are at (device/leeco/x3/vendor/mediatek/proprietary/external/mpo/mpodecoder)
 
 All the source code of this library were written by MediaTek co..

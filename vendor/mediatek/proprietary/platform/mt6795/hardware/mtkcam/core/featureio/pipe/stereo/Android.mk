@@ -48,19 +48,19 @@ LOCAL_SRC_FILES += $(call all-c-cpp-files-under, .)
 
 #-----------------------------------------------------------
 LOCAL_C_INCLUDES += \
-    $(TOP)/vendor/mediatek/proprietary/frameworks/av/include \
-    $(TOP)/vendor/mediatek/proprietary/custom/mt6795/hal/inc \
-    $(TOP)/vendor/mediatek/proprietary/custom/common/hal/camera/camera \
-    $(TOP)/vendor/mediatek/proprietary/hardware/include \
-    $(TOP)/vendor/mediatek/proprietary/hardware/include/mtkcam \
-    $(TOP)/vendor/mediatek/proprietary/hardware/include/mtkcam/hal \
-    $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/include \
-    $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/include/mtkcam/featureio \
-    $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/include/mtkcam/algorithm/libcore \
-    $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/include/mtkcam/algorithm/libwarp \
-    $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/include/mtkcam/algorithm/libstereocam \
-    $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/include/mtkcam/algorithm/libutility \
-    $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/featureio/drv/inc \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/frameworks/av/include \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/inc \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/custom/common/hal/camera/camera \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include/mtkcam \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include/mtkcam/hal \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/include \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/include/mtkcam/featureio \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/include/mtkcam/algorithm/libcore \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/include/mtkcam/algorithm/libwarp \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/include/mtkcam/algorithm/libstereocam \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/include/mtkcam/algorithm/libutility \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/featureio/drv/inc \
 
 
 #-----------------------------------------------------------

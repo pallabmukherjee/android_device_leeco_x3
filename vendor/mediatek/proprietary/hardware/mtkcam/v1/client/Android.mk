@@ -44,8 +44,8 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 #-----------------------------------------------------------
--include $(TOP)/vendor/mediatek/proprietary/hardware/mtkcam/mtkcam.mk
--include $(TOP)/vendor/mediatek/proprietary/hardware/mtkcam/v1/client.mk
+-include $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/mtkcam/mtkcam.mk
+-include $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/mtkcam/v1/client.mk
 
 ################################################################################
 #

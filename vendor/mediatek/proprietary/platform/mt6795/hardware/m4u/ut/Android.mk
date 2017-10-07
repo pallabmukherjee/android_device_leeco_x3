@@ -41,12 +41,12 @@ LOCAL_MODULE := m4u_ut
   
 LOCAL_SHARED_LIBRARIES := libcutils liblog libion
 
-LOCAL_C_INCLUDES+= vendor/mediatek/proprietary/platform/mt6795/hardware/m4u
+LOCAL_C_INCLUDES+= device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/m4u
 LOCAL_C_INCLUDES += \
- 	vendor/mediatek/proprietary/kernel/include \
+ 	device/leeco/x3/vendor/mediatek/proprietary/kernel/include \
     $(TOPDIR)/kernel/include \
     $(TOPDIR)/system/core/include \
-    vendor/mediatek/proprietary/external/include
+    device/leeco/x3/vendor/mediatek/proprietary/external/include
 
 LOCAL_SHARED_LIBRARIES += libm4u libion_mtk
   

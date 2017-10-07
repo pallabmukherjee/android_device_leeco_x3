@@ -37,11 +37,11 @@
 #
 ################################################################################
 
--include $(TOP)/vendor/mediatek/proprietary/hardware/mtkcam/mtkcam.mk
--include $(TOP)/vendor/mediatek/proprietary/custom/mt6795/hal/mtkcam/mtkcam.mk
+-include $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/mtkcam/mtkcam.mk
+-include $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/mtkcam/mtkcam.mk
 
 #-----------------------------------------------------------
 # MTK Hal Standard Include Path
-MTKCAM_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/include
-MTKCAM_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/include
+MTKCAM_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include
+MTKCAM_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/include
 #

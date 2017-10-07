@@ -47,14 +47,14 @@ LOCAL_SRC_FILES += \
     utility/utility_hal.cpp \
   
 LOCAL_C_INCLUDES:= \
-   $(TOP)/vendor/mediatek/proprietary/frameworks/av/include \
-   $(TOP)/vendor/mediatek/proprietary/hardware/include \
-   $(TOP)/vendor/mediatek/proprietary/hardware/include/mtkcam/v1/featureio \
-   $(TOP)/vendor/mediatek/proprietary/external/mpo/inc \
-   $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/include \
-   $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/featureio/pipe/utility/utility \
-   $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/jpeg/inc \
-   $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/m4u \
+   $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/frameworks/av/include \
+   $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include \
+   $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include/mtkcam/v1/featureio \
+   $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/external/mpo/inc \
+   $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/include \
+   $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/featureio/pipe/utility/utility \
+   $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/jpeg/inc \
+   $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/m4u \
    
 LOCAL_STATIC_LIBRARIES := \
 
@@ -65,7 +65,7 @@ LOCAL_MODULE := libcam.featureio.pipe.utility
 
 #
 # Start of common part ------------------------------------
-sinclude $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/mtkcam.mk
+sinclude $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/mtkcam.mk
 
 #-----------------------------------------------------------
 LOCAL_CFLAGS += $(MTKCAM_CFLAGS)
@@ -74,8 +74,8 @@ LOCAL_CFLAGS += $(MTKCAM_CFLAGS)
 LOCAL_C_INCLUDES += $(MTKCAM_C_INCLUDES)
 
 #-----------------------------------------------------------
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/include
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/include
 LOCAL_C_INCLUDES += $(TOP)/system/media/camera/include
 
 # End of common part ---------------------------------------

@@ -54,7 +54,7 @@ LOCAL_SRC_FILES := ./Cmd_test_hal.cpp \
 
 #-----------------------------------------------------------
 LOCAL_C_INCLUDES += \
-    $(TOP)/vendor/mediatek/proprietary/hardware/include/ \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include/ \
                     
 
 #-----------------------------------------------------------

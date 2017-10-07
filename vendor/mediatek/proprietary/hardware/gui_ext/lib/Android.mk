@@ -53,10 +53,10 @@ LOCAL_SRC_FILES:= \
 MTK_HWC_CHIP = $(shell echo $(MTK_PLATFORM) | tr A-Z a-z )
 
 LOCAL_C_INCLUDES:= \
-    $(TOP)/vendor/mediatek/proprietary/hardware/gui_ext/inc \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/gui_ext/inc \
     $(TOP)/frameworks/base/include/ \
-    $(TOP)/vendor/mediatek/proprietary/external/include \
-    $(TOP)/vendor/mediatek/proprietary/hardware/include
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/external/include \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include
 
 LOCAL_SHARED_LIBRARIES := \
     libutils \

@@ -25,7 +25,7 @@ import com.mediatek.mmsdk.TrasformOptions;
 interface IImageTransformUser
 {
     /**
-     * Keep up-to-date with vendor/mediatek/proprietary/frameworks/av/include/mmsdk/IImageTransformUser.h	
+     * Keep up-to-date with device/leeco/x3/vendor/mediatek/proprietary/frameworks/av/include/mmsdk/IImageTransformUser.h	
      */
     String getName();
     boolean applyTransform(in ImageInfo rSrcImage, IMemory srcData, in ImageInfo rDestImage, IMemory destData);

@@ -44,7 +44,7 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 #-----------------------------------------------------------
--include $(TOP)/vendor/mediatek/proprietary/hardware/mtkcam/mtkcam.mk
+-include $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/mtkcam/mtkcam.mk
 
 #-----------------------------------------------------------
 LOCAL_SRC_FILES += CamExif.cpp
@@ -59,10 +59,10 @@ LOCAL_C_INCLUDES += $(MTK_PATH_CUSTOM_PLATFORM)/hal/inc
 LOCAL_C_INCLUDES += $(MTK_PATH_CUSTOM_PLATFORM)/hal/inc/debug_exif
 LOCAL_C_INCLUDES += $(MTK_PATH_CUSTOM_PLATFORM)/hal/inc/debug_exif/cam/
 
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/custom/common/hal/inc
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/custom/mt6795/hal/inc
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/custom/common/hal/inc
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/inc
 LOCAL_C_INCLUDES += $(MTKCAM_C_INCLUDES)
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include
 
 ifeq ($(strip $(TARGET_BOARD_PLATFORM)),mt6735)
 LOCAL_C_INCLUDES += $(MTK_PATH_CUSTOM_PLATFORM)/hal/D1/inc
@@ -83,8 +83,8 @@ LOCAL_C_INCLUDES += $(MTK_PATH_CUSTOM_PLATFORM)/hal/D2/inc/debug_exif/cam/
 endif
 
 #
-LOCAL_C_INCLUDES += vendor/mediatek/proprietary/hardware/mtkcam/exif/common
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/custom/common/kernel/imgsensor/inc
+LOCAL_C_INCLUDES += device/leeco/x3/vendor/mediatek/proprietary/hardware/mtkcam/exif/common
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/custom/common/kernel/imgsensor/inc
 #
 
 #-----------------------------------------------------------

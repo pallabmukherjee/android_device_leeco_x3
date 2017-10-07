@@ -47,29 +47,29 @@ include $(CLEAR_VARS)
 MTKCAM_HAVE_OT_CLIENT           ?= '1'  # built-in if '1' ; otherwise not built-in
 
 #-----------------------------------------------------------
--include $(TOP)/vendor/mediatek/proprietary/hardware/mtkcam/mtkcam.mk
+-include $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/mtkcam/mtkcam.mk
 
 #-----------------------------------------------------------
 LOCAL_SRC_FILES += PanoramaClient.cpp
 LOCAL_SRC_FILES += PanoramaClient.Scenario.cpp
 #-----------------------------------------------------------
 LOCAL_C_INCLUDES += $(MTKCAM_C_INCLUDES)
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include
 LOCAL_C_INCLUDES += $(TOP)/system/media/camera/include
 #
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/frameworks/av/include
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/include
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/include/mtkcam
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/include/mtkcam/v1/featureio
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/mtkcam/v1/client/CamClient
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/mtkcam/v1/client/CamClient/inc
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/mtkcam/v1/client/CamClient/PreviewFeature
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/frameworks/av/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include/mtkcam
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include/mtkcam/v1/featureio
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/mtkcam/v1/client/CamClient
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/mtkcam/v1/client/CamClient/inc
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/mtkcam/v1/client/CamClient/PreviewFeature
 
 
 LOCAL_C_INCLUDES += $(TOP)/bionic
 LOCAL_C_INCLUDES += $(TOP)/external/stlport/stlport
 
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/dpframework/inc
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/dpframework/inc
 
 #-----------------------------------------------------------
 LOCAL_CFLAGS += $(MTKCAM_CFLAGS)

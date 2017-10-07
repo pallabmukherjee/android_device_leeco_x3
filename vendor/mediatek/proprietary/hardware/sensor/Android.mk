@@ -45,9 +45,9 @@ LOCAL_MODULE_RELATIVE_PATH := hw
 LOCAL_SHARED_LIBRARIES := liblog libcutils libutils
 LOCAL_SRC_FILES := sensors.c  hwmsen_chip_info.c nusensors.cpp InputEventReader.cpp SensorBase.cpp Hwmsen.cpp Acceleration.cpp Magnetic.cpp Gyroscope.cpp AmbienteLight.cpp Proximity.cpp Pressure.cpp Temprature.cpp sensordebug.cpp BatchSensor.cpp StepCounter.cpp Shake.cpp Activity.cpp FaceDown.cpp InPocket.cpp Pedometer.cpp PickUp.cpp HeartRate.cpp Tilt.cpp WakeGesture.cpp GlanceGesture.cpp
 LOCAL_C_INCLUDES+= \
-        vendor/mediatek/proprietary/hardware/sensor/ \
+        device/leeco/x3/vendor/mediatek/proprietary/hardware/sensor/ \
 	$(MTK_ROOT_CUSTOM_OUT)/hal/sensors \
-        vendor/mediatek/proprietary/custom/mt6795/hal/sensors/sensor
+        device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/sensors/sensor
 
 LOCAL_MODULE := sensors.$(TARGET_BOARD_PLATFORM)
 LOCAL_MODULE_TAGS := optional

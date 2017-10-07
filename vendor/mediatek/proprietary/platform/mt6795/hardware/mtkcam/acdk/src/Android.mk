@@ -14,53 +14,53 @@ LOCAL_SRC_FILES := \
 # Note: "/bionic" and "/external/stlport/stlport" is for stlport.
 LOCAL_C_INCLUDES += \
     $(TOP)/bionic \
-    $(TOP)/vendor/mediatek/proprietary/kernel/drivers/video \
-    $(TOP)/vendor/mediatek/proprietary/platform/mt6795/kernel/core/include/mach \
-    $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/m4u \
-    $(TOP)/vendor/mediatek/proprietary/kernel/include \
-    $(TOP)/vendor/mediatek/proprietary/platform/mt6795/external/ldvt/include \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/kernel/drivers/video \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/kernel/core/include/mach \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/m4u \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/kernel/include \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/external/ldvt/include \
     $(TOP)/external/stlport/stlport \
-    $(TOP)/vendor/mediatek/proprietary/hardware/mtkcam/inc \
-    $(TOP)/vendor/mediatek/proprietary/hardware/mtkcam/inc/acdk \
-    $(TOP)/vendor/mediatek/proprietary/hardware/mtkcam/inc/common \
-    $(TOP)/vendor/mediatek/proprietary/hardware/mtkcam/inc/drv \
-    $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam \
-    $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/inc \
-    $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/inc/drv \
-    $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/inc/common \
-    $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/acdk/inc/acdk \
-    $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware \
-    $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam\
-    $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/drv/imgsensor \
-    $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/drv/res_mgr \
-    $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/imageio/inc \
-    $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/imageio/pipe/inc \
-    $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/v1/hal/adapter/inc \
-    $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/featureio/pipe/aaa/isp_tuning \
-    $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/featureio/pipe/aaa/ae_mgr \
-    $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/featureio/pipe/aaa \
-    $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/m4u \
-    $(TOP)/vendor/mediatek/proprietary/platform/mt6795/kernel/core/include/mach \
-    $(TOP)/vendor/mediatek/proprietary/platform/mt6795/external/ldvt/include \
-    $(TOP)/vendor/mediatek/proprietary/custom/common/kernel/imgsensor/inc \
-    $(TOP)/vendor/mediatek/proprietary/custom/mt6795/hal/inc/isp_tuning \
-    $(TOP)/vendor/mediatek/proprietary/custom/mt6795/hal/inc/aaa \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/mtkcam/inc \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/mtkcam/inc/acdk \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/mtkcam/inc/common \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/mtkcam/inc/drv \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/inc \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/inc/drv \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/inc/common \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/acdk/inc/acdk \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam\
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/drv/imgsensor \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/drv/res_mgr \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/imageio/inc \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/imageio/pipe/inc \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/v1/hal/adapter/inc \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/featureio/pipe/aaa/isp_tuning \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/featureio/pipe/aaa/ae_mgr \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/featureio/pipe/aaa \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/m4u \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/kernel/core/include/mach \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/external/ldvt/include \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/custom/common/kernel/imgsensor/inc \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/inc/isp_tuning \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/inc/aaa \
     $(TOP)/$(MTK_PATH_CUSTOM_PLATFORM)/hal/inc \
     $(TOP)/$(MTK_PATH_CUSTOM_PLATFORM)/hal/inc/debug_exif/aaa \
-    $(TOP)/vendor/mediatek/proprietary/hardware/mtkcam/inc/common/camexif \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/mtkcam/inc/common/camexif \
     $(TOP)/mediatek/hardware \
     $(TOP)/mediatek/hardware/include \
-    $(TOP)/vendor/mediatek/proprietary/hardware/include/mtkcam \
-    $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/include/mtkcam \
-    $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/include \
-    $(TOP)/vendor/mediatek/proprietary/custom/mt6795/hal/inc \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include/mtkcam \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/include/mtkcam \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/include \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/inc \
     $(TOP)/$(MTK_PATH_CUSTOM_PLATFORM)/hal/inc \
     $(TOP)/$(MTK_PATH_CUSTOM_PLATFORM)/hal/inc/isp_tuning \
     $(TOP)/$(MTK_PATH_CUSTOM_PLATFORM)/hal/inc/aaa \
-    $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/include/mtkcam/featureio
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/include/mtkcam/featureio
 
 
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/frameworks/av/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/frameworks/av/include
 
 # Add a define value that can be used in the code to indicate that it's using LDVT now.
 # For print message function when using LDVT.
@@ -110,7 +110,7 @@ LOCAL_MODULE := libacdk
 
 #
 # Start of common part ------------------------------------
-sinclude $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/mtkcam.mk
+sinclude $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/mtkcam.mk
 
 #-----------------------------------------------------------
 LOCAL_CFLAGS += $(MTKCAM_CFLAGS)
@@ -119,8 +119,8 @@ LOCAL_CFLAGS += $(MTKCAM_CFLAGS)
 LOCAL_C_INCLUDES += $(MTKCAM_C_INCLUDES)
 
 #-----------------------------------------------------------
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/include
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/include
 LOCAL_C_INCLUDES += $(TOP)/system/media/camera/include
 # End of common part ---------------------------------------
 #

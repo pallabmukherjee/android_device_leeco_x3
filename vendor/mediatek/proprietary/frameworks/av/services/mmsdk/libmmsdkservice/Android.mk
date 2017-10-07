@@ -8,7 +8,7 @@ LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
 
 #-----------------------------------------------------------
--include $(TOP)/vendor/mediatek/proprietary/frameworks/av/services/mmsdk/libmmsdkservice/mmsdk.mk
+-include $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/frameworks/av/services/mmsdk/libmmsdkservice/mmsdk.mk
 
 
 LOCAL_SRC_FILES += $(call all-c-cpp-files-under, .)
@@ -34,12 +34,12 @@ LOCAL_SHARED_LIBRARIES += \
 
 #LOCAL_SHARED_LIBRARIES += libcam.camadapter	#remove later
 
-LOCAL_C_INCLUDES += vendor/mediatek/proprietary/frameworks/av/include/
-LOCAL_C_INCLUDES += vendor/mediatek/proprietary/hardware/include/
+LOCAL_C_INCLUDES += device/leeco/x3/vendor/mediatek/proprietary/frameworks/av/include/
+LOCAL_C_INCLUDES += device/leeco/x3/vendor/mediatek/proprietary/hardware/include/
 LOCAL_C_INCLUDES += $(TOP)/system/media/camera/include
 #
-LOCAL_C_INCLUDES += vendor/mediatek/proprietary/frameworks-ext/av/include
-LOCAL_C_INCLUDES += vendor/mediatek/proprietary/platform/mt6795/hardware/include # remove later
+LOCAL_C_INCLUDES += device/leeco/x3/vendor/mediatek/proprietary/frameworks-ext/av/include
+LOCAL_C_INCLUDES += device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/include # remove later
 
     
 

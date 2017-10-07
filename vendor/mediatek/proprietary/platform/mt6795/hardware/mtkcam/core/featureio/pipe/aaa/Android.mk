@@ -44,7 +44,7 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 #-----------------------------------------------------------
-sinclude $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/mtkcam.mk
+sinclude $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/mtkcam.mk
 
 #-----------------------------------------------------------
 #LOCAL_SRC_FILES += $(call all-c-cpp-files-under, .)
@@ -142,79 +142,79 @@ LOCAL_SRC_FILES += \
 #-----------------------------------------------------------
 LOCAL_C_INCLUDES:= \
     $(TOP)/external/stlport/stlport \
-    vendor/mediatek/proprietary/custom/common/kernel/imgsensor/inc \
-    vendor/mediatek/proprietary/custom/mt6795/hal/inc \
-    vendor/mediatek/proprietary/custom/mt6795/hal/inc/aaa \
-    vendor/mediatek/proprietary/custom/mt6795/hal/inc/isp_tuning \
-    vendor/mediatek/proprietary/custom/mt6795/hal/inc/debug_exif/aaa \
-    vendor/mediatek/proprietary/custom/mt6795/hal/inc/debug_exif/cam \
+    device/leeco/x3/vendor/mediatek/proprietary/custom/common/kernel/imgsensor/inc \
+    device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/inc \
+    device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/inc/aaa \
+    device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/inc/isp_tuning \
+    device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/inc/debug_exif/aaa \
+    device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/inc/debug_exif/cam \
     $(MTK_PATH_CUSTOM_PLATFORM)/hal/inc \
     $(MTK_PATH_CUSTOM_PLATFORM)/hal/inc/pd_buf_mgr \
     $(MTK_PATH_CUSTOM_PLATFORM)/hal/inc/aaa \
     $(MTK_PATH_CUSTOM_PLATFORM)/hal/inc/isp_tuning \
     $(MTK_PATH_CUSTOM_PLATFORM)/hal/inc/debug_exif/aaa \
     $(MTK_PATH_CUSTOM_PLATFORM)/hal/inc/debug_exif/cam \
-    vendor/mediatek/proprietary/custom/common/hal/inc/camera_feature \
-    vendor/mediatek/proprietary/custom/mt6795/hal/inc/debug_exif/aaa \
+    device/leeco/x3/vendor/mediatek/proprietary/custom/common/hal/inc/camera_feature \
+    device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/inc/debug_exif/aaa \
     $(MTK_PATH_CUSTOM_PLATFORM)/hal/inc/debug_exif/aaa \
-    vendor/mediatek/proprietary/custom/mt6795/hal/inc/debug_exif/cam \
-    vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/featureio/drv/inc \
-    vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/featureio/drv/cam_cal \
-    vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/featureio/pipe/aaa/awb_mgr \
-    vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/featureio/pipe/aaa/nvram_mgr \
-    vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/featureio/pipe/aaa/isp_mgr \
-    vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/featureio/pipe/aaa/buf_mgr \
-    vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/featureio/pipe/aaa/ispdrv_mgr \
-    vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/featureio/pipe/aaa/isp_tuning \
-    vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/featureio/pipe/aaa/isp_tuning/paramctrl/inc \
-    vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/featureio/pipe/aaa/isp_tuning/paramctrl/pca_mgr/ \
-    vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/featureio/pipe/aaa/isp_tuning/paramctrl/ccm_mgr/ \
-    vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/featureio/pipe/aaa/isp_tuning/paramctrl/gma_mgr/ \
-    vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/featureio/pipe/aaa/lsc_mgr \
-    vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/featureio/pipe/aaa/ae_mgr \
-    vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/featureio/pipe/aaa/flash_mgr \
-    vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/featureio/pipe/aaa/af_mgr \
-    vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/featureio/pipe/aaa/pd_mgr \
-    vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/featureio/pipe/aaa/sensor_mgr \
-    vendor/mediatek/proprietary/platform/mt6795/hardware/include \
-    vendor/mediatek/proprietary/platform/mt6795/hardware/include/mtkcam/algorithm/lib3a \
-    vendor/mediatek/proprietary/platform/mt6795/hardware/include/mtkcam/algorithm/liblsctrans \
-    vendor/mediatek/proprietary/platform/mt6795/hardware/include/mtkcam/algorithm/libtsf \
-    vendor/mediatek/proprietary/platform/mt6795/hardware/include/mtkcam/algorithm/libgma \
-    vendor/mediatek/proprietary/platform/mt6795/hardware/include/mtkcam/algorithm/libsync3a \
-    $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware \
-    vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/drv/imgsensor \
-    vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/imageio/inc \
-    vendor/mediatek/proprietary/platform/mt6795/hardware/include/mtkcam/camnode \
+    device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/inc/debug_exif/cam \
+    device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/featureio/drv/inc \
+    device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/featureio/drv/cam_cal \
+    device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/featureio/pipe/aaa/awb_mgr \
+    device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/featureio/pipe/aaa/nvram_mgr \
+    device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/featureio/pipe/aaa/isp_mgr \
+    device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/featureio/pipe/aaa/buf_mgr \
+    device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/featureio/pipe/aaa/ispdrv_mgr \
+    device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/featureio/pipe/aaa/isp_tuning \
+    device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/featureio/pipe/aaa/isp_tuning/paramctrl/inc \
+    device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/featureio/pipe/aaa/isp_tuning/paramctrl/pca_mgr/ \
+    device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/featureio/pipe/aaa/isp_tuning/paramctrl/ccm_mgr/ \
+    device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/featureio/pipe/aaa/isp_tuning/paramctrl/gma_mgr/ \
+    device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/featureio/pipe/aaa/lsc_mgr \
+    device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/featureio/pipe/aaa/ae_mgr \
+    device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/featureio/pipe/aaa/flash_mgr \
+    device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/featureio/pipe/aaa/af_mgr \
+    device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/featureio/pipe/aaa/pd_mgr \
+    device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/featureio/pipe/aaa/sensor_mgr \
+    device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/include \
+    device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/include/mtkcam/algorithm/lib3a \
+    device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/include/mtkcam/algorithm/liblsctrans \
+    device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/include/mtkcam/algorithm/libtsf \
+    device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/include/mtkcam/algorithm/libgma \
+    device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/include/mtkcam/algorithm/libsync3a \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware \
+    device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/drv/imgsensor \
+    device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/imageio/inc \
+    device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/include/mtkcam/camnode \
 
     
 LOCAL_C_INCLUDES += $(MTKCAM_C_INCLUDES)
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/include
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/include
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/camera/inc
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/camera/inc/featureio
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/camera/inc/drv
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/camera/inc/acdk
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/camera/inc/common
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/camera/inc/common/camexif
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/camera/inc
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/camera/inc/featureio
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/camera/inc/drv
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/camera/inc/acdk
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/camera/inc/common
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/camera/inc/common/camexif
 
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/external/aee/binary/inc
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/external
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/camera/inc/common/camutils
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/platform/mt6795/kernel/core/include/mach
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/external/aee/binary/inc
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/external
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/camera/inc/common/camutils
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/kernel/core/include/mach
 LOCAL_C_INCLUDES += $(TOP)/bionic
 #
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/include/mtkcam
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/include/mtkcam/featureio
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include/mtkcam
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/include/mtkcam/featureio
 
 # For stereo_hal.h
 LOCAL_C_INCLUDES += \
-    $(TOP)/vendor/mediatek/proprietary/frameworks/av/include \
-    $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/include/mtkcam/algorithm/libcore \
-    $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/include/mtkcam/algorithm/libwarp \
-    $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/include/mtkcam/algorithm/libutility \
-    $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/include/mtkcam/algorithm/libstereocam \
-    $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/featureio/pipe/stereo
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/frameworks/av/include \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/include/mtkcam/algorithm/libcore \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/include/mtkcam/algorithm/libwarp \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/include/mtkcam/algorithm/libutility \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/include/mtkcam/algorithm/libstereocam \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/core/featureio/pipe/stereo
 #-----------------------------------------------------------
 LOCAL_CFLAGS += $(MTKCAM_CFLAGS)
 #

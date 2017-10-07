@@ -42,7 +42,7 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 #-----------------------------------------------------------
-sinclude $(TOP)/vendor/mediatek/proprietary/hardware/mtkcam/mtkcam.mk
+sinclude $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/mtkcam/mtkcam.mk
 
 #-----------------------------------------------------------
 # version
@@ -50,7 +50,7 @@ MY_CUST_VERSION := $(shell date) rev:0.2.0
 
 #-----------------------------------------------------------
 MY_CUST_REQUEST_PATH := $(LOCAL_PATH)/config
-MY_CUST_REQUEST_PATH += vendor/mediatek/proprietary/custom/mt6795/hal/imgsensor
+MY_CUST_REQUEST_PATH += device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/imgsensor
 #-----------------------------------------------------------
 #
 define my-all-config.request-under
@@ -69,8 +69,8 @@ LOCAL_SRC_FILES += custom.cpp
 LOCAL_C_INCLUDES += $(call include-path-for, camera)
 LOCAL_C_INCLUDES += $(MTKCAM_C_INCLUDES)
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/config
-LOCAL_C_INCLUDES += vendor/mediatek/proprietary/custom/mt6795/hal/imgsensor
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/include
+LOCAL_C_INCLUDES += device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/imgsensor
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include
 #LOCAL_C_INCLUDES += $(TOP)/$(MTK_ROOT_CUSTOM_OUT)/hal/imgsensor
 
 #-----------------------------------------------------------

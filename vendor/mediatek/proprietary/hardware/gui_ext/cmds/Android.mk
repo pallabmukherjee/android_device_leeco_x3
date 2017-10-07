@@ -11,7 +11,7 @@ LOCAL_SHARED_LIBRARIES := \
     libgui_ext \
 
 LOCAL_C_INCLUDES := \
-    $(TOP)/vendor/mediatek/proprietary/hardware/gui_ext/inc
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/gui_ext/inc
 
 
 LOCAL_MODULE:= guiext-server

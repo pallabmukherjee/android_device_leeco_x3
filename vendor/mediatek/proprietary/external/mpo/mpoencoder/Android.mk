@@ -7,13 +7,13 @@ include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES:= MpoEncoder.cpp
 
-LOCAL_C_INCLUDES += vendor/mediatek/proprietary/external/mpo \
+LOCAL_C_INCLUDES += device/leeco/x3/vendor/mediatek/proprietary/external/mpo \
 	$(JNI_H_INCLUDE)
 
 LOCAL_C_INCLUDES += \
-        vendor/mediatek/proprietary/external/mpo \
-        vendor/mediatek/proprietary/external/mpo/mpoencoder \
-        vendor/mediatek/proprietary/external/mpo/inc \
+        device/leeco/x3/vendor/mediatek/proprietary/external/mpo \
+        device/leeco/x3/vendor/mediatek/proprietary/external/mpo/mpoencoder \
+        device/leeco/x3/vendor/mediatek/proprietary/external/mpo/inc \
 
 LOCAL_SHARED_LIBRARIES:= \
 	libcutils \

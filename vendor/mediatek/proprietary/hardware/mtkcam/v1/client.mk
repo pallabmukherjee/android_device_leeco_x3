@@ -37,17 +37,17 @@
 #
 ################################################################################
 
-MY_CLIENT_C_INCLUDES_PATH := $(TOP)/vendor/mediatek/proprietary/hardware/mtkcam/v1/client
+MY_CLIENT_C_INCLUDES_PATH := $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/mtkcam/v1/client
 MY_CLIENT_C_INCLUDES :=
 MY_CLIENT_CFLAGS :=
 
 #-----------------------------------------------------------
 # MTK Hal Standard Include Path
-MY_CLIENT_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/include
+MY_CLIENT_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include
 #
 #-----------------------------------------------------------
 # MTK Framework Standard Include Path
-MY_CLIENT_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/frameworks/av/include
+MY_CLIENT_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/frameworks/av/include
 #
 #
 ################################################################################

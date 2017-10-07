@@ -21,6 +21,6 @@ HOW TO USE IT?
 ==============
 
 Provide api for mpo file encoding.
-all api interface are at (vendor/mediatek/proprietary/external/mpo/mpoencoder)
+all api interface are at (device/leeco/x3/vendor/mediatek/proprietary/external/mpo/mpoencoder)
 
 All the source code of this library were written by MediaTek co..

@@ -18,6 +18,6 @@ HOW TO USE IT?
 ==============
 
 Provide api for mpo to encode and decode.
-all api interface are at (vendor/mediatek/proprietary/external/mpo)
+all api interface are at (device/leeco/x3/vendor/mediatek/proprietary/external/mpo)
 
 All the source code of this library were written by MediaTek co..

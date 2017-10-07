@@ -24,7 +24,7 @@ import com.mediatek.mmsdk.EffectHalVersion;
 interface IEffectFactory
 {
     /**
-     * Keep up-to-date with vendor/mediatek/proprietary/frameworks/av/include/mmsdk/IMMSdkService.h	
+     * Keep up-to-date with device/leeco/x3/vendor/mediatek/proprietary/frameworks/av/include/mmsdk/IMMSdkService.h	
      */
     // rest of 'int' return values in this file are actually status_t
     //@see    void setFindAccessibilityNodeInfosResult(in List<AccessibilityNodeInfo> infos,

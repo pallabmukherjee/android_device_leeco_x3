@@ -20,7 +20,7 @@ include $(CLEAR_VARS)
 
 LOCAL_MODULE_RELATIVE_PATH := hw
 LOCAL_C_INCLUDES += hardware/libhardware/include \
-                    vendor/mediatek/proprietary/hardware/libmemtrack
+                    device/leeco/x3/vendor/mediatek/proprietary/hardware/libmemtrack
 
 LOCAL_SHARED_LIBRARIES := liblog
 LOCAL_SRC_FILES := memtrack_mtk.c memtrack_graphic.c

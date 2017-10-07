@@ -18,7 +18,7 @@ LOCAL_SRC_FILES := \
 	shf_hal.cpp
 	
 LOCAL_C_INCLUDES+= \
-        vendor/mediatek/proprietary/hardware/sensorhub/
+        device/leeco/x3/vendor/mediatek/proprietary/hardware/sensorhub/
 
 LOCAL_MODULE := libhwsensorhub
 
@@ -30,7 +30,7 @@ else
 
 ifeq ($(strip $(CUSTOM_KERNEL_SENSORHUB)),CWSTM32)
 
-include vendor/mediatek/proprietary/hardware/sensorhub/cwmcu/Android.mk
+include device/leeco/x3/vendor/mediatek/proprietary/hardware/sensorhub/cwmcu/Android.mk
 
 endif
 

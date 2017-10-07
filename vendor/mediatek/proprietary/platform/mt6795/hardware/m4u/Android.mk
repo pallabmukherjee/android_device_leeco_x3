@@ -42,8 +42,8 @@ include $(CLEAR_VARS)
 LOCAL_SRC_FILES:= m4u_lib.cpp
 
 LOCAL_C_INCLUDES:= \
-  $(TOP)/vendor/mediatek/proprietary/platform/mt6795/kernel/core/include/mach \
-  $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/m4u \
+  $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/kernel/core/include/mach \
+  $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/m4u \
 
 
 LOCAL_SHARED_LIBRARIES := \

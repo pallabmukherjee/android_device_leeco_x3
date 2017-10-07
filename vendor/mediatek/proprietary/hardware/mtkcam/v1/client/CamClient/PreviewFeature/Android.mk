@@ -49,18 +49,18 @@ LOCAL_SRC_FILES += PreviewFeatureBase.cpp
 LOCAL_SRC_FILES += PreviewFeatureBufMgr.cpp
 LOCAL_SRC_FILES += PreviewFeatureClient.BufOps.cpp
 #-----------------------------------------------------------
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/frameworks/av/include
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/external/mpo/mpoencoder
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/external/mpo
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/external/mpo/inc
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/include
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/include/mtkcam
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/include/mtkcam/v1/featureio
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/mtkcam/v1/client/CamClient
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/mtkcam/v1/client/CamClient/PreviewFeature
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/mtkcam/v1/client/CamClient/PreviewFeature/MAV
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/mtkcam/v1/client/CamClient/PreviewFeature/Panorama
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/mtkcam/v1/client/CamClient/PreviewFeature/MotionTrack
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/frameworks/av/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/external/mpo/mpoencoder
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/external/mpo
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/external/mpo/inc
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include/mtkcam
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include/mtkcam/v1/featureio
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/mtkcam/v1/client/CamClient
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/mtkcam/v1/client/CamClient/PreviewFeature
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/mtkcam/v1/client/CamClient/PreviewFeature/MAV
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/mtkcam/v1/client/CamClient/PreviewFeature/Panorama
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/mtkcam/v1/client/CamClient/PreviewFeature/MotionTrack
 
 LOCAL_C_INCLUDES += $(TOP)/bionic
 LOCAL_C_INCLUDES += $(TOP)/external/stlport/stlport
@@ -83,7 +83,7 @@ LOCAL_MODULE := libcam.client.camclient.previewfeature
 
 #
 # Start of common part ------------------------------------
--include $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/mtkcam.mk
+-include $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/mtkcam.mk
 #-----------------------------------------------------------
 
 LOCAL_CFLAGS += $(MTKCAM_CFLAGS)

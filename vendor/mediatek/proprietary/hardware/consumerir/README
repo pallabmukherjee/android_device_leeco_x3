@@ -11,7 +11,7 @@ HOW IT WAS BUILT?
 ==================
 
 All source of this module are already put in
-'vendor/mediatek/proprietary/hardware/consumerir' folder.
+'device/leeco/x3/vendor/mediatek/proprietary/hardware/consumerir' folder.
 dependency modules: liblog libcutils
 
 

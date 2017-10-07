@@ -61,12 +61,12 @@ LOCAL_SRC_FILES += RecordClient.dump.cpp
 #-----------------------------------------------------------
 LOCAL_C_INCLUDES += $(MTKCAM_C_INCLUDES)
 LOCAL_C_INCLUDES += $(MY_CLIENT_C_INCLUDES)
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/frameworks/av/include
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/frameworks/av/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include
 #
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/gralloc_extra/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/gralloc_extra/include
 LOCAL_C_INCLUDES += $(TOP)/device/mediatek/sprout/common
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/external
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/external
 #
 LOCAL_C_INCLUDES += $(TOP)/system/media/camera/include
 LOCAL_C_INCLUDES += $(TOP)/system/core/libion/include

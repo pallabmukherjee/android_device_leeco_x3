@@ -41,13 +41,13 @@ PARAMSMGR_VERSION := Rev:0.1.6
 
 #-----------------------------------------------------------
 #
-PARAMSMGR_C_INCLUDES_PATH := $(TOP)/vendor/mediatek/proprietary/hardware/mtkcam/v1/common/paramsmgr
+PARAMSMGR_C_INCLUDES_PATH := $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/mtkcam/v1/common/paramsmgr
 
 #-----------------------------------------------------------
 # MTK Hal Standard Include Path
-PARAMSMGR_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/include
+PARAMSMGR_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include
 #
 #-----------------------------------------------------------
 # MTK Framework Standard Include Path
-PARAMSMGR_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/frameworks/av/include
+PARAMSMGR_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/frameworks/av/include
 #

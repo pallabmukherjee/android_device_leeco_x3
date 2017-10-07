@@ -44,7 +44,7 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 #-----------------------------------------------------------
--include $(TOP)/vendor/mediatek/proprietary/frameworks/av/services/mmsdk/libmmsdkservice/mmsdk.mk 
+-include $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/frameworks/av/services/mmsdk/libmmsdkservice/mmsdk.mk 
 
 
 #-----------------------------------------------------------
@@ -55,11 +55,11 @@ LOCAL_SRC_FILES := ./IEffectUser.cpp \
 
 #-----------------------------------------------------------
 LOCAL_C_INCLUDES += \
-    vendor/mediatek/proprietary/frameworks/av/include/ \
-    vendor/mediatek/proprietary/frameworks/av/services/mmsdk/libmmsdkservice/include \
+    device/leeco/x3/vendor/mediatek/proprietary/frameworks/av/include/ \
+    device/leeco/x3/vendor/mediatek/proprietary/frameworks/av/services/mmsdk/libmmsdkservice/include \
 
 #-----------------------------------------------------------
-LOCAL_C_INCLUDES += vendor/mediatek/proprietary/hardware/include/
+LOCAL_C_INCLUDES += device/leeco/x3/vendor/mediatek/proprietary/hardware/include/
 LOCAL_C_INCLUDES += $(TOP)/system/media/camera/include
 
 #-----------------------------------------------------------

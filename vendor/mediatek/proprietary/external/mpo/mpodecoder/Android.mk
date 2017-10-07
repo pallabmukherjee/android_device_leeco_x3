@@ -7,7 +7,7 @@ include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES:= MpoDecoder.cpp
 
-LOCAL_C_INCLUDES += vendor/mediatek/proprietary/external/mpo \
+LOCAL_C_INCLUDES += device/leeco/x3/vendor/mediatek/proprietary/external/mpo \
 	$(JNI_H_INCLUDE) \
 	external/skia/include/core \
 	external/skia/include/effects \
@@ -17,10 +17,10 @@ LOCAL_C_INCLUDES += vendor/mediatek/proprietary/external/mpo \
 	frameworks/base/core/jni/android/graphics 
 
 LOCAL_C_INCLUDES += \
-        vendor/mediatek/proprietary/external/mpo \
-        vendor/mediatek/proprietary/external/mpo/inc \
-        vendor/mediatek/proprietary/external/mpo/mpodecoder \
-        vendor/mediatek/proprietary/external/mpo/mpodecoder/inc \
+        device/leeco/x3/vendor/mediatek/proprietary/external/mpo \
+        device/leeco/x3/vendor/mediatek/proprietary/external/mpo/inc \
+        device/leeco/x3/vendor/mediatek/proprietary/external/mpo/mpodecoder \
+        device/leeco/x3/vendor/mediatek/proprietary/external/mpo/mpodecoder/inc \
 
 LOCAL_SHARED_LIBRARIES:= \
 	libcutils \

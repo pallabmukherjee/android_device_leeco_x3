@@ -11,11 +11,11 @@ LOCAL_SRC_FILES:= \
     MpoCommon.cpp
 
 LOCAL_C_INCLUDES += \
-    vendor/mediatek/proprietary/external/mpo \
-    vendor/mediatek/proprietary/external/mpo/inc \
-    vendor/mediatek/proprietary/external/mpo/mpoencoder \
-    vendor/mediatek/proprietary/external/mpo/mpodecoder \
-    vendor/mediatek/proprietary/external/mpo/mpodecoder/inc \
+    device/leeco/x3/vendor/mediatek/proprietary/external/mpo \
+    device/leeco/x3/vendor/mediatek/proprietary/external/mpo/inc \
+    device/leeco/x3/vendor/mediatek/proprietary/external/mpo/mpoencoder \
+    device/leeco/x3/vendor/mediatek/proprietary/external/mpo/mpodecoder \
+    device/leeco/x3/vendor/mediatek/proprietary/external/mpo/mpodecoder/inc \
 
 LOCAL_SHARED_LIBRARIES:= \
 	libcutils 

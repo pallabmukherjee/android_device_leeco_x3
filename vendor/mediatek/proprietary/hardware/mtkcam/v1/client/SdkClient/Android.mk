@@ -47,13 +47,13 @@ include $(CLEAR_VARS)
 MTKSDK_HAVE_GESTURE_CLIENT           ?= '1'  # built-in if '1' ; otherwise not built-in
 
 #-----------------------------------------------------------
-sinclude $(TOP)/vendor/mediatek/proprietary/hardware/mtkcam/mtkcam.mk
+sinclude $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/mtkcam/mtkcam.mk
 
 #-----------------------------------------------------------
 LOCAL_C_INCLUDES += $(MTKCAM_C_INCLUDES)
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include
 #
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/external/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/external/include
 #-----------------------------------------------------------
 LOCAL_CFLAGS += $(MTKCAM_CFLAGS)
 

@@ -22,7 +22,7 @@ import com.mediatek.mmsdk.IEffectUser;
 interface IEffectUpdateListener
 {
     /**
-     * Keep up-to-date with vendor/mediatek/proprietary/frameworks/av/include/mmsdk/IEffectUpdateListener.h	
+     * Keep up-to-date with device/leeco/x3/vendor/mediatek/proprietary/frameworks/av/include/mmsdk/IEffectUpdateListener.h	
      */
     void onEffectUpdated(IEffectUser effect, /*out*/ int info);
 }

@@ -50,13 +50,13 @@ LOCAL_SRC_FILES += \
 
 #-----------------------------------------------------------
 LOCAL_C_INCLUDES += $(MTKCAM_C_INCLUDES)
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/include
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/include
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/include
 #
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/frameworks/av/include
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/v1/adapter/inc/Scenario
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/include/mtkcam/featureio
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/frameworks/av/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/v1/adapter/inc/Scenario
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/include/mtkcam/featureio
 #
 
 #-----------------------------------------------------------
@@ -71,7 +71,7 @@ LOCAL_WHOLE_STATIC_LIBRARIES += libcam.camadapter.scenario.shot.hdrshot
 LOCAL_WHOLE_STATIC_LIBRARIES += libcam.camadapter.scenario.shot.engshot
 LOCAL_WHOLE_STATIC_LIBRARIES += libcam.camadapter.scenario.shot.stereoshot
 #
-LOCAL_C_INCLUDES += vendor/mediatek/proprietary/custom/mt6795/hal/inc
+LOCAL_C_INCLUDES += device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/inc
 LOCAL_C_INCLUDES += $(MTK_PATH_CUSTOM_PLATFORM)/hal/inc
 
 ifeq ($(VANZO_FEATURE_CAMERA_TS_FACEBEAUTY),yes)

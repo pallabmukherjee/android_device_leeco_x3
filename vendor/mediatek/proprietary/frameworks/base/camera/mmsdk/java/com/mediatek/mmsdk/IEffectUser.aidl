@@ -24,7 +24,7 @@ import com.mediatek.mmsdk.IMemory;
 interface IEffectUser
 {
     /**
-     * Keep up-to-date with vendor/mediatek/proprietary/frameworks/av/include/mmsdk/IEffectUser.h	
+     * Keep up-to-date with device/leeco/x3/vendor/mediatek/proprietary/frameworks/av/include/mmsdk/IEffectUser.h	
      */
     String getName();
     boolean apply(in ImageInfo rSrcImage, IMemory srcData, in ImageInfo rDestImage, IMemory destData);

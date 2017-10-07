@@ -7,7 +7,7 @@ WHAT IT DOES?
 =============
 libcam.camadapter.mtkstereo.state.so contains MediaTek developed camera related 
 pre- and post-processing modules.  
-Without them, stereo feature functionalities will not work¡¨
+Without them, stereo feature functionalities will not workï¿½ï¿½
 
 HOW IT WAS BUILT?
 ==================
@@ -29,6 +29,6 @@ HOW TO USE IT?
 ==============
 
 Provide api for camera HAL to control the camera features.
-all api interface are at (vendor/mediatek/proprietary/hardware/mtkcam)
+all api interface are at (device/leeco/x3/vendor/mediatek/proprietary/hardware/mtkcam)
 
 All the source code of this library were written by MediaTek co..

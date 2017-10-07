@@ -53,8 +53,8 @@ LOCAL_SHARED_LIBRARIES := \
 
 
 LOCAL_C_INCLUDES:= \
-    $(TOP)/vendor/mediatek/proprietary/hardware/gui_ext/inc \
-    $(TOP)/vendor/mediatek/proprietary/hardware/include
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/gui_ext/inc \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include
 
 LOCAL_MODULE := guiext-test
 
@@ -84,8 +84,8 @@ LOCAL_SHARED_LIBRARIES := \
     libgralloc_extra
 
 LOCAL_C_INCLUDES:= \
-    $(TOP)/vendor/mediatek/proprietary/hardware/gui_ext/inc \
-    $(TOP)/vendor/mediatek/proprietary/hardware/include
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/gui_ext/inc \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include
 
 
 LOCAL_MODULE := guiext-test-surface

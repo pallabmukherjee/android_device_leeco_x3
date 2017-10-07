@@ -37,19 +37,19 @@
 #
 ################################################################################
 
-MY_ADAPTER_C_INCLUDES_PATH := $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/v1/adapter
+MY_ADAPTER_C_INCLUDES_PATH := $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/v1/adapter
 MY_ADAPTER_C_INCLUDES :=
 #-----------------------------------------------------------
 # MTK Hal Standard Include Path
-MY_ADAPTER_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/include
-MY_ADAPTER_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/include
+MY_ADAPTER_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include
+MY_ADAPTER_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/include
 #
 #-----------------------------------------------------------
 # MTK Framework Standard Include Path
-MY_ADAPTER_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/frameworks/av/include
+MY_ADAPTER_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/frameworks/av/include
 #
 #-----------------------------------------------------------
 # Adapter Include Path
-MY_ADAPTER_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/v1/adapter/inc
+MY_ADAPTER_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/v1/adapter/inc
 #
 

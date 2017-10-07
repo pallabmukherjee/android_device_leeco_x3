@@ -46,8 +46,8 @@ LOCAL_SRC_FILES:= \
 	FpsCounter.cpp
 
 LOCAL_C_INCLUDES:= \
-    $(TOP)/vendor/mediatek/proprietary/hardware/ui_ext/inc \
-    $(TOP)/vendor/mediatek/proprietary/hardware/include \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/ui_ext/inc \
+    $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include \
 	external/libpng \
 	external/zlib \
 	external/skia/src/images \

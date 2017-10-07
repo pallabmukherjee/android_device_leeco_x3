@@ -10,7 +10,7 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 #-----------------------------------------------------------
-sinclude $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/mtkcam.mk
+sinclude $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/mtkcam/mtkcam.mk
 
 #-----------------------------------------------------------
 MTKCAM_USE_PERFSERVICE = '0'
@@ -21,14 +21,14 @@ LOCAL_SRC_FILES += res_mgr_drv.cpp
 LOCAL_C_INCLUDES += $(MTKCAM_C_INCLUDES)
 LOCAL_C_INCLUDES += $(TOP)/bionic
 LOCAL_C_INCLUDES += $(TOP)/external/stlport/stlport
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/include
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/include
 #
 LOCAL_C_INCLUDES += $(TOP)/$(LOCAL_PATH)/../inc
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/bwc/inc
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/bwc/inc
 
 ifeq "'1'" "$(strip $(MTKCAM_USE_PERFSERVICE))"
-LOCAL_C_INCLUDES += vendor/mediatek/proprietary/frameworks/base/perfservice/perfservicenative
+LOCAL_C_INCLUDES += device/leeco/x3/vendor/mediatek/proprietary/frameworks/base/perfservice/perfservicenative
 endif
 
 #-----------------------------------------------------------

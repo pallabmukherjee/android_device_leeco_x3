@@ -42,8 +42,8 @@ LOCAL_SRC_FILES := ./mmsdkHAL.cpp \
 
 #-----------------------------------------------------------
 LOCAL_C_INCLUDES += system/core/include 
-LOCAL_C_INCLUDES += vendor/mediatek/proprietary/hardware/include
-LOCAL_C_INCLUDES += vendor/mediatek/proprietary/platform/mt6795/hardware/include
+LOCAL_C_INCLUDES += device/leeco/x3/vendor/mediatek/proprietary/hardware/include
+LOCAL_C_INCLUDES += device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/include
 LOCAL_C_INCLUDES += $(TOP)/system/core/libsync/include
 
 #-----------------------------------------------------------

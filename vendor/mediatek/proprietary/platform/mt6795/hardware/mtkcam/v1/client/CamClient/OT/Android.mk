@@ -53,15 +53,15 @@ LOCAL_SRC_FILES += $(call all-c-cpp-files-under, .)
 #-----------------------------------------------------------
 LOCAL_C_INCLUDES += $(MTKCAM_C_INCLUDES)
 LOCAL_C_INCLUDES += $(MY_CLIENT_C_INCLUDES)
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/include
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/platform/mt6795/hardware/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/platform/mt6795/hardware/include
 #
 LOCAL_C_INCLUDES += $(TOP)/bionic
 LOCAL_C_INCLUDES += $(TOP)/external/stlport/stlport
 #
-LOCAL_C_INCLUDES += vendor/mediatek/proprietary/custom/mt6795/hal/inc
+LOCAL_C_INCLUDES += device/leeco/x3/vendor/mediatek/proprietary/custom/mt6795/hal/inc
 LOCAL_C_INCLUDES += $(MTK_PATH_CUSTOM_PLATFORM)/hal/inc
-LOCAL_C_INCLUDES += vendor/mediatek/proprietary/frameworks/av/include
+LOCAL_C_INCLUDES += device/leeco/x3/vendor/mediatek/proprietary/frameworks/av/include
 LOCAL_C_INCLUDES += $(TOP)/system/media/camera/include
 #-----------------------------------------------------------
 LOCAL_CFLAGS += $(MTKCAM_CFLAGS)

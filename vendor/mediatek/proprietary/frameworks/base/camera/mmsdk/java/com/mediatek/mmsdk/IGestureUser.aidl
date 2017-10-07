@@ -24,7 +24,7 @@ import com.mediatek.mmsdk.IMemory;
 interface IGestureUser
 {
     /**
-     * Keep up-to-date with vendor/mediatek/proprietary/frameworks/av/include/mmsdk/IGestureUser.h	
+     * Keep up-to-date with device/leeco/x3/vendor/mediatek/proprietary/frameworks/av/include/mmsdk/IGestureUser.h	
      */
     boolean addHandDetectionListener(IHandDetectionListener listener, int pose);
     boolean removeHandDetectionListener(IHandDetectionListener listener, int pose);

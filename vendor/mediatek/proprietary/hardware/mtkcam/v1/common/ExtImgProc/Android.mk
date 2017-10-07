@@ -39,7 +39,7 @@ include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := ./ExtImgProcImp.cpp \
 #
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include
 # 
 LOCAL_SHARED_LIBRARIES += liblog
 LOCAL_SHARED_LIBRARIES += libutils

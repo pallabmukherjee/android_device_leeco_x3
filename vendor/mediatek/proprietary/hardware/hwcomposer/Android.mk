@@ -57,7 +57,7 @@ LOCAL_CFLAGS += -DMTK_HWC_VER_1_4
 endif
 
 LOCAL_C_INCLUDES += \
-	$(TOP)/vendor/mediatek/proprietary/hardware/include
+	$(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include
 
 LOCAL_STATIC_LIBRARIES += \
 	hwcomposer.$(TARGET_BOARD_PLATFORM).$(MTK_HWC_VERSION)

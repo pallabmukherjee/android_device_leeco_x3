@@ -26,6 +26,6 @@ HOW TO USE IT?
 ==============
 
 Provide api for camera HAL to control the camera features.
-all api interface are at (vendor/mediatek/proprietary/hardware/mtkcam)
+all api interface are at (device/leeco/x3/vendor/mediatek/proprietary/hardware/mtkcam)
 
 All the source code of this library were written by MediaTek co..

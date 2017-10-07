@@ -47,8 +47,8 @@ include $(CLEAR_VARS)
 LOCAL_SRC_FILES += GrallocHelper.cpp
 
 #-----------------------------------------------------------
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/include
-LOCAL_C_INCLUDES += $(TOP)/vendor/mediatek/proprietary/hardware/gralloc_extra/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include
+LOCAL_C_INCLUDES += $(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/gralloc_extra/include
 #
 
 #-----------------------------------------------------------

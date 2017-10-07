@@ -10,4 +10,4 @@ libcam_platform.halmemoryadapter.a
 HOW TO USE IT?
 ==============
 Refer to the interfaces defined as below:
-$(TOP)/vendor/mediatek/proprietary/hardware/include/mtkcam/IPlatform.h
+$(TOP)/device/leeco/x3/vendor/mediatek/proprietary/hardware/include/mtkcam/IPlatform.h
