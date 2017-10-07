@@ -25,6 +25,6 @@ HOW TO USE IT?
 ==============
 
 Enter dialer, and key in *#*#3646633#*#* to launch the EngineerMode.
-all source code are at (device/leeco/x3/vendor/mediatek/proprietary/packages/apps/EngineerMode/)
+all source code are at (vendor/mediatek/proprietary/packages/apps/EngineerMode/)
 
 All the source code of this library were written by MediaTek co..
