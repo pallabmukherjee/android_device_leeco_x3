@@ -29,6 +29,7 @@ PRODUCT_PACKAGES += \
 # Camera
 PRODUCT_PACKAGES += \
 	Snap \
+	Camera2 \
 	libcamera_parameters_ext
 
 # Charger
@@ -309,7 +310,3 @@ PRODUCT_PACKAGES += \
 # Engineering mode
 PRODUCT_PACKAGES += \
 	EngineerMode
-
-#camera2
-PRODUCT_PACKAGES += \
-camera2
