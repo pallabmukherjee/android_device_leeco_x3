@@ -9,7 +9,7 @@ MTK_PATH_CUSTOM_PLATFORM := device/leeco/x3/vendor/mediatek/proprietary/custom/$
 
 #########
 
-PRODUCT_PACKAGES += \
+LOCAL_SHARED_LIBRARIES := \
 					libcameracustom.camera \
 					libcameracustom.imgsensor \
 					libmmsdk.client.effect \
@@ -167,4 +167,4 @@ PRODUCT_PACKAGES += \
 					libperfservicenative \
 					libz \
 					libsync \
-					sync-unit-tests \
+					sync-unit-tests
