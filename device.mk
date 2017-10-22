@@ -17,6 +17,8 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 # Screen density
 PRODUCT_AAPT_CONFIG := normal xxhdpi
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
+PRODUCT_AAPT_PREBUILT_DPI := xxhdpi xhdpi 480dpi hdpi tvdpi mdpi ldpi
+
 
 # Recovery allowed devices
 TARGET_OTA_ASSERT_DEVICE := x3,X500,X507,X509,X3,x500,x507,x509,X502,x502
@@ -29,6 +31,7 @@ PRODUCT_PACKAGES += \
 # Camera
 PRODUCT_PACKAGES += \
 	Snap \
+	Camera2 \
 	libcamera_parameters_ext
 
 # Charger
@@ -49,6 +52,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	ro.allow.mock.location=0 \
 	ro.debuggable=1 \
+	ro.adb.secure=0 \
+	ro.secure=0 \
 	ro.zygote=zygote64_32 \
 	ro.dalvik.vm.native.bridge=0 \
 	persist.sys.usb.config=mtp \
@@ -79,6 +84,7 @@ PRODUCT_PACKAGES += \
 	libaudio-resampler \
 	libaudiopolicymanagerdefault \
 	libtinyalsa \
+	com.android.future.usb.accessory \
 	libtinycompress \
 	libtinyxml \
 	audio_policy.stub \
@@ -98,7 +104,6 @@ PRODUCT_COPY_FILES += \
 	frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
 	frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:system/etc/media_codecs_google_video_le.xml \
 	frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
-	media.stagefright.legacyencoder=0
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
@@ -264,7 +269,8 @@ PRODUCT_COPY_FILES += \
 # MTK Helpers
 PRODUCT_PACKAGES += \
 	libccci_util \
-	libmtk_symbols
+	libmtk_symbols \
+	libcam.halsensor
 
 # Sensor Calibration
 PRODUCT_PACKAGES += libem_sensor_jni
@@ -310,4 +316,19 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	EngineerMode
 
-include device/leeco/x3/camera.mk
+# build.prop
+PRODUCT_PROPERTY_OVERRIDES += \
+    media.stagefright.legacyencoder=true \
+    media.stagefright.less-secure=true \
+    persist.service.adb.enable=1 \
+    persist.service.debuggable=1 \
+    persist.sys.root_access=0 \
+    ro.sys.fw.bg_apps_limits=5
+
+# extra log controls prop
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.ril.log=0 \
+    ro.disable.xlog=0
+
+
+include device/leeco/x3/camera_hal/Android.mk
