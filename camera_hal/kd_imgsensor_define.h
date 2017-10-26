@@ -24,11 +24,23 @@
 /* #define BOOL signed int */
 #ifndef _MEDIA_TYPES_H
 typedef unsigned char MUINT8;
-typedef unsigned short MUINT16;
-typedef unsigned int MUINT32;
+typedef uint16_t MUINT16;
+typedef uint32_t MUINT32;
+typedef uint64_t MUINT64;
 typedef signed char MINT8;
-typedef signed short MINT16;
-typedef signed int MINT32;
+typedef int16_t MINT16;
+typedef int32_t MINT32;
+typedef int MBOOL;
+typedef unsigned int* MUINTPTR;
+typedef void MVOID;
+#define UCHAR	MUINT8
+#define UINT8	MUINT8
+#define MUINT	MUINT32
+#define MINT	MINT32
+#define	TRUE	1
+#define FALSE	0
+#define MTRUE	TRUE
+#define MFALSE	FALSE
 #endif
 
 /*******************************************************************************
