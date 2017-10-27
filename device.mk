@@ -60,7 +60,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	persist.debug.xlog.enable=0 \
 	camera.disable_zsl_mode=1
 
-ifeq (lineage_x3,$(TARGET_PRODUCT))	#this is included only in lineage atm as some other roms have issue with this
+ifeq (aim_x3,$(TARGET_PRODUCT))	#this is included only in lineage atm as some other roms have issue with this
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	dalvik.vm.dex2oat-Xms=64m \
 	dalvik.vm.dex2oat-Xmx=64m \

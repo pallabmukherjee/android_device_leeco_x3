@@ -395,7 +395,7 @@ public:     ////
     struct  ConfigParam
     {
         MUINT                       index;              //  sensor index
-        MSize                       crop;               //  TG crop size in pixels.
+        MUINT                       crop;               //  TG crop size in pixels.
         MUINT                       scenarioId;         //  sensor scenario ID.
         MBOOL                       isBypassScenario;
         MBOOL                       isContinuous;
@@ -508,7 +508,7 @@ public:     ////                    Attributes.
      * Query static information for a specific sensor index.
      * This call is legal only after searchSensors().
      */
-    virtual IMetadata const&        queryStaticInfo(MUINT const index) const    = 0;
+    virtual MUINT const&        queryStaticInfo(MUINT const index) const    = 0;
 
     /**
      * Query the driver name for a specific sensor index.

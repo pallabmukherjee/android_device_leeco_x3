@@ -25,7 +25,7 @@ TO REVISE OR REPLACE THE MEDIATEK SOFTWARE AT ISSUE, OR REFUND ANY SOFTWARE LICE
  ************************************************************************************************/
 
 #define LOG_TAG "ImgSensorDrv"
-
+#define _LINUX_TYPES_H
 #include <stdio.h>
 #include <string.h>
 #include <fcntl.h>
@@ -149,7 +149,7 @@ ImgSensorDrv::impSearchSensor(pfExIdChk pExIdChkCbf)
     MUINT32 SensorEnum = (MUINT32) DUAL_CAMERA_MAIN_SENSOR;
     MUINT32 i,id[KDIMGSENSOR_MAX_INVOKE_DRIVERS] = {0,0};
     MBOOL SensorConnect=TRUE;
-    UCHAR cBuf[64];
+    char cBuf[64];
     MINT32 err = SENSOR_NO_ERROR;
     MINT32 err2 = SENSOR_NO_ERROR;
     ACDK_SENSOR_INFO_STRUCT SensorInfo;
@@ -426,7 +426,7 @@ ImgSensorDrv::init(
     MINT32 sensorIdx
 )
 {
-    UCHAR cBuf[64];
+    char cBuf[64];
     MINT32 ret = SENSOR_NO_ERROR;
     MUINT16 pFeaturePara16[2];
     MUINT32 FeaturePara32;
@@ -903,9 +903,9 @@ ImgSensorDrv::waitSensorEventDone(
     LOG_MSG("[ImgSensorDrv]waitSensorEventDone: EventType = %d, Timeout=%d\n",EventType,Timeout);
     switch (EventType) {
         case WAIT_SENSOR_SET_SHUTTER_GAIN_DONE:
-            ret = ioctl(m_fdSensor, KDIMGSENSORIOC_X_SET_SHUTTER_GAIN_WAIT_DONE, &Timeout);
+/*            ret = ioctl(m_fdSensor, KDIMGSENSORIOC_X_SET_SHUTTER_GAIN_WAIT_DONE, &Timeout);
             break;
-        default :
+*/     default :
             break;
     }
     if(ret < 0)
@@ -1365,7 +1365,7 @@ ImgSensorDrv::sendCommand(
      case CMD_SENSOR_GET_DEFAULT_FRAME_RATE_BY_SCENARIO:
         FeatureId = SENSOR_FEATURE_GET_DEFAULT_FRAME_RATE_BY_SCENARIO;
         FeaturePara[0] = *parg1;
-        FeaturePara[1] = (MUINTPTR)parg2; // Pass the address of parg2
+        FeaturePara[1] = (MUINT64)parg2; // Pass the address of parg2
         FeatureParaLen = sizeof(MUINT64) * 2;
 
         switch(*parg1)
@@ -1578,7 +1578,7 @@ ImgSensorDrv::sendCommand(
 
         FeatureId = SENSOR_FEATURE_GET_CROP_INFO;
         //u4FeaturePara[0] = *parg1;
-        FeaturePara[1] = (MUINTPTR)parg2;
+        FeaturePara[1] = (MUINT64)parg2;
         FeatureParaLen = sizeof(MUINT64) * 2;
         pFeaturePara = (MUINT8*)FeaturePara;
 #ifdef SENDCMD_LOG
@@ -1624,7 +1624,7 @@ ImgSensorDrv::sendCommand(
                 return SENSOR_UNKNOWN_ERROR;
         }
         FeatureId = SENSOR_FEATURE_GET_VC_INFO;
-        FeaturePara[1] = (MUINTPTR)parg1;
+        FeaturePara[1] = (MUINT64)parg1;
         FeatureParaLen = sizeof(MUINT64) * 2;
         pFeaturePara = (MUINT8*)FeaturePara;
 #ifdef SENDCMD_LOG
@@ -1657,7 +1657,7 @@ ImgSensorDrv::sendCommand(
         }
 
         FeatureId = SENSOR_FEATURE_GET_PDAF_INFO;
-        FeaturePara[1] = (MUINTPTR)parg2;
+        FeaturePara[1] = (MUINT64)parg2;
         FeatureParaLen = sizeof(SET_PD_BLOCK_INFO_T);
         pFeaturePara = (MUINT8*)FeaturePara;
         LOG_ERR("[SENSOR_FEATURE_GET_PDAF_INFO]%llu %llu\n",FeaturePara[0],FeaturePara[1]);
@@ -1667,7 +1667,7 @@ ImgSensorDrv::sendCommand(
      case CMD_SENSOR_GET_PDAF_DATA:
         FeatureId = SENSOR_FEATURE_GET_PDAF_DATA;
         FeaturePara[0] = *parg1;//offset
-        FeaturePara[1] = (MUINTPTR)(*parg2);//the address of pointer pointed
+        FeaturePara[1] = (MUINT64)(*parg2);//the address of pointer pointed
         FeaturePara[2] = *parg3;//size of buff
         FeatureParaLen = sizeof(MUINT64) * 3;
         pFeaturePara = (MUINT8*)FeaturePara;
@@ -1677,7 +1677,7 @@ ImgSensorDrv::sendCommand(
      case CMD_SENSOR_GET_SENSOR_PDAF_CAPACITY:
         FeatureId = SENSOR_FEATURE_GET_SENSOR_PDAF_CAPACITY;
         FeaturePara[0] = *parg1;
-        FeaturePara[1] = (MUINTPTR)parg2; // Pass the address of parg2
+        FeaturePara[1] = (MUINT64)parg2; // Pass the address of parg2
         FeatureParaLen = sizeof(MUINT64) * 2;
 
         switch(*parg1)
@@ -1746,14 +1746,14 @@ ImgSensorDrv::sendCommand(
 
     case CMD_SENSOR_SET_YUV_AF_WINDOW:
         FeatureId = SENSOR_FEATURE_SET_AF_WINDOW;
-        FeaturePara[0] = (MUINTPTR)parg1;
+        FeaturePara[0] = (MUINT64)parg1;
         FeatureParaLen = sizeof(MUINT64);
         pFeaturePara = (MUINT8*)FeaturePara;
         //LOG_MSG("zone_addr=0x%llu\n", FeaturePara[0]);
         break;
 
     case CMD_SENSOR_SET_YUV_AE_WINDOW:
-        FeaturePara[0] = (MUINTPTR)parg1;
+        FeaturePara[0] = (MUINT64)parg1;
         FeatureParaLen = sizeof(MUINT64);
         pFeaturePara = (MUINT8*)FeaturePara;
         //LOG_MSG("AEzone_addr=0x%llu\n", FeaturePara[0]);
@@ -1800,7 +1800,7 @@ ImgSensorDrv::sendCommand(
 
     case CMD_SENSOR_GET_YUV_EV_INFO_AWB_REF_GAIN:
         FeatureId = SENSOR_FEATURE_GET_EV_AWB_REF;
-        FeaturePara[0] = (MUINTPTR)parg1;
+        FeaturePara[0] = (MUINT64)parg1;
         FeatureParaLen = sizeof(MUINT64);
         pFeaturePara = (MUINT8*)FeaturePara;
         //LOG_MSG("p_ref=0x%x\n", u4FeaturePara[0]);
@@ -1808,7 +1808,7 @@ ImgSensorDrv::sendCommand(
 
     case CMD_SENSOR_GET_YUV_CURRENT_SHUTTER_GAIN_AWB_GAIN:
         FeatureId = SENSOR_FEATURE_GET_SHUTTER_GAIN_AWB_GAIN;
-        FeaturePara[0] = (MUINTPTR)parg1;
+        FeaturePara[0] = (MUINT64)parg1;
         FeatureParaLen = sizeof(MUINT64);
         pFeaturePara = (MUINT8*)FeaturePara;
         //LOG_MSG("p_cur=0x%x\n", u4FeaturePara[0]);
@@ -1830,7 +1830,7 @@ ImgSensorDrv::sendCommand(
 
     case CMD_SENSOR_GET_YUV_EXIF_INFO:
         FeatureId = SENSOR_FEATURE_GET_EXIF_INFO;
-        FeaturePara[0] = (MUINTPTR)parg1;
+        FeaturePara[0] = (MUINT64)parg1;
         FeatureParaLen = sizeof(MUINT64);
         pFeaturePara = (MUINT8*)FeaturePara;
         //LOG_MSG("EXIF_addr=0x%x\n", u4FeaturePara[0]);
@@ -1838,20 +1838,20 @@ ImgSensorDrv::sendCommand(
 
     case CMD_SENSOR_GET_YUV_DELAY_INFO:
         FeatureId = SENSOR_FEATURE_GET_DELAY_INFO;
-        FeaturePara[0] = (MUINTPTR)parg1;
+        FeaturePara[0] = (MUINT64)parg1;
         FeatureParaLen = sizeof(MUINT64);
         pFeaturePara = (MUINT8*)FeaturePara;
         break;
     case CMD_SENSOR_GET_YUV_AE_AWB_LOCK_INFO:
         FeatureId = SENSOR_FEATURE_GET_AE_AWB_LOCK_INFO;
-        FeaturePara[0] = (MUINTPTR)parg1;
-        FeaturePara[1] = (MUINTPTR)parg2;
+        FeaturePara[0] = (MUINT64)parg1;
+        FeaturePara[1] = (MUINT64)parg2;
         FeatureParaLen = sizeof(MUINT64) * 2;
         pFeaturePara = (MUINT8*)FeaturePara;
         break;
     case CMD_SENSOR_GET_YUV_AE_FLASHLIGHT_INFO:
         FeatureId = SENSOR_FEATURE_GET_AE_FLASHLIGHT_INFO;
-        FeaturePara[0] = (MUINTPTR)parg1;
+        FeaturePara[0] = (MUINT64)parg1;
         FeatureParaLen = sizeof(MUINT64);
         pFeaturePara = (MUINT8*)FeaturePara;
         //LOG_MSG("FLASHLIGHT_INFO=0x%x\n", u4FeaturePara[0]);
@@ -1865,8 +1865,8 @@ ImgSensorDrv::sendCommand(
         break;
     case CMD_SENSOR_SET_YUV_AUTOTEST:
         FeatureId = SENSOR_FEATURE_AUTOTEST_CMD;
-        FeaturePara[0] = (MUINTPTR)parg1;
-        FeaturePara[1] = (MUINTPTR)parg2;
+        FeaturePara[0] = (MUINT64)parg1;
+        FeaturePara[1] = (MUINT64)parg2;
         FeatureParaLen = sizeof(MUINT64) * 2;
         pFeaturePara = (MUINT8*)FeaturePara;
         break;
