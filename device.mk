@@ -14,7 +14,7 @@ LOCAL_PATH := device/leeco/x3
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Screen density
-PRODUCT_AAPT_CONFIG := normal xxhdpi
+PRODUCT_AAPT_CONFIG := normal xhdpi xxhdpi
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Recovery allowed devices
@@ -29,6 +29,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	Snap \
 	Camera2 \
+	LegacyCamera \
 	libcamera_parameters_ext
 
 # Charger
@@ -98,7 +99,7 @@ PRODUCT_COPY_FILES += \
 	frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
 	frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:system/etc/media_codecs_google_video_le.xml \
 	frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
-	media.stagefright.legacyencoder=0
+#	media.stagefright.legacyencoder=0
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
