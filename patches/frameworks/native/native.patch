@@ -1,0 +1,52 @@
+
+diff --git a/include/ui/Fence.h b/include/ui/Fence.h
+index 48a7aa3c5..47a4359d6 100644
+--- a/include/ui/Fence.h
++++ b/include/ui/Fence.h
+@@ -136,8 +136,11 @@ private:
+     const Fence& operator = (const Fence& rhs) const;
+ 
+     int mFenceFd;
+-};
+ 
++#ifdef MTK_HARDWARE
++private:
++    void dump(int fd);
++#endif
+ }; // namespace android
+-
++};
+ #endif // ANDROID_FENCE_H
+
+diff --git a/libs/ui/Android.mk b/libs/ui/Android.mk
+index 2b16365c3..c4b400c21 100644
+--- a/libs/ui/Android.mk
++++ b/libs/ui/Android.mk
+@@ -47,6 +47,15 @@ LOCAL_SRC_FILES := \
+ 	Rect.cpp \
+ 	Region.cpp \
+ 	UiConfig.cpp
++ifeq ($(BOARD_HAS_MTK_HARDWARE),true)
++LOCAL_SRC_FILES += \
++	mediatek/Fence.cpp \
++	mediatek/IDumpTunnel.cpp \
++	mediatek/RefBaseDump.cpp
++
++# just make everything compile for now... cleanups later
++LOCAL_CPPFLAGS := -std=c++1y -Weverything
++endif
+ 
+ LOCAL_SHARED_LIBRARIES := \
+ 	libbinder \
+@@ -55,7 +64,10 @@ LOCAL_SHARED_LIBRARIES := \
+ 	libsync \
+ 	libutils \
+ 	liblog
+-
++ifeq ($(BOARD_HAS_MTK_HARDWARE),true)
++LOCAL_SHARED_LIBRARIES += \
++	libbinder
++endif
+ ifneq ($(BOARD_FRAMEBUFFER_FORCE_FORMAT),)
+ LOCAL_CFLAGS += -DFRAMEBUFFER_FORCE_FORMAT=$(BOARD_FRAMEBUFFER_FORCE_FORMAT)
+ endif
