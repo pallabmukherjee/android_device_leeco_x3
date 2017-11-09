@@ -1,0 +1,14 @@
+[
+  {
+    "remote": "github",
+    "repository": "joshi3/proprietary_vendor_leeco",
+    "target_path": "vendor/leeco/",
+    "branch": "master"
+  },
+  {
+    "remote": "github",
+    "repository": "EDIT WHAT U NEED",
+    "target_path": "kernel/leeco/x3",
+    "branch": "EDIT WHAT U NEED"
+  }
+] 
