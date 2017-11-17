@@ -35,7 +35,7 @@
 			echo -e "${bldred}N4: No kernel sources, downloading...${txtrst}"
 			git clone https://github.com/joshi3/Psycho-Kernel.git -b master kernel/leeco/x3
 		fi
-		if ! [ -d vendor/huawei/angler ]; then
+		if ! [ -d vendor/leeco/x3 ]; then
 			echo -e "${bldred}N4: No vendor, downloading...${txtrst}"
 			git clone https://github.com/joshi3/proprietary_vendor_leeco.git -b master vendor/leeco
 		fi
