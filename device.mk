@@ -32,6 +32,8 @@ PRODUCT_PACKAGES += \
 	LegacyCamera \
 	libcamera_parameters_ext
 
+PRODUCT_PACKAGES += CompassMi
+
 # Charger
 PRODUCT_PACKAGES += \
 	charger \
@@ -223,6 +225,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/configs/ril_conf/ecc_list.xml:system/etc/ecc_list.xml \
 	$(LOCAL_PATH)/configs/ril_conf/spn-conf.xml:system/etc/spn-conf.xml
+	$(LOCAL_PATH)/configs/ril_conf/apns-conf.xml:system/etc/apns-conf.xml
 
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/configs/dhcpcd/dhcpcd-run-hooks:system/etc/dhcpcd/dhcpcd-run-hooks \
