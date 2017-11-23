@@ -34,6 +34,8 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += CompassMi
 
+PRODUCT_PACKAGES := SchedulePowerOnOff
+
 # Charger
 PRODUCT_PACKAGES += \
 	charger \
