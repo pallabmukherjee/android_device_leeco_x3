@@ -15,8 +15,7 @@
      limitations under the License.
 -->
 
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-        android:key="prefscreen_top">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
 
   <!-- Resolutions and Quality -->
   <PreferenceScreen
@@ -70,5 +69,10 @@
         android:key="pref_camera_exposure_compensation_key"
         android:title="@string/pref_camera_exposure_compensation" />
   </PreferenceScreen>
+
+  <!-- Google Help and feedback launcher -->
+  <Preference
+      android:key="pref_launch_help"
+      android:title="@string/setting_google_help_and_feedback" />
 
 </PreferenceScreen>

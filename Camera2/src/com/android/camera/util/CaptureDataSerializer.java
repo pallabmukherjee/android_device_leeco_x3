@@ -20,7 +20,6 @@ import android.hardware.camera2.CameraMetadata;
 import android.hardware.camera2.CaptureRequest;
 import android.hardware.camera2.CaptureResult;
 import android.hardware.camera2.params.ColorSpaceTransform;
-import android.hardware.camera2.params.LensShadingMap;
 import android.hardware.camera2.params.RggbChannelVector;
 import android.hardware.camera2.params.TonemapCurve;
 import android.util.Pair;
@@ -116,7 +115,7 @@ public class CaptureDataSerializer {
             @Override
             public void write(Writer writer) throws IOException {
                 List<CaptureResult.Key<?>> keys = metadata.getKeys();
-                writer.write(String.format(title) + '\n');
+                writer.write(String.format(title));
 
                 // TODO: move to CameraMetadata#toString ?
                 for (CaptureResult.Key<?> key : keys) {
@@ -152,8 +151,12 @@ public class CaptureDataSerializer {
         } else {
             // These classes don't have a toString() method yet
             // See: http://b/16899576
-            if (object instanceof LensShadingMap) {
-                return toString((LensShadingMap) object);
+            if (object instanceof RggbChannelVector) {
+                return toString((RggbChannelVector) object);
+            } else if (object instanceof ColorSpaceTransform) {
+                return toString((ColorSpaceTransform) object);
+            } else if (object instanceof TonemapCurve) {
+                return toString((TonemapCurve) object);
             } else if (object instanceof Pair) {
                 return toString((Pair<?, ?>) object);
             }
@@ -181,41 +184,51 @@ public class CaptureDataSerializer {
         }
     }
 
-    private static String toString(LensShadingMap lensShading) {
+    private static String toString(RggbChannelVector vector) {
         StringBuilder str = new StringBuilder();
-        str.append("LensShadingMap{");
+        str.append("RggbChannelVector:");
+        str.append(" R:");
+        str.append(vector.getRed());
+        str.append(" G(even):");
+        str.append(vector.getGreenEven());
+        str.append(" G(odd):");
+        str.append(vector.getGreenOdd());
+        str.append(" B:");
+        str.append(vector.getBlue());
 
-        String channelName[] = {"R", "G_even", "G_odd", "B"};
-        int numRows = lensShading.getRowCount();
-        int numCols = lensShading.getColumnCount();
-        int numChannels = RggbChannelVector.COUNT;
+        return str.toString();
+    }
 
-        for (int ch = 0; ch < numChannels; ch++) {
-            str.append(channelName[ch]);
-            str.append(":(");
+    private static String toString(ColorSpaceTransform transform) {
+        StringBuilder str = new StringBuilder();
+        Rational[] rationals = new Rational[9];
+        transform.copyElements(rationals, 0);
+        str.append("ColorSpaceTransform: ");
+        str.append(Arrays.toString(rationals));
+        return str.toString();
+    }
 
-            for (int r = 0; r < numRows; r++) {
-                str.append("[");
-                for (int c = 0; c < numCols; c++) {
-                    float gain = lensShading.getGainFactor(ch, c, r);
-                    str.append(gain);
-                    if (c < numCols - 1) {
-                        str.append(", ");
-                    }
-                }
-                str.append("]");
-                if (r < numRows - 1) {
-                    str.append(", ");
-                }
-            }
+    private static String toString(TonemapCurve curve) {
+        StringBuilder str = new StringBuilder();
+        str.append("TonemapCurve:");
 
-            str.append(")");
-            if (ch < numChannels - 1) {
-                str.append(", ");
-            }
-        }
+        float[] reds = new float[curve.getPointCount(TonemapCurve.CHANNEL_RED)
+                * TonemapCurve.POINT_SIZE];
+        curve.copyColorCurve(TonemapCurve.CHANNEL_RED, reds, 0);
+        float[] greens = new float[curve.getPointCount(TonemapCurve.CHANNEL_GREEN)
+                * TonemapCurve.POINT_SIZE];
+        curve.copyColorCurve(TonemapCurve.CHANNEL_GREEN, greens, 0);
+        float[] blues = new float[curve.getPointCount(TonemapCurve.CHANNEL_BLUE)
+                * TonemapCurve.POINT_SIZE];
+        curve.copyColorCurve(TonemapCurve.CHANNEL_BLUE, blues, 0);
 
-        str.append("}");
+        str.append("\n\nReds: ");
+        str.append(Arrays.toString(reds));
+        str.append("\n\nGreens: ");
+        str.append(Arrays.toString(greens));
+        str.append("\n\nBlues: ");
+        str.append(Arrays.toString(blues));
+
         return str.toString();
     }
 

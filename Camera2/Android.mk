@@ -1,3 +1,4 @@
+ifeq ($(MTK_BSP_PACKAGE) , yes)
 LOCAL_PATH:= $(call my-dir)
 
 include $(CLEAR_VARS)
@@ -8,18 +9,10 @@ LOCAL_STATIC_JAVA_LIBRARIES := android-support-v13
 LOCAL_STATIC_JAVA_LIBRARIES += android-ex-camera2-portability
 LOCAL_STATIC_JAVA_LIBRARIES += xmp_toolkit
 LOCAL_STATIC_JAVA_LIBRARIES += glide
-LOCAL_STATIC_JAVA_LIBRARIES += guava
-LOCAL_STATIC_JAVA_LIBRARIES += jsr305
 
 LOCAL_SRC_FILES := $(call all-java-files-under, src)
 LOCAL_SRC_FILES += $(call all-java-files-under, src_pd)
 LOCAL_SRC_FILES += $(call all-java-files-under, src_pd_gcam)
-
-ifneq ($(BOARD_CAMERA_PLUGIN),)
-    LOCAL_SRC_FILES += $(call all-java-files-under, ../../../$(BOARD_CAMERA_PLUGIN))
-else
-    LOCAL_SRC_FILES += $(call all-java-files-under, src_plugin)
-endif
 
 LOCAL_RESOURCE_DIR += \
 	$(LOCAL_PATH)/res \
@@ -38,11 +31,9 @@ LOCAL_SDK_VERSION := current
 
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 
-# Guava uses deprecated org.apache.http.legacy classes.
-LOCAL_JAVA_LIBRARIES += org.apache.http.legacy
-
 LOCAL_JNI_SHARED_LIBRARIES := libjni_tinyplanet libjni_jpegutil
 
 include $(BUILD_PACKAGE)
 
 include $(call all-makefiles-under, $(LOCAL_PATH))
+endif

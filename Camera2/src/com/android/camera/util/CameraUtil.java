@@ -38,7 +38,10 @@ import android.hardware.camera2.CameraMetadata;
 import android.location.Location;
 import android.net.Uri;
 import android.os.ParcelFileDescriptor;
+import android.telephony.TelephonyManager;
+import android.util.DisplayMetrics;
 import android.util.TypedValue;
+import android.view.Display;
 import android.view.OrientationEventListener;
 import android.view.Surface;
 import android.view.View;
@@ -49,14 +52,15 @@ import android.widget.Toast;
 
 import com.android.camera.CameraActivity;
 import com.android.camera.CameraDisabledException;
-import com.android.camera.FatalErrorHandler;
 import com.android.camera.debug.Log;
+import com.android.camera.filmstrip.ImageData;
 import com.android.camera2.R;
 import com.android.ex.camera2.portability.CameraCapabilities;
 import com.android.ex.camera2.portability.CameraSettings;
 
 import java.io.Closeable;
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -65,21 +69,8 @@ import java.util.Locale;
 /**
  * Collection of utility functions used in this package.
  */
-@Deprecated
 public class CameraUtil {
-    private static final Log.Tag TAG = new Log.Tag("CameraUtil");
-
-    private static class Singleton {
-        private static final CameraUtil INSTANCE = new CameraUtil(
-              AndroidContext.instance().get());
-    }
-
-    /**
-     * Thread safe CameraUtil instance.
-     */
-    public static CameraUtil instance() {
-        return Singleton.INSTANCE;
-    }
+    private static final Log.Tag TAG = new Log.Tag("Util");
 
     // For calculate the best fps range for still image capture.
     private final static int MAX_PREVIEW_FPS_TIMES_1000 = 400000;
@@ -127,11 +118,24 @@ public class CameraUtil {
     private static final String EXTRAS_CAMERA_FACING =
             "android.intent.extras.CAMERA_FACING";
 
-    private final ImageFileNamer mImageFileNamer;
+    private static float sPixelDensity = 1;
+    private static ImageFileNamer sImageFileNamer;
 
-    private CameraUtil(Context context) {
-        mImageFileNamer = new ImageFileNamer(
-              context.getString(R.string.image_file_name_format));
+    private CameraUtil() {
+    }
+
+    public static void initialize(Context context) {
+        DisplayMetrics metrics = new DisplayMetrics();
+        WindowManager wm = (WindowManager)
+                context.getSystemService(Context.WINDOW_SERVICE);
+        wm.getDefaultDisplay().getMetrics(metrics);
+        sPixelDensity = metrics.density;
+        sImageFileNamer = new ImageFileNamer(
+                context.getString(R.string.image_file_name_format));
+    }
+
+    public static int dpToPixel(int dp) {
+        return Math.round(sPixelDensity * dp);
     }
 
     /**
@@ -199,9 +203,9 @@ public class CameraUtil {
      * we round up the sample size to avoid OOM.
      */
     public static int computeSampleSize(BitmapFactory.Options options,
-            int minSideLength, int maxNumOfPixels) {
+    int minSideLength, int maxNumOfPixels) {
         int initialSize = computeInitialSampleSize(options, minSideLength,
-                maxNumOfPixels);
+      maxNumOfPixels);
 
         int roundedSize;
         if (initialSize <= 8) {
@@ -282,32 +286,12 @@ public class CameraUtil {
         }
     }
 
-    /**
-     * Shows custom error dialog. Designed specifically
-     * for the scenario where the camera cannot be attached.
-     * @deprecated Use {@link FatalErrorHandler} instead.
-     */
-    @Deprecated
-    public static void showError(final Activity activity, final int dialogMsgId, final int feedbackMsgId,
-                                 final boolean finishActivity, final Exception ex) {
-        final DialogInterface.OnClickListener buttonListener =
+    public static void showErrorAndFinish(final Activity activity, int msgId) {
+        DialogInterface.OnClickListener buttonListener =
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        if (finishActivity) {
-                            activity.finish();
-                        }
-                    }
-                };
-
-        DialogInterface.OnClickListener reportButtonListener =
-                new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        new GoogleHelpHelper(activity).sendGoogleFeedback(feedbackMsgId, ex);
-                        if (finishActivity) {
-                            activity.finish();
-                        }
+                        activity.finish();
                     }
                 };
         TypedValue out = new TypedValue();
@@ -320,9 +304,8 @@ public class CameraUtil {
             new AlertDialog.Builder(activity)
                     .setCancelable(false)
                     .setTitle(R.string.camera_error_title)
-                    .setMessage(dialogMsgId)
-                    .setNegativeButton(R.string.dialog_report, reportButtonListener)
-                    .setPositiveButton(R.string.dialog_dismiss, buttonListener)
+                    .setMessage(msgId)
+                    .setNeutralButton(R.string.dialog_ok, buttonListener)
                     .setIcon(out.resourceId)
                     .show();
         }
@@ -394,25 +377,26 @@ public class CameraUtil {
 
     /**
      * Given (nx, ny) \in [0, 1]^2, in the display's portrait coordinate system,
-     * returns normalized sensor coordinates \in [0, 1]^2 depending on how the
-     * sensor's orientation \in {0, 90, 180, 270}.
+     * returns normalized sensor coordinates \in [0, 1]^2 depending on how
+     * the sensor's orientation \in {0, 90, 180, 270}.
+     *
      * <p>
      * Returns null if sensorOrientation is not one of the above.
      * </p>
      */
     public static PointF normalizedSensorCoordsForNormalizedDisplayCoords(
-            float nx, float ny, int sensorOrientation) {
+        float nx, float ny, int sensorOrientation) {
         switch (sensorOrientation) {
-            case 0:
-                return new PointF(nx, ny);
-            case 90:
-                return new PointF(ny, 1.0f - nx);
-            case 180:
-                return new PointF(1.0f - nx, 1.0f - ny);
-            case 270:
-                return new PointF(1.0f - ny, nx);
-            default:
-                return null;
+        case 0:
+            return new PointF(nx, ny);
+        case 90:
+            return new PointF(ny, 1.0f - nx);
+        case 180:
+            return new PointF(1.0f - nx, 1.0f - ny);
+        case 270:
+            return new PointF(1.0f - ny, nx);
+        default:
+            return null;
         }
     }
 
@@ -450,8 +434,9 @@ public class CameraUtil {
         return new Size((int) width, (int) height);
     }
 
-    public static int getDisplayRotation() {
-        WindowManager windowManager = AndroidServices.instance().provideWindowManager();
+    public static int getDisplayRotation(Context context) {
+        WindowManager windowManager = (WindowManager) context
+                .getSystemService(Context.WINDOW_SERVICE);
         int rotation = windowManager.getDefaultDisplay()
                 .getRotation();
         switch (rotation) {
@@ -467,15 +452,57 @@ public class CameraUtil {
         return 0;
     }
 
-    private static Size getDefaultDisplaySize() {
-        WindowManager windowManager = AndroidServices.instance().provideWindowManager();
+    /**
+     * Calculate the default orientation of the device based on the width and
+     * height of the display when rotation = 0 (i.e. natural width and height)
+     *
+     * @param context current context
+     * @return whether the default orientation of the device is portrait
+     */
+    public static boolean isDefaultToPortrait(Context context) {
+        Display currentDisplay = ((WindowManager) context.getSystemService(Context.WINDOW_SERVICE))
+                .getDefaultDisplay();
+        Point displaySize = new Point();
+        currentDisplay.getSize(displaySize);
+        int orientation = currentDisplay.getRotation();
+        int naturalWidth, naturalHeight;
+        if (orientation == Surface.ROTATION_0 || orientation == Surface.ROTATION_180) {
+            naturalWidth = displaySize.x;
+            naturalHeight = displaySize.y;
+        } else {
+            naturalWidth = displaySize.y;
+            naturalHeight = displaySize.x;
+        }
+        return naturalWidth < naturalHeight;
+    }
+
+    public static int roundOrientation(int orientation, int orientationHistory) {
+        boolean changeOrientation = false;
+        if (orientationHistory == OrientationEventListener.ORIENTATION_UNKNOWN) {
+            changeOrientation = true;
+        } else {
+            int dist = Math.abs(orientation - orientationHistory);
+            dist = Math.min(dist, 360 - dist);
+            changeOrientation = (dist >= 45 + ORIENTATION_HYSTERESIS);
+        }
+        if (changeOrientation) {
+            return ((orientation + 45) / 90 * 90) % 360;
+        }
+        return orientationHistory;
+    }
+
+    private static Size getDefaultDisplaySize(Context context) {
+        WindowManager windowManager = (WindowManager) context
+                .getSystemService(Context.WINDOW_SERVICE);
         Point res = new Point();
         windowManager.getDefaultDisplay().getSize(res);
         return new Size(res);
     }
 
-    public static Size getOptimalPreviewSize(List<Size> sizes, double targetRatio) {
-        int optimalPickIndex = getOptimalPreviewSizeIndex(sizes, targetRatio);
+    public static com.android.ex.camera2.portability.Size getOptimalPreviewSize(Context context,
+            List<com.android.ex.camera2.portability.Size> sizes, double targetRatio) {
+        int optimalPickIndex = getOptimalPreviewSizeIndex(context, Size.convert(sizes),
+                targetRatio);
         if (optimalPickIndex == -1) {
             return null;
         } else {
@@ -483,52 +510,20 @@ public class CameraUtil {
         }
     }
 
-    /**
-     * Returns the index into 'sizes' that is most optimal given the current
-     * screen and target aspect ratio..
-     * <p>
-     * This is using a default aspect ratio tolerance. If the tolerance is to be
-     * given you should call
-     * {@link #getOptimalPreviewSizeIndex(List, double, Double)}
-     *
-     * @param sizes the available preview sizes
-     * @param targetRatio the target aspect ratio, typically the aspect ratio of
-     *            the picture size
-     * @return The index into 'previewSizes' for the optimal size, or -1, if no
-     *         matching size was found.
-     */
-    public static int getOptimalPreviewSizeIndex(List<Size> sizes, double targetRatio) {
-        // Use a very small tolerance because we want an exact match. HTC 4:3
-        // ratios is over .01 from true 4:3, so this value must be above .01,
-        // see b/18241645.
-        final double aspectRatioTolerance = 0.02;
-
-        return getOptimalPreviewSizeIndex(sizes, targetRatio, aspectRatioTolerance);
-    }
-
-    /**
-     * Returns the index into 'sizes' that is most optimal given the current
-     * screen, target aspect ratio and tolerance.
-     *
-     * @param previewSizes the available preview sizes
-     * @param targetRatio the target aspect ratio, typically the aspect ratio of
-     *            the picture size
-     * @param aspectRatioTolerance the tolerance we allow between the selected
-     *            preview size's aspect ratio and the target ratio. If this is
-     *            set to 'null', the default value is used.
-     * @return The index into 'previewSizes' for the optimal size, or -1, if no
-     *         matching size was found.
-     */
-    public static int getOptimalPreviewSizeIndex(
-            List<Size> previewSizes, double targetRatio, Double aspectRatioTolerance) {
-        if (previewSizes == null) {
-            return -1;
+    public static int getOptimalPreviewSizeIndex(Context context,
+            List<Size> sizes, double targetRatio) {
+        // Use a very small tolerance because we want an exact match.
+        final double ASPECT_TOLERANCE;
+        // HTC 4:3 ratios is over .01 from true 4:3, targeted fix for those
+        // devices here, see b/18241645
+        if (ApiHelper.IS_HTC && targetRatio > 1.3433 && targetRatio < 1.35) {
+            Log.w(TAG, "4:3 ratio out of normal tolerance, increasing tolerance to 0.02");
+            ASPECT_TOLERANCE = 0.02;
+        } else {
+            ASPECT_TOLERANCE = 0.01;
         }
-
-        // If no particular aspect ratio tolerance is set, use the default
-        // value.
-        if (aspectRatioTolerance == null) {
-            return getOptimalPreviewSizeIndex(previewSizes, targetRatio);
+        if (sizes == null) {
+            return -1;
         }
 
         int optimalSizeIndex = -1;
@@ -539,13 +534,13 @@ public class CameraUtil {
         // wrong size of preview surface. When we change the preview size, the
         // new overlay will be created before the old one closed, which causes
         // an exception. For now, just get the screen size.
-        Size defaultDisplaySize = getDefaultDisplaySize();
+        Size defaultDisplaySize = getDefaultDisplaySize(context);
         int targetHeight = Math.min(defaultDisplaySize.getWidth(), defaultDisplaySize.getHeight());
         // Try to find an size match aspect ratio and size
-        for (int i = 0; i < previewSizes.size(); i++) {
-            Size size = previewSizes.get(i);
+        for (int i = 0; i < sizes.size(); i++) {
+            Size size = sizes.get(i);
             double ratio = (double) size.getWidth() / size.getHeight();
-            if (Math.abs(ratio - targetRatio) > aspectRatioTolerance) {
+            if (Math.abs(ratio - targetRatio) > ASPECT_TOLERANCE) {
                 continue;
             }
 
@@ -565,10 +560,10 @@ public class CameraUtil {
         // Cannot find the one match the aspect ratio. This should not happen.
         // Ignore the requirement.
         if (optimalSizeIndex == -1) {
-            Log.w(TAG, "No preview size match the aspect ratio. available sizes: " + previewSizes);
+            Log.w(TAG, "No preview size match the aspect ratio. available sizes: " + sizes);
             minDiff = Double.MAX_VALUE;
-            for (int i = 0; i < previewSizes.size(); i++) {
-                Size size = previewSizes.get(i);
+            for (int i = 0; i < sizes.size(); i++) {
+                Size size = sizes.get(i);
                 if (Math.abs(size.getHeight() - targetHeight) < minDiff) {
                     optimalSizeIndex = i;
                     minDiff = Math.abs(size.getHeight() - targetHeight);
@@ -581,16 +576,16 @@ public class CameraUtil {
 
     /**
      * Returns the largest picture size which matches the given aspect ratio,
-     * except for the special WYSIWYG case where the picture size exactly
-     * matches the target size.
+     * except for the special WYSIWYG case where the picture size exactly matches
+     * the target size.
      *
-     * @param sizes a list of candidate sizes, available for use
-     * @param targetWidth the ideal width of the video snapshot
+     * @param sizes        a list of candidate sizes, available for use
+     * @param targetWidth  the ideal width of the video snapshot
      * @param targetHeight the ideal height of the video snapshot
      * @return the Optimal Video Snapshot Picture Size
      */
-    public static Size getOptimalVideoSnapshotPictureSize(
-            List<Size> sizes, int targetWidth,
+    public static com.android.ex.camera2.portability.Size getOptimalVideoSnapshotPictureSize(
+            List<com.android.ex.camera2.portability.Size> sizes, int targetWidth,
             int targetHeight) {
 
         // Use a very small tolerance because we want an exact match.
@@ -599,12 +594,12 @@ public class CameraUtil {
             return null;
         }
 
-        Size optimalSize = null;
+        com.android.ex.camera2.portability.Size optimalSize = null;
 
-        // WYSIWYG Override
-        // We assume that physical display constraints have already been
-        // imposed on the variables sizes
-        for (Size size : sizes) {
+        //  WYSIWYG Override
+        //  We assume that physical display constraints have already been
+        //  imposed on the variables sizes
+        for (com.android.ex.camera2.portability.Size size : sizes) {
             if (size.height() == targetHeight && size.width() == targetWidth) {
                 return size;
             }
@@ -612,7 +607,7 @@ public class CameraUtil {
 
         // Try to find a size matches aspect ratio and has the largest width
         final double targetRatio = (double) targetWidth / targetHeight;
-        for (Size size : sizes) {
+        for (com.android.ex.camera2.portability.Size size : sizes) {
             double ratio = (double) size.width() / size.height();
             if (Math.abs(ratio - targetRatio) > ASPECT_TOLERANCE) {
                 continue;
@@ -626,13 +621,42 @@ public class CameraUtil {
         // happen. Ignore the requirement.
         if (optimalSize == null) {
             Log.w(TAG, "No picture size match the aspect ratio");
-            for (Size size : sizes) {
+            for (com.android.ex.camera2.portability.Size size : sizes) {
                 if (optimalSize == null || size.width() > optimalSize.width()) {
                     optimalSize = size;
                 }
             }
         }
         return optimalSize;
+    }
+
+    /**
+     * Returns whether the device is voice-capable (meaning, it can do MMS).
+     */
+    public static boolean isMmsCapable(Context context) {
+        TelephonyManager telephonyManager = (TelephonyManager)
+                context.getSystemService(Context.TELEPHONY_SERVICE);
+        if (telephonyManager == null) {
+            return false;
+        }
+
+        try {
+            Class<?> partypes[] = new Class[0];
+            Method sIsVoiceCapable = TelephonyManager.class.getMethod(
+                    "isVoiceCapable", partypes);
+
+            Object arglist[] = new Object[0];
+            Object retobj = sIsVoiceCapable.invoke(telephonyManager, arglist);
+            return (Boolean) retobj;
+        } catch (java.lang.reflect.InvocationTargetException ite) {
+            // Failure, must be another device.
+            // Assume that it is voice capable.
+        } catch (IllegalAccessException iae) {
+            // Failure, must be an other device.
+            // Assume that it is voice capable.
+        } catch (NoSuchMethodException nsme) {
+        }
+        return true;
     }
 
     // This is for test only. Allow the camera to launch the specific camera.
@@ -710,7 +734,7 @@ public class CameraUtil {
                 + "," + rect.right + "," + rect.bottom + ")");
     }
 
-    public static void inlineRectToRectF(RectF rectF, Rect rect) {
+    public static void rectFToRect(RectF rectF, Rect rect) {
         rect.left = Math.round(rectF.left);
         rect.top = Math.round(rectF.top);
         rect.right = Math.round(rectF.right);
@@ -719,7 +743,7 @@ public class CameraUtil {
 
     public static Rect rectFToRect(RectF rectF) {
         Rect rect = new Rect();
-        inlineRectToRectF(rectF, rect);
+        rectFToRect(rectF, rect);
         return rect;
     }
 
@@ -739,9 +763,24 @@ public class CameraUtil {
         matrix.postTranslate(viewWidth / 2f, viewHeight / 2f);
     }
 
-    public String createJpegName(long dateTaken) {
-        synchronized (mImageFileNamer) {
-            return mImageFileNamer.generateName(dateTaken);
+    public static void prepareMatrix(Matrix matrix, boolean mirror, int displayOrientation,
+            Rect previewRect) {
+        // Need mirror for front camera.
+        matrix.setScale(mirror ? -1 : 1, 1);
+        // This is the value for android.hardware.Camera.setDisplayOrientation.
+        matrix.postRotate(displayOrientation);
+
+        // Camera driver coordinates range from (-1000, -1000) to (1000, 1000).
+        // We need to map camera driver coordinates to preview rect coordinates
+        Matrix mapping = new Matrix();
+        mapping.setRectToRect(new RectF(-1000, -1000, 1000, 1000), rectToRectF(previewRect),
+                Matrix.ScaleToFit.FILL);
+        matrix.setConcat(mapping, matrix);
+    }
+
+    public static String createJpegName(long dateTaken) {
+        synchronized (sImageFileNamer) {
+            return sImageFileNamer.generateName(dateTaken);
         }
     }
 
@@ -760,6 +799,20 @@ public class CameraUtil {
         Animation animation = new AlphaAnimation(startAlpha, endAlpha);
         animation.setDuration(duration);
         view.startAnimation(animation);
+    }
+
+    /**
+     * Down-samples a jpeg byte array.
+     *
+     * @param data a byte array of jpeg data
+     * @param downSampleFactor down-sample factor
+     * @return decoded and down-sampled bitmap
+     */
+    public static Bitmap downSample(final byte[] data, int downSampleFactor) {
+        final BitmapFactory.Options opts = new BitmapFactory.Options();
+        // Downsample the image
+        opts.inSampleSize = downSampleFactor;
+        return BitmapFactory.decodeByteArray(data, 0, data.length, opts);
     }
 
     public static void setGpsParameters(CameraSettings settings, Location loc) {
@@ -857,9 +910,10 @@ public class CameraUtil {
         return new int[0];
     }
 
-    public static void throwIfCameraDisabled() throws CameraDisabledException {
+    public static void throwIfCameraDisabled(Context context) throws CameraDisabledException {
         // Check if device policy has disabled the camera.
-        DevicePolicyManager dpm = AndroidServices.instance().provideDevicePolicyManager();
+        DevicePolicyManager dpm =
+                (DevicePolicyManager) context.getSystemService(Context.DEVICE_POLICY_SERVICE);
         if (dpm.getCameraDisabled(null)) {
             throw new CameraDisabledException();
         }
@@ -988,23 +1042,20 @@ public class CameraUtil {
             imageWidth = imageHeight;
             imageHeight = savedWidth;
         }
+        if (imageWidth == ImageData.SIZE_FULL
+                || imageHeight == ImageData.SIZE_FULL) {
+            imageWidth = boundWidth;
+            imageHeight = boundHeight;
+        }
 
         Point p = new Point();
         p.x = boundWidth;
         p.y = boundHeight;
 
-        // In some cases like automated testing, image height/width may not be
-        // loaded, to avoid divide by zero fall back to provided bounds.
-        if (imageWidth != 0 && imageHeight != 0) {
-            if (imageWidth * boundHeight > boundWidth * imageHeight) {
-                p.y = imageHeight * p.x / imageWidth;
-            } else {
-                p.x = imageWidth * p.y / imageHeight;
-            }
+        if (imageWidth * boundHeight > boundWidth * imageHeight) {
+            p.y = imageHeight * p.x / imageWidth;
         } else {
-            Log.w(TAG, "zero width/height, falling back to bounds (w|h|bw|bh):"
-                    + imageWidth + "|" + imageHeight + "|" + boundWidth + "|"
-                    + boundHeight);
+            p.x = imageWidth * p.y / imageHeight;
         }
 
         return p;
@@ -1041,14 +1092,15 @@ public class CameraUtil {
         }
     }
 
-    public static void playVideo(CameraActivity activity, Uri uri, String title) {
+    public static void playVideo(Activity activity, Uri uri, String title) {
         try {
-            boolean isSecureCamera = activity.isSecureCamera();
+            CameraActivity cameraActivity = (CameraActivity)activity;
+            boolean isSecureCamera = cameraActivity.isSecureCamera();
             if (!isSecureCamera) {
                 Intent intent = IntentHelper.getVideoPlayerIntent(uri)
                         .putExtra(Intent.EXTRA_TITLE, title)
                         .putExtra(KEY_TREAT_UP_AS_BACK, true);
-                activity.launchActivityByIntent(intent);
+                cameraActivity.launchActivityByIntent(intent);
             } else {
                 // In order not to send out any intent to be intercepted and
                 // show the lock screen immediately, we just let the secure
@@ -1278,39 +1330,20 @@ public class CameraUtil {
      * Given the device orientation and Camera2 characteristics, this returns
      * the required JPEG rotation for this camera.
      *
-     * @param deviceOrientationDegrees the clockwise angle of the device orientation from its
-     *                                 natural orientation in degrees.
-     * @return The angle to rotate image clockwise in degrees. It should be 0, 90, 180, or 270.
+     * @param deviceOrientationDegrees the device orientation in degrees.
+     * @return The JPEG orientation in degrees.
      */
     public static int getJpegRotation(int deviceOrientationDegrees,
-                                      CameraCharacteristics characteristics) {
+            CameraCharacteristics characteristics) {
         if (deviceOrientationDegrees == OrientationEventListener.ORIENTATION_UNKNOWN) {
             return 0;
         }
-        boolean isFrontCamera = characteristics.get(CameraCharacteristics.LENS_FACING) ==
-                CameraMetadata.LENS_FACING_FRONT;
+        int facing = characteristics.get(CameraCharacteristics.LENS_FACING);
         int sensorOrientation = characteristics.get(CameraCharacteristics.SENSOR_ORIENTATION);
-        return getImageRotation(sensorOrientation, deviceOrientationDegrees, isFrontCamera);
-    }
-
-    /**
-     * Given the camera sensor orientation and device orientation, this returns a clockwise angle
-     * which the final image needs to be rotated to be upright on the device screen.
-     *
-     * @param sensorOrientation Clockwise angle through which the output image needs to be rotated
-     *                          to be upright on the device screen in its native orientation.
-     * @param deviceOrientation Clockwise angle of the device orientation from its
-     *                          native orientation when front camera faces user.
-     * @param isFrontCamera True if the camera is front-facing.
-     * @return The angle to rotate image clockwise in degrees. It should be 0, 90, 180, or 270.
-     */
-    public static int getImageRotation(int sensorOrientation,
-                                       int deviceOrientation,
-                                       boolean isFrontCamera) {
-        // The sensor of front camera faces in the opposite direction from back camera.
-        if (isFrontCamera) {
-            deviceOrientation = (360 - deviceOrientation) % 360;
+        if (facing == CameraMetadata.LENS_FACING_FRONT) {
+            return (sensorOrientation + deviceOrientationDegrees) % 360;
+        } else {
+            return (sensorOrientation - deviceOrientationDegrees + 360) % 360;
         }
-        return (sensorOrientation + deviceOrientation) % 360;
     }
 }

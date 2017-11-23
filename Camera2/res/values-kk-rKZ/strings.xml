@@ -40,7 +40,7 @@
     <string name="title" msgid="8061744305671964703">"Атауы"</string>
     <string name="description" msgid="8193138501982849808">"Сипаттама"</string>
     <string name="time" msgid="5248213506417024287">"Уақыт"</string>
-    <string name="location" msgid="564326205780827668">"Орын"</string>
+    <string name="location" msgid="564326205780827668">"Аймақ"</string>
     <string name="path" msgid="5927003361865586353">"Жол"</string>
     <string name="width" msgid="7045750687833828758">"Ені"</string>
     <string name="height" msgid="5186001199353423689">"Биіктігі"</string>
@@ -65,23 +65,18 @@
     <string name="try_to_set_local_album_available_offline" msgid="3363125545009254117">"Бұл элемент жергілікті сақталған және желіден тыс қол жетімді."</string>
     <string name="please_wait" msgid="1416313324505140068">"Күте тұрыңыз..."</string>
     <string name="camera_error_title" msgid="6200558085072670067">"Камера қателігі"</string>
-    <string name="error_cannot_connect_camera" msgid="2713059773224193128">"Камераға қосылу мүмкін емес."</string>
-    <string name="error_camera_disabled" msgid="5582398275657419692">"Камера қауіпсіздік саясаттарына байланысты өшірілді."</string>
-    <string name="error_media_storage_failure" msgid="7711687330673245629">"Фотосуретті немесе бейнені сақтау кезінде қате болды."</string>
-    <string name="error_permissions" msgid="3454167403425651254">"Қолданбада іске қосылу үшін маңызды рұқсаттар жоқ. Рұқсаттардың параметрлерін қараңыз."</string>
-    <string name="reason_storage_failure" msgid="6818898304774654969">"Фотосуретті сақтау қатесі."</string>
+    <string name="cannot_connect_camera" msgid="4311259792784598381">"Камераға жалғау мүмкін болмады."</string>
+    <string name="camera_disabled" msgid="6963443549010040595">"Камера қауіпсіздік саясаты себебінен өшірілді."</string>
     <string name="wait" msgid="765601745709933047">"Күте тұрыңыз..."</string>
     <string name="no_storage" product="default" msgid="5922012950780548098">"Камераны қолдануға дейін SD картасын енгізу."</string>
     <string name="preparing_sd" product="default" msgid="7435693655017362767">"SD картаны әзірлеу"</string>
     <string name="access_sd_fail" product="default" msgid="2634861611082499811">"SD картаға кіру мүмкін болмады."</string>
     <string name="time_lapse_title" msgid="3267978566401228497">"Уақыт аралығы режимінде жазу"</string>
-    <string name="feedback_description_camera_access" msgid="419090951070170132">"Қолданба камераға қосыла алмады"</string>
-    <string name="feedback_description_save_photo" msgid="8658767358989083228">"Фотосурет немесе бейне құрылғыға сақталмады."</string>
     <string name="capturing" msgid="5255164204641920893">"Түсіруде"</string>
     <string name="pref_camera_id_title" msgid="4680648115225411185">"Камераны таңдау"</string>
     <string name="pref_camera_id_entry_back" msgid="6386943973628160510">"Артқа"</string>
     <string name="pref_camera_id_entry_front" msgid="6233067010315787044">"Алдыңғы"</string>
-    <string name="pref_camera_save_location_title" msgid="2344235620113384017">"Орынды сақтау"</string>
+    <string name="pref_camera_save_location_title" msgid="2344235620113384017">"Аймақты сақтау"</string>
     <string name="pref_camera_location_label" msgid="8695441802378057719">"ОРНЫ"</string>
     <string name="pref_camera_timer_title" msgid="4728838281741571323">"Кері санау таймері"</string>
     <!-- no translation found for pref_camera_timer_sound_default (6225207881203007747) -->
@@ -158,8 +153,6 @@
     <string name="pref_camera_id_label_front" msgid="349308803062874842">"АРТҚЫ КАМЕРА"</string>
     <string name="dialog_ok" msgid="774141340500181131">"Жарайды"</string>
     <string name="dialog_cancel" msgid="692365061128351656">"Өшіру"</string>
-    <string name="dialog_report" msgid="7616428760369876209">"Есеп"</string>
-    <string name="dialog_dismiss" msgid="1382550604990470119">"Бас тарту"</string>
     <string name="spaceIsLow_content" product="default" msgid="4522771065344332702">"SD картаңызда орын азайып барады. Сапа параметрін өзгертіңіз немесе кейбір суреттер немесе файлдарды жойыңыз."</string>
     <string name="video_reach_size_limit" msgid="9196836111505731836">"Өлшем шектеуінен асып кетті."</string>
     <string name="pano_too_fast_prompt" msgid="2503148095578052177">"Тым жылдам"</string>
@@ -187,7 +180,7 @@
     <string name="video_recording_stopped" msgid="4658626532857624974">"Видео жазу тоқтады."</string>
     <string name="clear_effects" msgid="6192797848995967992">"Анықтық әсерлері"</string>
     <string name="effect_silly_faces" msgid="7952713419757286453">"ҚЫЗЫҚ БЕТ-ӘЛПЕТТЕР"</string>
-    <string name="effect_background" msgid="1358432220077975015">"ФОН"</string>
+    <string name="effect_background" msgid="1358432220077975015">"Жалпы мағлұмат"</string>
     <string name="accessibility_shutter_button" msgid="6040483605347230438">"Сырғыту"</string>
     <string name="accessibility_cancel_button" msgid="5679989494636116448">"Өшіру"</string>
     <string name="accessibility_menu_button" msgid="7692103503958544723">"Mәзір түймесі"</string>
@@ -219,11 +212,6 @@
     <string name="btn_mode_list_toggle" msgid="3986242443098400164">"Режимдер тізімі"</string>
     <string name="accessibility_filmstrip_toggle" msgid="6966978483643396442">"Диафильмді ажырата қосу"</string>
     <string name="btn_filmstrip_toggle" msgid="3666693972882351490">"Диафильм"</string>
-    <string name="accessibility_mode_zoom_plus" msgid="4967389173992713073">"Ұлғайту"</string>
-    <string name="btn_zoom_plus" msgid="4645138949375961656">"Z+"</string>
-    <string name="accessibility_mode_zoom_minus" msgid="8850636036927992409">"Кішірейту"</string>
-    <string name="btn_zoom_minus" msgid="5436240345362098272">"Z-"</string>
-    <string name="accessibility_zoom_announcement" msgid="6976673411698319811">"Масштабтау мәні — %.1f"</string>
     <string name="capital_on" msgid="1118214824959797269">"Қосулы"</string>
     <string name="capital_off" msgid="3020696135020167263">"Өшірулі"</string>
     <string name="video_control_play" msgid="6895236811408921715">"Бейнені ойнату"</string>
@@ -270,13 +258,13 @@
     <string name="time_lapse_seconds" msgid="7319683099532506270">"секундтар"</string>
     <string name="time_lapse_minutes" msgid="5325447383033224679">"минуттар"</string>
     <string name="time_lapse_hours" msgid="5294001144133261436">"сағаттар"</string>
-    <string name="time_lapse_interval_set" msgid="2418594453248958440">"Дайын"</string>
+    <string name="time_lapse_interval_set" msgid="2418594453248958440">"Орындалды"</string>
     <string name="set_time_interval" msgid="2531393962847535331">"Уақыт аралығын орнату"</string>
     <string name="set_time_interval_help" msgid="64145154088021389">"Уақыт аралығы функциясы өшірулі. Уақыт аралығын реттеу үшін оны қосыңыз."</string>
     <string name="set_duration" msgid="1638453882581604341">"Ұзақтығын секундпен реттеу"</string>
     <string name="count_down_title_text" msgid="7586031110595513050">"Фотосурет түсіру үшін кері санау"</string>
-    <string name="remember_location_title" msgid="3045040613094030429">"Фотосуреттің қайда түсірілгені көрсетілсін бе?"</string>
-    <string name="remember_location_prompt" msgid="3006013504489919474">"Фотосуреттерді және бейнелерді түсірілген орындарымен тегтеңіз."</string>
+    <string name="remember_location_title" msgid="3045040613094030429">"Фотосурет аймақтары есіңізде ме?"</string>
+    <string name="remember_location_prompt" msgid="5104210757873140169">"Фотосуреттер мен видеоларды түсірілген аймақтарымен байланыстырыңыз. \n\nБұл ақпарат сақталған бейнелеріңізбен бірге басқа қолданбаларға қол жетімді болады."</string>
     <string name="remember_location_no" msgid="4412802756840226925">"Жоқ рахмет"</string>
     <string name="remember_location_yes" msgid="4339424460683531388">"Иә"</string>
     <string name="camera_menu_more_label" msgid="7951917844735828365">"Басқа опциялар"</string>
@@ -326,9 +314,8 @@
     <string name="countdown_timer_duration_10s" msgid="9085308782250002795">"Кері санау таймерінің ұзақтығы 10 секундқа орнатылған"</string>
     <string name="more_options_desc" msgid="4628738800610478353">"Басқа опциялар"</string>
     <string name="cancel_button_description" msgid="3801167024006905033">"Өшіру"</string>
-    <string name="done_button_description" msgid="1334963435441544592">"Дайын"</string>
+    <string name="done_button_description" msgid="1334963435441544592">"Орындалды"</string>
     <string name="retake_button_description" msgid="4234613030674787714">"Қайта түсіру"</string>
-    <string name="review_button_description" msgid="7932122063748430080">"Қарап шығу"</string>
     <string name="share_button_description" msgid="5108508790540832053">"Бөлісу"</string>
     <string name="view_button_description" msgid="4985768837891362075">"Көрініс"</string>
     <string name="edit_button_description" msgid="98550816724901925">"Өзгерту"</string>
@@ -340,10 +327,10 @@
     <string name="exposure_compensation_desc_p1" msgid="2328275401634452554">"Экспозиция түзетілімі +1"</string>
     <string name="exposure_compensation_desc_p2" msgid="4555277824096107142">"Экспозиция түзетілімі +2"</string>
     <string name="button_change_announcement" msgid="3759686152778772111">"Түйме қазір %s"</string>
-    <string name="setting_location" msgid="4459859689227893838">"Орын"</string>
-    <string name="setting_back_camera_photo" msgid="256738900473265017">"Артқы камера фотосы"</string>
+    <string name="setting_location" msgid="4459859689227893838">"Аймақ"</string>
+    <string name="setting_back_camera_photo" msgid="256738900473265017">"Артқы камераның фотосур."</string>
     <string name="setting_back_camera_video" msgid="5220819479408164689">"Артқы камераның бейнесі"</string>
-    <string name="setting_front_camera_photo" msgid="4131886734622868637">"Алдыңғы камера фотосы"</string>
+    <string name="setting_front_camera_photo" msgid="4131886734622868637">"Алдыңғы камераның фотос."</string>
     <string name="setting_front_camera_video" msgid="2178799452805359752">"Алдыңғы камераның бейнесі"</string>
     <string name="setting_default_camera" msgid="6954076799301004779">"Бастапқы камера"</string>
     <string name="setting_google_help_and_feedback" msgid="2079580537079242775">"Анықтама және кері байл."</string>
@@ -366,7 +353,7 @@
     <string name="setting_summary_aspect_ratio_and_megapixels" msgid="5828440902461064821">"(%1$d:%2$d) %3$s мп"</string>
     <string name="cling_text_for_refocus_editor_button" msgid="4785017397116829802">"Қайта фокустау үшін осы жерді түртіңіз"</string>
     <string name="pref_category_advanced" msgid="5921085080077574872">"Қосымша"</string>
-    <string name="pref_camera_exposure_compensation" msgid="4143245817259719147">"Экспозиция: қолдан"</string>
+    <string name="pref_camera_exposure_compensation" msgid="4143245817259719147">"Қолмен рет-тін экс."</string>
     <string name="settings_cling_text" msgid="5368054627268181292">"«Параметрлер» тармағында ажыратымдылықты және сапаны өзгертіңіз немесе кеңейтілген мүмкіндіктерді қолданып көріңіз."</string>
     <string name="photo_size_selection_title" msgid="2789753590719172645">"Фотосурет өлшемін таңдау"</string>
     <string name="photo_aspect_ratio_selection_content" msgid="6668224437962196229">"Мұны кейінірек «Параметрлер» тармағында өзгертуге болады."</string>
@@ -378,5 +365,4 @@
     <string name="cropped_sensor_16x9_aspect_ratio" msgid="4742161537633251795">"Қиып алынған сенсор \n(16:9)"</string>
     <string name="pref_boolean_false" msgid="461317129020087333">"0"</string>
     <string name="pref_boolean_true" msgid="4131945223998878009">"1"</string>
-    <string name="session_saving_image" msgid="8932315404486416826">"Сақталуда…"</string>
 </resources>

@@ -18,25 +18,31 @@ package com.android.camera.data;
 
 import android.content.Context;
 import android.net.Uri;
+import android.os.Bundle;
 
 import com.android.camera.util.RefocusHelper;
 
 /**
- * Loads RGBZ data.
+ * Asynchronously loads RGBZ data.
  */
 public class RgbzMetadataLoader {
+    private static final String KEY_RGBZ_INFO = "metadata_key_rgbz_info";
+
+    /**
+     * @return whether the data has RGBZ metadata.
+     */
+    public static boolean hasRGBZData(final LocalData data) {
+        return data.getMetadata().getBoolean(KEY_RGBZ_INFO);
+    }
 
     /**
      * Checks whether this file is an RGBZ file and fill in the metadata.
      *
      * @param context  The app context.
      */
-    public static boolean loadRgbzMetadata(
-            final Context context, Uri contentUri, Metadata metadata) {
+    public static void loadRgbzMetadata(final Context context, Uri contentUri, Bundle metadata) {
         if (RefocusHelper.isRGBZ(context, contentUri)) {
-            metadata.setHasRgbzData(true);
-            return true;
+            metadata.putBoolean(KEY_RGBZ_INFO, true);
         }
-        return false;
     }
 }

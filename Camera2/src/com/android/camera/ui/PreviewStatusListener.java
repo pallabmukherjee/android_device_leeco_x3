@@ -67,6 +67,15 @@ public interface PreviewStatusListener extends TextureView.SurfaceTextureListene
     public boolean shouldAutoAdjustTransformMatrixOnLayout();
 
     /**
+     * The preview status listener needs to know for the specific module whether
+     * bottom bar should be automatically adjusted when preview has changed size
+     * or orientation.
+     *
+     * @return whether bottom bar should be automatically adjusted
+     */
+    public boolean shouldAutoAdjustBottomBar();
+
+    /**
      * Gets called when the preview is flipped (i.e. 180-degree rotated).
      */
     public void onPreviewFlipped();

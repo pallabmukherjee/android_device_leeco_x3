@@ -16,6 +16,7 @@
 
 package com.android.camera;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.BroadcastReceiver;
@@ -27,7 +28,6 @@ import android.content.IntentFilter;
 import android.graphics.Bitmap;
 import android.graphics.Point;
 import android.graphics.SurfaceTexture;
-import android.hardware.Camera;
 import android.location.Location;
 import android.media.AudioManager;
 import android.media.CamcorderProfile;
@@ -45,6 +45,7 @@ import android.provider.MediaStore;
 import android.provider.MediaStore.MediaColumns;
 import android.provider.MediaStore.Video;
 import android.view.KeyEvent;
+import android.view.OrientationEventListener;
 import android.view.View;
 import android.widget.Toast;
 
@@ -54,7 +55,6 @@ import com.android.camera.app.LocationManager;
 import com.android.camera.app.MediaSaver;
 import com.android.camera.app.MemoryManager;
 import com.android.camera.app.MemoryManager.MemoryListener;
-import com.android.camera.app.OrientationManager;
 import com.android.camera.debug.Log;
 import com.android.camera.exif.ExifInterface;
 import com.android.camera.hardware.HardwareSpec;
@@ -64,11 +64,9 @@ import com.android.camera.settings.Keys;
 import com.android.camera.settings.SettingsManager;
 import com.android.camera.settings.SettingsUtil;
 import com.android.camera.ui.TouchCoordinate;
-import com.android.camera.util.AndroidServices;
 import com.android.camera.util.ApiHelper;
 import com.android.camera.util.CameraUtil;
-import com.android.camera.stats.UsageStatistics;
-import com.android.camera.util.Size;
+import com.android.camera.util.UsageStatistics;
 import com.android.camera2.R;
 import com.android.ex.camera2.portability.CameraAgent;
 import com.android.ex.camera2.portability.CameraAgent.CameraPictureCallback;
@@ -76,6 +74,7 @@ import com.android.ex.camera2.portability.CameraAgent.CameraProxy;
 import com.android.ex.camera2.portability.CameraCapabilities;
 import com.android.ex.camera2.portability.CameraDeviceInfo.Characteristics;
 import com.android.ex.camera2.portability.CameraSettings;
+import com.android.ex.camera2.portability.Size;
 import com.google.common.logging.eventprotos;
 
 import java.io.File;
@@ -88,11 +87,15 @@ import java.util.List;
 import java.util.Set;
 
 public class VideoModule extends CameraModule
-        implements FocusOverlayManager.Listener, MediaRecorder.OnErrorListener,
-        MediaRecorder.OnInfoListener, MemoryListener,
-        OrientationManager.OnOrientationChangeListener, VideoController {
+    implements ModuleController,
+    VideoController,
+    MemoryListener,
+    MediaRecorder.OnErrorListener,
+    MediaRecorder.OnInfoListener, FocusOverlayManager.Listener {
 
-    private static final Log.Tag TAG = new Log.Tag("VideoModule");
+    private static final String VIDEO_MODULE_STRING_ID = "VideoModule";
+
+    private static final Log.Tag TAG = new Log.Tag(VIDEO_MODULE_STRING_ID);
 
     // Messages defined for the UI thread handler.
     private static final int MSG_CHECK_DISPLAY_ROTATION = 4;
@@ -122,7 +125,6 @@ public class VideoModule extends CameraModule
     private int mCameraId;
     private CameraSettings mCameraSettings;
     private CameraCapabilities mCameraCapabilities;
-    private HardwareSpec mHardwareSpec;
 
     private boolean mIsInReviewMode;
     private boolean mSnapshotInProgress = false;
@@ -135,13 +137,6 @@ public class VideoModule extends CameraModule
     private boolean mQuickCapture;
 
     private MediaRecorder mMediaRecorder;
-    /** Manager used to mute sounds and vibrations during video recording. */
-    private AudioManager mAudioManager;
-    /*
-     * The ringer mode that was set when video recording started. We use this to
-     * reset the mode once video recording has stopped.
-     */
-    private int mOriginalRingerMode;
 
     private boolean mSwitchingCamera;
     private boolean mMediaRecorderRecording = false;
@@ -182,6 +177,9 @@ public class VideoModule extends CameraModule
     private final Handler mHandler = new MainHandler();
     private VideoUI mUI;
     private CameraProxy mCameraDevice;
+
+    // The degrees of the device rotated clockwise from its natural orientation.
+    private int mOrientation = OrientationEventListener.ORIENTATION_UNKNOWN;
 
     private float mZoomValue;  // The current zoom ratio.
 
@@ -228,7 +226,8 @@ public class VideoModule extends CameraModule
                     ? new CameraAgent.CameraAFMoveCallback() {
                 @Override
                 public void onAutoFocusMoving(boolean moving, CameraProxy camera) {
-                     mFocusManager.onAutoFocusMoving(moving);
+                    // mFocusManager.onAutoFocusMoving(moving) not called because UI
+                    // not compatible with vertical video hint UI.
                 }
             } : null;
 
@@ -256,7 +255,7 @@ public class VideoModule extends CameraModule
                     // down and camera app is opened. Rotation animation will
                     // take some time and the rotation value we have got may be
                     // wrong. Framework does not have a callback for this now.
-                    if ((CameraUtil.getDisplayRotation() != mDisplayRotation)
+                    if ((CameraUtil.getDisplayRotation(mActivity) != mDisplayRotation)
                             && !mMediaRecorderRecording && !mSwitchingCamera) {
                         startPreview();
                     }
@@ -327,12 +326,16 @@ public class VideoModule extends CameraModule
     }
 
     @Override
+    public String getModuleStringIdentifier() {
+        return VIDEO_MODULE_STRING_ID;
+    }
+
+    @Override
     public void init(CameraActivity activity, boolean isSecureCamera, boolean isCaptureIntent) {
         mActivity = activity;
         // TODO: Need to look at the controller interface to see if we can get
         // rid of passing in the activity directly.
         mAppController = mActivity;
-        mAudioManager = AndroidServices.instance().provideAudioManager();
 
         mActivity.updateStorageSpaceAndHint(null);
 
@@ -425,6 +428,7 @@ public class VideoModule extends CameraModule
         }
     }
 
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
      private void updateAutoFocusMoveCallback() {
         if (mPaused || mCameraDevice == null) {
             return;
@@ -478,24 +482,32 @@ public class VideoModule extends CameraModule
             }
             mFocusManager = new FocusOverlayManager(mAppController,
                     defaultFocusModes, mCameraCapabilities, this, mMirror,
-                    mActivity.getMainLooper(), mUI.getFocusRing());
+                    mActivity.getMainLooper(), mUI.getFocusUI());
         }
         mAppController.addPreviewAreaSizeChangedListener(mFocusManager);
     }
 
     @Override
-    public void onOrientationChanged(OrientationManager orientationManager,
-                                     OrientationManager.DeviceOrientation deviceOrientation) {
-        mUI.onOrientationChanged(orientationManager, deviceOrientation);
+    public void onOrientationChanged(int orientation) {
+        // We keep the last known orientation. So if the user first orient
+        // the camera then point the camera to floor or sky, we still have
+        // the correct orientation.
+        if (orientation == OrientationEventListener.ORIENTATION_UNKNOWN) {
+            return;
+        }
+        int newOrientation = CameraUtil.roundOrientation(orientation, mOrientation);
+
+        if (mOrientation != newOrientation) {
+            mOrientation = newOrientation;
+        }
+        mUI.onOrientationChanged(orientation);
+
     }
 
     private final ButtonManager.ButtonCallback mFlashCallback =
         new ButtonManager.ButtonCallback() {
             @Override
             public void onStateChanged(int state) {
-                if (mPaused) {
-                    return;
-                }
                 // Update flash parameters.
                 enableTorchMode(true);
             }
@@ -508,8 +520,6 @@ public class VideoModule extends CameraModule
                 if (mPaused || mAppController.getCameraProvider().waitingForCamera()) {
                     return;
                 }
-                ButtonManager buttonManager = mActivity.getButtonManager();
-                buttonManager.disableCameraButtonAndBlock();
                 mPendingSwitchCameraId = state;
                 Log.d(TAG, "Start to copy texture.");
 
@@ -546,12 +556,8 @@ public class VideoModule extends CameraModule
 
     @Override
     public HardwareSpec getHardwareSpec() {
-        if (mHardwareSpec == null) {
-            mHardwareSpec = (mCameraSettings != null ?
-                    new HardwareSpecImpl(getCameraProvider(), mCameraCapabilities,
-                            mAppController.getCameraFeatureConfig(), isCameraFrontFacing()) : null);
-        }
-        return mHardwareSpec;
+        return (mCameraSettings != null ?
+                new HardwareSpecImpl(getCameraProvider(), mCameraCapabilities) : null);
     }
 
     @Override
@@ -564,8 +570,6 @@ public class VideoModule extends CameraModule
         bottomBarSpec.flashCallback = mFlashCallback;
         bottomBarSpec.hideHdr = true;
         bottomBarSpec.enableGridLines = true;
-        bottomBarSpec.enableExposureCompensation = false;
-        bottomBarSpec.isExposureCompensationSupported = false;
 
         if (isVideoCaptureIntent()) {
             bottomBarSpec.showCancel = true;
@@ -587,8 +591,6 @@ public class VideoModule extends CameraModule
         }
         mCameraDevice = cameraProxy;
         mCameraCapabilities = mCameraDevice.getCapabilities();
-        mAppController.getCameraAppUI().showAccessibilityZoomUI(
-                mCameraCapabilities.getMaxZoomRatio());
         mCameraSettings = mCameraDevice.getSettings();
         mFocusAreaSupported = mCameraCapabilities.supports(CameraCapabilities.Feature.FOCUS_AREA);
         mMeteringAreaSupported =
@@ -606,17 +608,10 @@ public class VideoModule extends CameraModule
         initializeVideoSnapshot();
         mUI.initializeZoom(mCameraSettings, mCameraCapabilities);
         initializeControlByIntent();
-
-        mHardwareSpec = new HardwareSpecImpl(getCameraProvider(), mCameraCapabilities,
-                mAppController.getCameraFeatureConfig(), isCameraFrontFacing());
-
-        ButtonManager buttonManager = mActivity.getButtonManager();
-        buttonManager.enableCameraButton();
     }
 
     private void startPlayVideoActivity() {
         Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
         intent.setDataAndType(mCurrentVideoUri, convertOutputFormatToMimeType(mProfile.fileFormat));
         try {
             mActivity.launchActivityByIntent(intent);
@@ -626,17 +621,20 @@ public class VideoModule extends CameraModule
     }
 
     @Override
+    @OnClickAttr
     public void onReviewPlayClicked(View v) {
         startPlayVideoActivity();
     }
 
     @Override
+    @OnClickAttr
     public void onReviewDoneClicked(View v) {
         mIsInReviewMode = false;
         doReturnToCaller(true);
     }
 
     @Override
+    @OnClickAttr
     public void onReviewCancelClicked(View v) {
         // TODO: It should be better to not even insert the URI at all before we
         // confirm done in review, which means we need to handle temporary video
@@ -671,7 +669,8 @@ public class VideoModule extends CameraModule
                 // back to use SurfaceTexture for preview and we need to stop then start
                 // the preview. This will cause the preview flicker since the preview
                 // will not be continuous for a short period of time.
-                mAppController.startFlashAnimation(false);
+
+                mUI.animateFlash();
             }
         }
     }
@@ -782,8 +781,8 @@ public class VideoModule extends CameraModule
         }
 
         mCameraSettings = mCameraDevice.getSettings();
-        Point desiredPreviewSize = getDesiredPreviewSize(
-              mCameraCapabilities, mProfile, mUI.getPreviewScreenSize());
+        Point desiredPreviewSize = getDesiredPreviewSize(mAppController.getAndroidContext(),
+                mCameraSettings, mCameraCapabilities, mProfile, mUI.getPreviewScreenSize());
         mDesiredPreviewWidth = desiredPreviewSize.x;
         mDesiredPreviewHeight = desiredPreviewSize.y;
         mUI.setPreviewSize(mDesiredPreviewWidth, mDesiredPreviewHeight);
@@ -791,6 +790,7 @@ public class VideoModule extends CameraModule
                 + mDesiredPreviewHeight);
     }
 
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     /**
      * Calculates the preview size and stores it in mDesiredPreviewWidth and
      * mDesiredPreviewHeight.
@@ -806,17 +806,17 @@ public class VideoModule extends CameraModule
      * @return The preferred preview size or {@code null} if the camera is not
      *         opened yet.
      */
-    private static Point getDesiredPreviewSize(CameraCapabilities capabilities,
-          CamcorderProfile profile, Point previewScreenSize) {
-        if (capabilities.getSupportedVideoSizes().size() == 0) {
+    private static Point getDesiredPreviewSize(Context context, CameraSettings settings,
+            CameraCapabilities capabilities, CamcorderProfile profile, Point previewScreenSize) {
+        if (capabilities.getSupportedVideoSizes() == null) {
             // Driver doesn't support separate outputs for preview and video.
             return new Point(profile.videoFrameWidth, profile.videoFrameHeight);
         }
 
         final int previewScreenShortSide = (previewScreenSize.x < previewScreenSize.y ?
                 previewScreenSize.x : previewScreenSize.y);
-        List<Size> sizes = Size.convert(capabilities.getSupportedPreviewSizes());
-        Size preferred = new Size(capabilities.getPreferredPreviewSizeForVideo());
+        List<Size> sizes = capabilities.getSupportedPreviewSizes();
+        Size preferred = capabilities.getPreferredPreviewSizeForVideo();
         final int preferredPreviewSizeShortSide = (preferred.width() < preferred.height() ?
                 preferred.width() : preferred.height());
         if (preferredPreviewSizeShortSide * 2 < previewScreenShortSide) {
@@ -844,7 +844,7 @@ public class VideoModule extends CameraModule
             }
         }
 
-        Size optimalSize = CameraUtil.getOptimalPreviewSize(sizes,
+        Size optimalSize = CameraUtil.getOptimalPreviewSize(context, sizes,
                 (double) profile.videoFrameWidth / profile.videoFrameHeight);
         return new Point(optimalSize.width(), optimalSize.height());
     }
@@ -864,7 +864,7 @@ public class VideoModule extends CameraModule
     }
 
     private void setDisplayOrientation() {
-        mDisplayRotation = CameraUtil.getDisplayRotation();
+        mDisplayRotation = CameraUtil.getDisplayRotation(mActivity);
         Characteristics info =
                 mActivity.getCameraProvider().getCharacteristics(mCameraId);
         mCameraDisplayOrientation = info.getPreviewOrientation(mDisplayRotation);
@@ -882,7 +882,7 @@ public class VideoModule extends CameraModule
         if (mMediaRecorderRecording) {
             return;
         }
-        if (mDisplayRotation != CameraUtil.getDisplayRotation()) {
+        if (mDisplayRotation != CameraUtil.getDisplayRotation(mActivity)) {
             setDisplayOrientation();
         }
     }
@@ -1101,9 +1101,9 @@ public class VideoModule extends CameraModule
         Log.i(TAG, "initializeRecorder: " + Thread.currentThread());
         // If the mCameraDevice is null, then this activity is going to finish
         if (mCameraDevice == null) {
-            Log.w(TAG, "null camera proxy, not recording");
             return;
         }
+
         Intent intent = mActivity.getIntent();
         Bundle myExtras = intent.getExtras();
 
@@ -1127,19 +1127,7 @@ public class VideoModule extends CameraModule
         mMediaRecorder = new MediaRecorder();
         // Unlock the camera object before passing it to media recorder.
         mCameraDevice.unlock();
-        // We rely here on the fact that the unlock call above is synchronous
-        // and blocks until it occurs in the handler thread. Thereby ensuring
-        // that we are up to date with handler requests, and if this proxy had
-        // ever been released by a prior command, it would be null.
-        Camera camera = mCameraDevice.getCamera();
-        // If the camera device is null, the camera proxy is stale and recording
-        // should be ignored.
-        if (camera == null) {
-            Log.w(TAG, "null camera within proxy, not recording");
-            return;
-        }
-
-        mMediaRecorder.setCamera(camera);
+        mMediaRecorder.setCamera(mCameraDevice.getCamera());
         mMediaRecorder.setAudioSource(MediaRecorder.AudioSource.CAMCORDER);
         mMediaRecorder.setVideoSource(MediaRecorder.VideoSource.CAMERA);
         mMediaRecorder.setProfile(mProfile);
@@ -1173,12 +1161,23 @@ public class VideoModule extends CameraModule
             // on the size restriction.
         }
 
-        int sensorOrientation =
-                mActivity.getCameraProvider().getCharacteristics(mCameraId).getSensorOrientation();
-        int deviceOrientation =
-                mAppController.getOrientationManager().getDeviceOrientation().getDegrees();
-        int rotation = CameraUtil.getImageRotation(
-                sensorOrientation, deviceOrientation, isCameraFrontFacing());
+        // See com.android.camera.cameradevice.CameraSettings.setPhotoRotationDegrees
+        // for documentation.
+        // Note that mOrientation here is the device orientation, which is the opposite of
+        // what activity.getWindowManager().getDefaultDisplay().getRotation() would return,
+        // which is the orientation the graphics need to rotate in order to render correctly.
+        int rotation = 0;
+        if (mOrientation != OrientationEventListener.ORIENTATION_UNKNOWN) {
+            Characteristics info =
+                    mActivity.getCameraProvider().getCharacteristics(mCameraId);
+            if (isCameraFrontFacing()) {
+                rotation = (info.getSensorOrientation() - mOrientation + 360) % 360;
+            } else if (isCameraBackFacing()) {
+                rotation = (info.getSensorOrientation() + mOrientation) % 360;
+            } else {
+                Log.e(TAG, "Camera is facing unhandled direction");
+            }
+        }
         mMediaRecorder.setOrientationHint(rotation);
 
         try {
@@ -1269,7 +1268,7 @@ public class VideoModule extends CameraModule
             mCurrentVideoValues.put(Video.Media.SIZE, new File(mCurrentVideoFilename).length());
             mCurrentVideoValues.put(Video.Media.DURATION, duration);
             getServices().getMediaSaver().addVideo(mCurrentVideoFilename,
-                    mCurrentVideoValues, mOnVideoSavedListener);
+                    mCurrentVideoValues, mOnVideoSavedListener, mContentResolver);
             logVideoCapture(duration);
         }
         mCurrentVideoValues = null;
@@ -1316,22 +1315,9 @@ public class VideoModule extends CameraModule
      * Make sure we're not recording music playing in the background, ask the
      * MediaPlaybackService to pause playback.
      */
-    private void silenceSoundsAndVibrations() {
-        // Get the audio focus which causes other music players to stop.
-        mAudioManager.requestAudioFocus(null, AudioManager.STREAM_MUSIC,
-                AudioManager.AUDIOFOCUS_GAIN);
-        // Store current ringer mode so we can set it once video recording is
-        // finished.
-        mOriginalRingerMode = mAudioManager.getRingerMode();
-        // TODO: Use new DND APIs to properly silence device
-    }
-
-    private void restoreRingerMode() {
-        // First check if ringer mode was changed during the recording. If not,
-        // re-set the mode that was set before video recording started.
-        if (mAudioManager.getRingerMode() == AudioManager.RINGER_MODE_SILENT) {
-            // TODO: Use new DND APIs to properly restore device notification/alarm settings
-        }
+    private void pauseAudioPlayback() {
+        AudioManager am = (AudioManager) mActivity.getSystemService(Context.AUDIO_SERVICE);
+        am.requestAudioFocus(null, AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN);
     }
 
     // For testing.
@@ -1343,9 +1329,8 @@ public class VideoModule extends CameraModule
         Log.i(TAG, "startVideoRecording: " + Thread.currentThread());
         mUI.cancelAnimations();
         mUI.setSwipingEnabled(false);
-        mUI.hidePassiveFocusIndicator();
-        mAppController.getCameraAppUI().hideCaptureIndicator();
-        mAppController.getCameraAppUI().setShouldSuppressCaptureIndicator(true);
+        mUI.showFocusUI(false);
+        mUI.showVideoRecordingHints(false);
 
         mActivity.updateStorageSpaceAndHint(new CameraActivity.OnStorageUpdateDoneListener() {
             @Override
@@ -1378,26 +1363,17 @@ public class VideoModule extends CameraModule
                         return;
                     }
 
+                    pauseAudioPlayback();
+
                     try {
                         mMediaRecorder.start(); // Recording is now started
                     } catch (RuntimeException e) {
                         Log.e(TAG, "Could not start media recorder. ", e);
-                        mAppController.getFatalErrorHandler().onGenericCameraAccessFailure();
                         releaseMediaRecorder();
                         // If start fails, frameworks will not lock the camera for us.
                         mCameraDevice.lock();
                         return;
                     }
-                    // Make sure we stop playing sounds and disable the
-                    // vibrations during video recording. Post delayed to avoid
-                    // silencing the recording start sound.
-                    mHandler.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            silenceSoundsAndVibrations();
-                        }
-                    }, 250);
-
                     mAppController.getCameraAppUI().setSwipeEnabled(false);
 
                     // The parameters might have been altered by MediaRecorder already.
@@ -1471,13 +1447,9 @@ public class VideoModule extends CameraModule
         }
         Log.v(TAG, "stopVideoRecording");
 
-        // Re-enable sound as early as possible to avoid interfering with stop
-        // recording sound.
-        restoreRingerMode();
-
         mUI.setSwipingEnabled(true);
-        mUI.showPassiveFocusIndicator();
-        mAppController.getCameraAppUI().setShouldSuppressCaptureIndicator(false);
+        mUI.showFocusUI(true);
+        mUI.showVideoRecordingHints(true);
 
         boolean fail = false;
         if (mMediaRecorderRecording) {
@@ -1507,6 +1479,7 @@ public class VideoModule extends CameraModule
                 // b/16300704: Monkey is fast so it could pause the module while recording.
                 // stopPreview should definitely be called before switching off.
                 stopPreview();
+
                 closeCamera();
             }
 
@@ -1646,8 +1619,7 @@ public class VideoModule extends CameraModule
         // Update Desired Preview size in case video camera resolution has changed.
         updateDesiredPreviewSize();
 
-        Size previewSize = new Size(mDesiredPreviewWidth, mDesiredPreviewHeight);
-        mCameraSettings.setPreviewSize(previewSize.toPortabilitySize());
+        mCameraSettings.setPreviewSize(new Size(mDesiredPreviewWidth, mDesiredPreviewHeight));
         // This is required for Samsung SGH-I337 and probably other Samsung S4 versions
         if (Build.BRAND.toLowerCase().contains("samsung")) {
             mCameraSettings.setSetting("video-size",
@@ -1679,12 +1651,12 @@ public class VideoModule extends CameraModule
         // The logic here is different from the logic in still-mode camera.
         // There we determine the preview size based on the picture size, but
         // here we determine the picture size based on the preview size.
-        List<Size> supported = Size.convert(mCameraCapabilities.getSupportedPhotoSizes());
+        List<Size> supported = mCameraCapabilities.getSupportedPhotoSizes();
         Size optimalSize = CameraUtil.getOptimalVideoSnapshotPictureSize(supported,
                 mDesiredPreviewWidth, mDesiredPreviewHeight);
         Size original = new Size(mCameraSettings.getCurrentPhotoSize());
         if (!original.equals(optimalSize)) {
-            mCameraSettings.setPhotoSize(optimalSize.toPortabilitySize());
+            mCameraSettings.setPhotoSize(optimalSize);
         }
         Log.d(TAG, "Video snapshot size is " + optimalSize);
 
@@ -1744,10 +1716,6 @@ public class VideoModule extends CameraModule
         mAppController.setShutterEnabled(false);
         mZoomValue = 1.0f;
 
-        OrientationManager orientationManager = mAppController.getOrientationManager();
-        orientationManager.addOnOrientationChangeListener(this);
-        mUI.onOrientationChanged(orientationManager, orientationManager.getDeviceOrientation());
-
         showVideoSnapshotUI(false);
 
         if (!mPreviewing) {
@@ -1774,8 +1742,6 @@ public class VideoModule extends CameraModule
     @Override
     public void pause() {
         mPaused = true;
-
-        mAppController.getOrientationManager().removeOnOrientationChangeListener(this);
 
         if (mFocusManager != null) {
             // If camera is not open when resume is called, focus manager will not
@@ -1871,7 +1837,7 @@ public class VideoModule extends CameraModule
         if (mCameraCapabilities.supports(CameraCapabilities.Feature.VIDEO_SNAPSHOT) &&
                 !mIsVideoCaptureIntent) {
             if (enabled) {
-                mAppController.startFlashAnimation(false);
+                mUI.animateFlash();
             } else {
                 mUI.showPreviewBorder(enabled);
             }
@@ -1945,7 +1911,7 @@ public class VideoModule extends CameraModule
 
     private void storeImage(final byte[] data, Location loc) {
         long dateTaken = System.currentTimeMillis();
-        String title = CameraUtil.instance().createJpegName(dateTaken);
+        String title = CameraUtil.createJpegName(dateTaken);
         ExifInterface exif = Exif.getExif(data);
         int orientation = Exif.getOrientation(exif);
 
@@ -1955,10 +1921,11 @@ public class VideoModule extends CameraModule
         UsageStatistics.instance().photoCaptureDoneEvent(
                 eventprotos.NavigationChange.Mode.VIDEO_STILL, title + ".jpeg", exif,
                 isCameraFrontFacing(), false, currentZoomValue(), flashSetting, gridLinesOn,
-                null, null, null, null, null, null, null);
+                null, null, null);
 
-        getServices().getMediaSaver().addImage(data, title, dateTaken, loc, orientation, exif,
-                mOnPhotoSavedListener);
+        getServices().getMediaSaver().addImage(
+                data, title, dateTaken, loc, orientation,
+                exif, mOnPhotoSavedListener, mContentResolver);
     }
 
     private String convertOutputFormatToMimeType(int outputFileFormat) {
@@ -1994,6 +1961,11 @@ public class VideoModule extends CameraModule
     @Override
     public void onPreviewUIDestroyed() {
         stopPreview();
+    }
+
+    @Override
+    public void startPreCaptureAnimation() {
+        mAppController.startPreCaptureAnimation();
     }
 
     private void requestCamera(int id) {

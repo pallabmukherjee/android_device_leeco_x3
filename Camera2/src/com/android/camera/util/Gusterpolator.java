@@ -20,8 +20,6 @@ import android.animation.TimeInterpolator;
 
 /**
  * Interpolator that uses a Bezier derived S shaped curve.
- *
- * TODO: Replace usages with ui.motion classes.
  */
 public class Gusterpolator implements TimeInterpolator {
     /** An instance of {@link Gusterpolator}. */

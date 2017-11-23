@@ -16,11 +16,6 @@
 
 package com.android.camera.filmstrip;
 
-import android.view.View;
-
-import com.android.camera.app.CameraAppUI;
-import com.android.camera.data.FilmstripItem;
-
 /**
  * An interface which defines the controller of filmstrip.
  * A filmstrip has 4 states:
@@ -51,9 +46,9 @@ public interface FilmstripController {
     /**
      * Sets the listener for filmstrip events.
      *
-     * @param listener
+     * @param l
      */
-    public void setListener(FilmstripListener listener);
+    public void setListener(FilmstripListener l);
 
     /**
      * Sets the gap width between each images on the filmstrip.
@@ -65,12 +60,12 @@ public interface FilmstripController {
     /**
      * @return The ID of the current item, or -1.
      */
-    public int getCurrentAdapterIndex();
+    public int getCurrentId();
 
     /**
-     * Sets the {@link FilmstripDataAdapter}.
+     * Sets the {@link DataAdapter}.
      */
-    public void setDataAdapter(FilmstripDataAdapter adapter);
+    public void setDataAdapter(DataAdapter adapter);
 
     /**
      * Returns whether the filmstrip is in filmstrip mode.
@@ -81,6 +76,16 @@ public interface FilmstripController {
      * @return Whether the filmstrip is in full-screen mode.
      */
     public boolean inFullScreen();
+
+    /**
+     * @return Whether the current view in filmstrip is camera preview.
+     */
+    public boolean isCameraPreview();
+
+    /**
+     * @return Whether the filmstrip is in full-screen camrea preview.
+     */
+    public boolean inCameraFullscreen();
 
     /**
      * @return Whether the filmstrip is in scaling animation.
@@ -156,19 +161,6 @@ public interface FilmstripController {
     public void goToFullScreen();
 
     /**
-     * Returns true if the supplied element is present and its view reports
-     * {@link View#VISIBLE}, such that it would be visible if onscreen. Note
-     * the filmstrip view itself might not be visible, if caller needs to check
-     * whether the filmstrip is visible, see
-     * {@link CameraAppUI#getFilmstripVisibility()}.
-     *
-     * @param data an item which can be present in the filmstrip.
-     * @return true if the view corresponding to the item has visibility of
-     *              {@link View#VISIBLE}, false otherwise.
-     */
-    public boolean isVisible(FilmstripItem data);
-
-    /**
      * An interface which defines the FilmStripView UI action listener.
      */
     interface FilmstripListener {
@@ -177,24 +169,24 @@ public interface FilmstripController {
          * Callback when the data item is promoted. A data is promoted if the user
          * swipe up a data vertically.
          *
-         * @param adapterIndex The ID of the promoted data.
+         * @param dataID The ID of the promoted data.
          */
-        public void onFocusedDataPromoted(int adapterIndex);
+        public void onFocusedDataPromoted(int dataID);
 
         /**
          * Callback when the data item is demoted. A data is promoted if the user
          * swipe down a data vertically.
          *
-         * @param adapterIndex The ID of the demoted data.
+         * @param dataID The ID of the demoted data.
          */
-        public void onFocusedDataDemoted(int adapterIndex);
+        public void onFocusedDataDemoted(int dataID);
 
         /**
          * Callback when the data item is long-pressed.
          *
-         * @param adapterIndex The ID of the long-pressed data.
+         * @param dataID The ID of the long-pressed data.
          */
-        public void onFocusedDataLongPressed(int adapterIndex);
+        public void onFocusedDataLongPressed(int dataID);
 
         /**
          * Called when all the data has been reloaded.
@@ -204,75 +196,75 @@ public interface FilmstripController {
         /**
          * Called when data is updated.
          *
-         * @param adapterIndex The ID of the updated data.
+         * @param dataId The ID of the updated data.
          */
-        public void onDataUpdated(int adapterIndex);
+        public void onDataUpdated(int dataId);
 
         /**
          * The callback when the item enters augmented full-screen state.
          *
-         * @param adapterIndex The ID of the current focused image data.
+         * @param dataId The ID of the current focused image data.
          */
-        public void onEnterFullScreenUiShown(int adapterIndex);
+        public void onEnterFullScreenUiShown(int dataId);
 
         /**
          * The callback when the item leaves augmented full-screen.
          *
-         * @param adapterIndex The ID of the current focused image data.
+         * @param dataId The ID of the current focused image data.
          */
-        public void onLeaveFullScreenUiShown(int adapterIndex);
+        public void onLeaveFullScreenUiShown(int dataId);
 
         /**
          * The callback when the filmstrip enters no UI full-screen.
          *
-         * @param adapterIndex The ID of the current focused image data.
+         * @param dataId The ID of the current focused image data.
          */
-        public void onEnterFullScreenUiHidden(int adapterIndex);
+        public void onEnterFullScreenUiHidden(int dataId);
 
         /**
          * The callback when the filmstrip leaves no UI full-screen.
          *
-         * @param adapterIndex The ID of the current focused image data.
+         * @param dataId The ID of the current focused image data.
          */
-        public void onLeaveFullScreenUiHidden(int adapterIndex);
+        public void onLeaveFullScreenUiHidden(int dataId);
 
         /**
          * The callback when the item enters filmstrip.
          *
-         * @param adapterIndex The ID of the current focused image data.
+         * @param dataId The ID of the current focused image data.
          */
-        public void onEnterFilmstrip(int adapterIndex);
+        public void onEnterFilmstrip(int dataId);
 
         /**
          * The callback when the item leaves filmstrip.
          *
-         * @param adapterIndex The ID of the current focused image data.
+         * @param dataId The ID of the current focused image data.
          */
-        public void onLeaveFilmstrip(int adapterIndex);
+        public void onLeaveFilmstrip(int dataId);
 
         /**
          * The callback when the item enters zoom view.
          *
-         * @param adapterIndex
+         * @param dataID
          */
-        public void onEnterZoomView(int adapterIndex);
+        public void onEnterZoomView(int dataID);
 
         /**
          * Called when current item or zoom level has changed.
          *
-         * @param adapterIndex The ID of the current focused image data.
+         * @param dataId The ID of the current focused image data.
          * @param zoom Zoom level.
          */
-        public void onZoomAtIndexChanged(int adapterIndex, float zoom);
+        public void onZoomAtIndexChanged(int dataId, float zoom);
 
         /**
          * The callback when the data focus changed.
          *
-         * @param prevIndex The ID of the previously focused data or {@code -1} if
+         * @param prevDataId The ID of the previously focused data or {@code -1} if
          *                   none.
-         * @param newIndex The ID of the focused data of {@code -1} if none.
+         * @param newDataId The ID of the focused data of {@code -1} if none.
          */
-        public void onDataFocusChanged(int prevIndex, int newIndex);
+        public void onDataFocusChanged(int prevDataId, int newDataId);
 
         /**
          * The callback when we scroll.

@@ -16,7 +16,9 @@
 
 package com.android.camera.app;
 
-import com.android.camera.device.CameraId;
+import android.hardware.Camera;
+import android.os.Handler;
+
 import com.android.ex.camera2.portability.CameraDeviceInfo.Characteristics;
 import com.android.ex.camera2.portability.CameraExceptionHandler;
 
@@ -68,7 +70,7 @@ public interface CameraProvider {
     /**
      * @returns The current camera id.
      */
-    public CameraId getCurrentCameraId();
+    public int getCurrentCameraId();
 
     /**
      * Returns the total number of cameras available on the device.

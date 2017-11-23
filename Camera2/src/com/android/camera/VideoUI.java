@@ -27,15 +27,17 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.android.camera.app.OrientationManager;
 import com.android.camera.debug.Log;
+import com.android.camera.ui.FocusOverlay;
 import com.android.camera.ui.PreviewOverlay;
 import com.android.camera.ui.PreviewStatusListener;
 import com.android.camera.ui.RotateLayout;
-import com.android.camera.ui.focus.FocusRing;
+import com.android.camera.widget.VideoRecordingHints;
 import com.android.camera2.R;
 import com.android.ex.camera2.portability.CameraCapabilities;
 import com.android.ex.camera2.portability.CameraSettings;
+
+import java.util.List;
 
 public class VideoUI implements PreviewStatusListener {
     private static final Log.Tag TAG = new Log.Tag("VideoUI");
@@ -45,10 +47,11 @@ public class VideoUI implements PreviewStatusListener {
     // module fields
     private final CameraActivity mActivity;
     private final View mRootView;
-    private final FocusRing mFocusRing;
+    private final FocusOverlay mFocusUI;
     // An review image having same size as preview. It is displayed when
     // recording is stopped in capture intent.
     private ImageView mReviewImage;
+    private VideoRecordingHints mVideoHints;
     private TextView mRecordingTimeView;
     private LinearLayout mLabelsLinearLayout;
     private RotateLayout mRecordingTimeRect;
@@ -70,6 +73,11 @@ public class VideoUI implements PreviewStatusListener {
     }
 
     @Override
+    public boolean shouldAutoAdjustBottomBar() {
+        return true;
+    }
+
+    @Override
     public void onPreviewFlipped() {
         mController.updateCameraOrientation();
     }
@@ -78,7 +86,11 @@ public class VideoUI implements PreviewStatusListener {
             = new GestureDetector.SimpleOnGestureListener() {
         @Override
         public boolean onSingleTapUp(MotionEvent ev) {
-            mController.onSingleTapUp(null, (int) ev.getX(), (int) ev.getY());
+            if (mVideoHints.getVisibility() == View.VISIBLE) {
+                mVideoHints.setVisibility(View.INVISIBLE);
+            } else {
+                mController.onSingleTapUp(null, (int) ev.getX(), (int) ev.getY());
+            }
             return true;
         }
     };
@@ -95,7 +107,8 @@ public class VideoUI implements PreviewStatusListener {
 
         initializeMiscControls();
         mAnimationManager = new AnimationManager();
-        mFocusRing = (FocusRing) mRootView.findViewById(R.id.focus_ring);
+        mFocusUI = (FocusOverlay) mRootView.findViewById(R.id.focus_overlay);
+        mVideoHints = (VideoRecordingHints) mRootView.findViewById(R.id.video_shooting_hints);
     }
 
     public void setPreviewSize(int width, int height) {
@@ -112,8 +125,15 @@ public class VideoUI implements PreviewStatusListener {
         setAspectRatio(aspectRatio);
     }
 
-    public FocusRing getFocusRing() {
-        return mFocusRing;
+    public FocusOverlayManager.FocusUI getFocusUI() {
+        return mFocusUI;
+    }
+
+    /**
+     * Starts a flash animation
+     */
+    public void animateFlash() {
+        mController.startPreCaptureAnimation();
     }
 
     /**
@@ -223,24 +243,24 @@ public class VideoUI implements PreviewStatusListener {
     }
 
     /**
-     * Hide the focus indicator.
+     * Shows or hides focus UI.
+     *
+     * @param show shows focus UI when true, hides it otherwise
      */
-    public void hidePassiveFocusIndicator() {
-        if (mFocusRing != null) {
-            Log.v(TAG, "mFocusRing.stopFocusAnimations()");
-            mFocusRing.stopFocusAnimations();
+    public void showFocusUI(boolean show) {
+        if (mFocusUI != null) {
+            mFocusUI.setVisibility(show ? View.VISIBLE : View.INVISIBLE);
         }
     }
 
     /**
-     * Show the passive focus indicator.
+     * Shows or hides video recording hints.
+     *
+     * @param show shows video recording hints when true, hides it otherwise.
      */
-    public void showPassiveFocusIndicator() {
-        if (mFocusRing != null) {
-            mFocusRing.startPassiveFocus();
-        }
+    public void showVideoRecordingHints(boolean show) {
+        mVideoHints.setVisibility(show ? View.VISIBLE : View.INVISIBLE);
     }
-
 
     /**
      * @return The size of the available preview area.
@@ -249,12 +269,8 @@ public class VideoUI implements PreviewStatusListener {
         return new Point(mRootView.getMeasuredWidth(), mRootView.getMeasuredHeight());
     }
 
-    /**
-     * Adjust UI to an orientation change if necessary.
-     */
-    public void onOrientationChanged(OrientationManager orientationManager,
-                                     OrientationManager.DeviceOrientation deviceOrientation) {
-        // do nothing.
+    public void onOrientationChanged(int orientation) {
+        mVideoHints.onOrientationChanged(orientation);
     }
 
     private class ZoomChangeListener implements PreviewOverlay.OnZoomChangedListener {

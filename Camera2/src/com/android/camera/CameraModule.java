@@ -51,8 +51,7 @@ public abstract class CameraModule implements ModuleController {
     public abstract boolean onKeyUp(int keyCode, KeyEvent event);
 
     @Deprecated
-    public void onSingleTapUp(View view, int x, int y) {
-    }
+    public abstract void onSingleTapUp(View view, int x, int y);
 
     /**
      * @return An instance containing common services to be used by the module.
@@ -103,9 +102,4 @@ public abstract class CameraModule implements ModuleController {
      * @return An accessibility String to be announced during the peek animation.
      */
     public abstract String getPeekAccessibilityString();
-
-    @Override
-    public void onShutterButtonLongPressed() {
-        // noop
-    }
 }

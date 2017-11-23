@@ -83,12 +83,6 @@
         <item>on</item>
     </string-array>
 
-    <string-array name="pref_camera_hdr_supportmode_entryvalues" translatable="false">
-        <item>@string/pref_camera_hdr_supportmode_none</item>
-        <item>@string/pref_camera_hdr_supportmode_hdr</item>
-        <item>@string/pref_camera_hdr_supportmode_hdr_plus</item>
-    </string-array>
-
     <string-array name="pref_camera_hdr_plus_flashmode_entryvalues" translatable="false">
         <item>off</item>
         <item>auto</item>
@@ -324,7 +318,7 @@
     </array>
 
     <!--  Labels for Countdown timer -->
-    <string-array name="pref_camera_countdown_labels">
+    <string-array name="pref_camera_countdown_labels" translatable="false">
         <item>@string/pref_camera_countdown_label_off</item>
         <item>@string/pref_camera_countdown_label_one</item>
         <item>@string/pref_camera_countdown_label_three</item>
@@ -332,13 +326,13 @@
         <item>@string/pref_camera_countdown_label_fifteen</item>
     </string-array>
 
-    <string-array name="pref_camera_jpeg_quality_entryvalues">
+    <string-array name="pref_camera_jpeg_quality_entryvalues" translatable="false">
       <item>@string/pref_camera_jpeg_quality_normal</item>
       <item>@string/pref_camera_jpeg_quality_fine</item>
       <item>@string/pref_camera_jpeg_quality_superfine</item>
     </string-array>
 
-    <string-array name="pref_camera_gridlines_entryvalues">
+    <string-array name="pref_camera_gridlines_entryvalues" translatable="false">
       <item>@string/setting_off_value</item>
       <item>@string/setting_on_value</item>
     </string-array>
@@ -364,7 +358,7 @@
         <item>@string/countdown_timer_duration_10s</item>
     </array>
 
-    <string-array name="pref_camera_pano_orientation_entryvalues">
+    <string-array name="pref_camera_pano_orientation_entryvalues" translatable="false">
       <item>@string/pano_orientation_horizontal</item>
       <item>@string/pano_orientation_vertical</item>
       <item>@string/pano_orientation_wide</item>
@@ -401,29 +395,27 @@
 
 
     <!--Index of camera modes. -->
-    <integer name="camera_mode_photo">0</integer>
-    <integer name="camera_mode_video">1</integer>
-    <integer name="camera_mode_refocus">2</integer>
-    <integer name="camera_mode_photosphere">3</integer>
-    <integer name="camera_mode_panorama">4</integer>
-    <integer name="camera_mode_gcam">5</integer>
-    <integer name="camera_mode_capture_intent">6</integer>
+    <integer name="camera_mode_photo" translatable="false">0</integer>
+    <integer name="camera_mode_video" translatable="false">1</integer>
+    <integer name="camera_mode_refocus" translatable="false">2</integer>
+    <integer name="camera_mode_photosphere" translatable="false">3</integer>
+    <integer name="camera_mode_panorama" translatable="false">4</integer>
+    <integer name="camera_mode_gcam" translatable="false">5</integer>
 
 
     <!-- Ordered list of all camera modes. -->
-    <integer-array name="camera_modes">
+    <integer-array name="camera_modes" translatable="false">
         <item>@integer/camera_mode_photo</item>
         <item>@integer/camera_mode_video</item>
         <item>@integer/camera_mode_refocus</item>
         <item>@integer/camera_mode_photosphere</item>
         <item>@integer/camera_mode_panorama</item>
         <item>@integer/camera_mode_gcam</item>
-        <item>@integer/camera_mode_capture_intent</item>
     </integer-array>
 
     <!-- An array of camera mode indices in the sequence of their appearance
     in the mode drawer. -->
-    <integer-array name="camera_modes_in_nav_drawer_if_supported">
+    <integer-array name="camera_modes_in_nav_drawer_if_supported" translatable="false">
         <item>@integer/camera_mode_photosphere</item>
         <item>@integer/camera_mode_panorama</item>
         <item>@integer/camera_mode_refocus</item>
@@ -432,7 +424,7 @@
     </integer-array>
 
     <!-- Camera modes that each supported mode is nested in in nav drawer. -->
-    <integer-array name="camera_mode_nested_in_nav_drawer">
+    <integer-array name="camera_mode_nested_in_nav_drawer" translatable="false">
         <item>@integer/camera_mode_photo</item>
         <item>@integer/camera_mode_video</item>
         <item>@integer/camera_mode_refocus</item>
@@ -442,21 +434,20 @@
     </integer-array>
 
     <!-- An array of camera mode indices that should always be visible in mode drawer. -->
-    <integer-array name="camera_modes_always_visible">
+    <integer-array name="camera_modes_always_visible" translatable="false">
         <item>@integer/camera_mode_photo</item>
     </integer-array>
 
-    <array name="camera_mode_theme_color">
+    <array name="camera_mode_theme_color" translatable="false">
         <item>@color/camera_mode_color</item>
         <item>@color/video_mode_color</item>
         <item>@color/refocus_mode_color</item>
         <item>@color/photosphere_mode_color</item>
         <item>@color/panorama_mode_color</item>
         <item>@color/camera_mode_color</item>
-        <item>@color/camera_mode_color</item>
     </array>
 
-    <string-array name="camera_mode_text">
+    <string-array name="camera_mode_text" translatable="false">
         <item>@string/mode_camera</item>
         <item>@string/mode_video</item>
         <item>@string/mode_refocus</item>
@@ -466,7 +457,7 @@
         <item>""</item>
     </string-array>
 
-    <string-array name="camera_mode_content_description">
+    <string-array name="camera_mode_content_description" translatable="false">
         <item>@string/mode_camera_desc</item>
         <item>@string/mode_video_desc</item>
         <item>@string/mode_refocus_desc</item>
@@ -476,7 +467,7 @@
         <item>""</item>
     </string-array>
 
-    <array name="camera_mode_cover_icon">
+    <array name="camera_mode_cover_icon" translatable="false">
         <item>@drawable/ic_camera_blanket</item>
         <item>@drawable/ic_video_blanket</item>
         <item>@drawable/ic_refocus_blanket</item>
@@ -486,28 +477,26 @@
         <item>@drawable/ic_camera_blanket</item>
     </array>
 
-    <array name="camera_mode_icon">
+    <array name="camera_mode_icon" translatable="false">
         <item>@drawable/ic_camera_normal</item>
         <item>@drawable/ic_video_normal</item>
         <item>@drawable/ic_refocus_normal</item>
         <item>@drawable/ic_photosphere_normal</item>
         <item>@drawable/ic_panorama_normal</item>
         <item>@drawable/ic_camera_normal</item>
-        <item>@drawable/ic_camera_normal</item>
     </array>
 
-    <array name="camera_mode_shutter_icon">
+    <array name="camera_mode_shutter_icon" translatable="false">
         <item>@drawable/ic_capture_camera</item>
         <item>@drawable/ic_capture_video</item>
         <item>@drawable/ic_capture_refocus</item>
         <item>@null</item>
         <item>@drawable/ic_capture_panorama</item>
         <item>@drawable/ic_capture_camera</item>
-        <item>@drawable/ic_capture_camera</item>
     </array>
 
     <!-- These must correspond in order to the entries in CameraProfile. -->
-    <array name="camcorder_profile_names">
+    <array name="camcorder_profile_names" translatable="false">
         <item>@string/pref_video_quality_entry_low</item>
         <item>@string/pref_video_quality_entry_high</item>
         <item>@string/pref_video_quality_entry_qcif_notrans</item>
@@ -519,7 +508,7 @@
         <item>@string/pref_video_quality_entry_2160p_notrans</item>
     </array>
 
-    <array name="pref_default_boolean_entryvalues">
+    <array name="pref_default_boolean_entryvalues" translatable="false">
         <item>@string/pref_boolean_false</item>
         <item>@string/pref_boolean_true</item>
     </array>
@@ -528,7 +517,6 @@
         <item>@drawable/shutter_button_background_still</item>
         <item>@drawable/shutter_button_background_video</item>
         <item>@drawable/shutter_button_background_refocus</item>
-        <item>@drawable/shutter_button_background_still</item>
         <item>@drawable/shutter_button_background_still</item>
         <item>@drawable/shutter_button_background_still</item>
         <item>@drawable/shutter_button_background_still</item>

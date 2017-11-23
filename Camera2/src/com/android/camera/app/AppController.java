@@ -17,7 +17,6 @@
 package com.android.camera.app;
 
 import android.app.Activity;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -29,12 +28,9 @@ import android.view.View;
 import android.widget.FrameLayout;
 
 import com.android.camera.ButtonManager;
-import com.android.camera.FatalErrorHandler;
 import com.android.camera.SoundPlayer;
 import com.android.camera.module.ModuleController;
-import com.android.camera.one.OneCameraOpener;
-import com.android.camera.one.config.OneCameraFeatureConfig;
-import com.android.camera.settings.ResolutionSetting;
+import com.android.camera.one.OneCameraManager;
 import com.android.camera.settings.SettingsManager;
 import com.android.camera.ui.AbstractTutorialOverlay;
 import com.android.camera.ui.PreviewStatusListener;
@@ -74,15 +70,10 @@ public interface AppController {
      */
     public Context getAndroidContext();
 
-    /** @return the camera feature configuration for the device. */
-    public OneCameraFeatureConfig getCameraFeatureConfig();
-
     /**
-     * Creates a new dialog which can be shown in the app.
-     *
-     * @return  {@link android.app.Dialog} of the app.
+     * @return the current camera id.
      */
-    public Dialog createDialog();
+    public int getCurrentCameraId();
 
     /**
      * @return a String scope uniquely identifing the current module.
@@ -125,11 +116,6 @@ public interface AppController {
      * Returns the currently active module index.
      */
     public int getCurrentModuleIndex();
-
-    /**
-     * Returns the module ID for a specific mode.
-     */
-    public int getModuleId(int modeIndex);
 
     /**
      * Gets the mode that can be switched to from the given mode id through
@@ -285,11 +271,11 @@ public interface AppController {
     /********************** Capture animation **********************/
 
     /**
-     * Starts flash animation with optional shorter flash.
+     * Starts the pre-capture animation with optional shorter flash.
      *
      * @param shortFlash true for shorter flash (faster cameras).
      */
-    public void startFlashAnimation(boolean shortFlash);
+    public void startPreCaptureAnimation(boolean shortFlash);
 
     /**
      * Starts normal pre-capture animation.
@@ -342,7 +328,7 @@ public interface AppController {
     /**
      * Returns the new camera API manager.
      */
-    public OneCameraOpener getCameraOpener();
+    public OneCameraManager getCameraManager();
 
     /**
      * Returns the {@link OrientationManagerImpl}.
@@ -352,33 +338,23 @@ public interface AppController {
     public OrientationManager getOrientationManager();
 
     /**
-     * Returns the {@link LocationManager}.
+     * Returns the {@link com.android.camera.LocationManager}.
      *
      * @return {@code null} if not available yet.
      */
     public LocationManager getLocationManager();
 
     /**
-     * Returns the {@link SettingsManager}.
+     * Returns the {@link com.android.camera.SettingsManager}.
+     *
+     * @return {@code null} if not available yet.
      */
     public SettingsManager getSettingsManager();
-
-    /**
-     * Returns the {@link com.android.camera.settings.ResolutionSetting}.
-     *
-     * @return the current resolution setting.
-     */
-    public ResolutionSetting getResolutionSetting();
 
     /**
      * @return Common services and functionality to be shared.
      */
     public CameraServices getServices();
-
-    /**
-     * @return The error handler to invoke for errors.
-     */
-    public FatalErrorHandler getFatalErrorHandler();
 
     /**
      * Returns the {@link com.android.camera.app.CameraAppUI}.
@@ -411,14 +387,10 @@ public interface AppController {
     public void showTutorial(AbstractTutorialOverlay tutorial);
 
     /**
-     * Finishes the activity since the intent is completed successfully.
+     * Shows and error message on the screen and, when dismissed, exits the
+     * activity.
      *
-     * @param resultIntent The intent that carries the result.
+     * @param messageId the ID of the message to show on screen before exiting.
      */
-    public void finishActivityWithIntentCompleted(Intent resultIntent);
-
-    /**
-     * Finishes the activity since the intent got canceled.
-     */
-    public void finishActivityWithIntentCanceled();
+    public void showErrorAndFinish(int messageId);
 }

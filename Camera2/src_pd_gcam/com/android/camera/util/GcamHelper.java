@@ -13,33 +13,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.android.camera.util;
 
 import android.content.ContentResolver;
 
 import com.android.camera.CameraModule;
 import com.android.camera.app.AppController;
-import com.android.camera.one.config.OneCameraFeatureConfig;
-import com.android.camera.one.config.OneCameraFeatureConfig.HdrPlusSupportLevel;
 
 public class GcamHelper {
 
-    public static CameraModule createGcamModule(AppController app,
-            HdrPlusSupportLevel hdrPlusSupportLevel) {
+    public static CameraModule createGcamModule(AppController app) {
         return null;
     }
 
-    public static boolean hasGcamAsSeparateModule(OneCameraFeatureConfig config) {
+    public static boolean hasGcamAsSeparateModule() {
         return false;
     }
 
-    public static boolean hasGcamCapture(OneCameraFeatureConfig config) {
+    public static boolean hasGcamCapture() {
         return false;
     }
 
-    public static HdrPlusSupportLevel determineHdrPlusSupportLevel(
-            ContentResolver contentResolver, boolean useCaptureModule) {
-        return HdrPlusSupportLevel.NONE;
+    public static boolean hasGcamAsHDRMode() {
+        return false;
+    }
+
+    public static void init(ContentResolver contentResolver) {
     }
 }

@@ -17,11 +17,8 @@
 package com.android.camera;
 
 import android.content.Context;
-import android.media.AudioManager;
 import android.media.SoundPool;
 import android.util.SparseIntArray;
-
-import com.android.camera.util.ApiHelper;
 
 /**
  * Loads a plays custom sounds. For playing system-standard sounds for various
@@ -32,14 +29,13 @@ public class SoundPlayer {
     private final SoundPool mSoundPool;
     /** Keeps a mapping from sound resource ID to sound ID */
     private final SparseIntArray mResourceToSoundId = new SparseIntArray();
-    private boolean mIsReleased = false;
 
     /**
      * Construct a new sound player.
      */
     public SoundPlayer(Context appContext) {
         mAppContext = appContext;
-        final int audioType = getAudioTypeForSoundPool();
+        final int audioType = SoundClips.getAudioTypeForSoundPool();
         mSoundPool = new SoundPool(1 /* max streams */, audioType, 0 /* quality */);
     }
 
@@ -79,17 +75,6 @@ public class SoundPlayer {
      * released and the object cannot be re-used.
      */
     public void release() {
-        mIsReleased = true;
         mSoundPool.release();
-    }
-
-    public boolean isReleased() {
-        return mIsReleased;
-    }
-
-    private static int getAudioTypeForSoundPool() {
-        // STREAM_SYSTEM_ENFORCED is hidden API.
-        return ApiHelper.getIntFieldIfExists(AudioManager.class,
-                "STREAM_SYSTEM_ENFORCED", null, AudioManager.STREAM_RING);
     }
 }

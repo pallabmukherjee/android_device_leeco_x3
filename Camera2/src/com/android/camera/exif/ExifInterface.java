@@ -19,7 +19,6 @@ package com.android.camera.exif;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.SparseIntArray;
-import com.android.camera.debug.Log;
 
 import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
@@ -70,7 +69,6 @@ public class ExifInterface {
     /**
      * Tag constants for Jeita EXIF 2.2
      */
-    public static final String EXIF_VERSION = "0220";
 
     // IFD 0
     public static final int TAG_IMAGE_WIDTH =
@@ -319,7 +317,6 @@ public class ExifInterface {
     // IFD Interoperability tags
     public static final int TAG_INTEROPERABILITY_INDEX =
         defineTag(IfdId.TYPE_IFD_INTEROPERABILITY, (short) 1);
-    private static final Log.Tag TAG = new Log.Tag("ExifInterface");
 
     /**
      * Tags that contain offset markers. These are included in the banned
@@ -471,7 +468,7 @@ public class ExifInterface {
      */
     public static interface Flash {
         // LSB
-        public static final short DID_NOT_FIRE = 0;
+        public static final short DID_NOT_FIRED = 0;
         public static final short FIRED = 1;
         // 1st~2nd bits
         public static final short RETURN_NO_STROBE_RETURN_DETECTION_FUNCTION = 0 << 1;
@@ -761,10 +758,13 @@ public class ExifInterface {
             throw new IllegalArgumentException(NULL_ARGUMENT_STRING);
         }
         InputStream is = null;
-
-        is = new BufferedInputStream(new FileInputStream(inFileName));
-        readExif(is);
-
+        try {
+            is = new BufferedInputStream(new FileInputStream(inFileName));
+            readExif(is);
+        } catch (IOException e) {
+            closeSilently(is);
+            throw e;
+        }
         is.close();
     }
 
@@ -856,9 +856,14 @@ public class ExifInterface {
             throw new IllegalArgumentException(NULL_ARGUMENT_STRING);
         }
         OutputStream s = null;
-        s = getExifWriterStream(exifOutFileName);
-        s.write(jpeg, 0, jpeg.length);
-        s.flush();
+        try {
+            s = getExifWriterStream(exifOutFileName);
+            s.write(jpeg, 0, jpeg.length);
+            s.flush();
+        } catch (IOException e) {
+            closeSilently(s);
+            throw e;
+        }
         s.close();
     }
 
@@ -878,10 +883,14 @@ public class ExifInterface {
             throw new IllegalArgumentException(NULL_ARGUMENT_STRING);
         }
         OutputStream s = null;
-
-        s = getExifWriterStream(exifOutFileName);
-        bmap.compress(Bitmap.CompressFormat.JPEG, 90, s);
-        s.flush();
+        try {
+            s = getExifWriterStream(exifOutFileName);
+            bmap.compress(Bitmap.CompressFormat.JPEG, 90, s);
+            s.flush();
+        } catch (IOException e) {
+            closeSilently(s);
+            throw e;
+        }
         s.close();
     }
 
@@ -901,11 +910,14 @@ public class ExifInterface {
             throw new IllegalArgumentException(NULL_ARGUMENT_STRING);
         }
         OutputStream s = null;
-
-        s = getExifWriterStream(exifOutFileName);
-        doExifStreamIO(jpegStream, s);
-        s.flush();
-
+        try {
+            s = getExifWriterStream(exifOutFileName);
+            doExifStreamIO(jpegStream, s);
+            s.flush();
+        } catch (IOException e) {
+            closeSilently(s);
+            throw e;
+        }
         s.close();
     }
 
@@ -925,10 +937,13 @@ public class ExifInterface {
             throw new IllegalArgumentException(NULL_ARGUMENT_STRING);
         }
         InputStream is = null;
-
-        is = new FileInputStream(jpegFileName);
-        writeExif(is, exifOutFileName);
-
+        try {
+            is = new FileInputStream(jpegFileName);
+            writeExif(is, exifOutFileName);
+        } catch (IOException e) {
+            closeSilently(is);
+            throw e;
+        }
         is.close();
     }
 
@@ -1027,6 +1042,9 @@ public class ExifInterface {
             // Attempt to overwrite tag values without changing lengths (avoids
             // file copy).
             ret = rewriteExif(buf, tags);
+        } catch (IOException e) {
+            closeSilently(file);
+            throw e;
         } finally {
             closeSilently(is);
         }
@@ -1090,6 +1108,9 @@ public class ExifInterface {
                 readExif(imageBytes);
                 setTags(tags);
                 writeExif(imageBytes, filename);
+            } catch (IOException e) {
+                closeSilently(is);
+                throw e;
             } finally {
                 is.close();
                 // Prevent clobbering of mData
@@ -1936,7 +1957,7 @@ public class ExifInterface {
      * {@link #TAG_DATE_TIME_ORIGINAL}.
      *
      * @param tagId one of the DateTimeStamp tags.
-     * @param timestamp a timestamp to format, in ms.
+     * @param timestamp a timestamp to format.
      * @param timezone a TimeZone object.
      * @return true if success, false if the tag could not be set.
      */

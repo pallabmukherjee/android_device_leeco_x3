@@ -40,4 +40,12 @@ public interface VideoController extends OnShutterButtonListener {
     // Callbacks for camera preview UI events.
     public void onPreviewUIReady();
     public void onPreviewUIDestroyed();
+
+    /********************** Capture animation **********************/
+
+    /**
+     * Starts the pre-capture animation.
+     */
+    public void startPreCaptureAnimation();
+
 }
