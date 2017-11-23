@@ -36,6 +36,9 @@ PRODUCT_PACKAGES += CompassMi
 
 PRODUCT_PACKAGES := SchedulePowerOnOff
 
+PRODUCT_PACKAGES := MiraVision
+
+
 # Charger
 PRODUCT_PACKAGES += \
 	charger \
