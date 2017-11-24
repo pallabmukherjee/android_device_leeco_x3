@@ -27,16 +27,22 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-	Snap \
-	Camera2 \
-	LegacyCamera \
+	Snap
+PRODUCT_PACKAGES += \
+	Camera2
+PRODUCT_PACKAGES += \
+	LegacyCamera
+PRODUCT_PACKAGES += \
 	libcamera_parameters_ext
 
-PRODUCT_PACKAGES += CompassMi
+PRODUCT_PACKAGES += \
+	CompassMi
 
-PRODUCT_PACKAGES := SchedulePowerOnOff
+PRODUCT_PACKAGES := \
+	SchedulePowerOnOff
 
-PRODUCT_PACKAGES := MiraVision
+PRODUCT_PACKAGES := \
+	MiraVision
 
 
 # Charger
@@ -230,6 +236,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/configs/ril_conf/ecc_list.xml:system/etc/ecc_list.xml \
 	$(LOCAL_PATH)/configs/ril_conf/spn-conf.xml:system/etc/spn-conf.xml
+PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/configs/ril_conf/apns-conf.xml:system/etc/apns-conf.xml
 
 PRODUCT_COPY_FILES += \
