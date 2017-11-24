@@ -27,12 +27,7 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-	Snap
-PRODUCT_PACKAGES += \
-	Camera2
-PRODUCT_PACKAGES += \
-	LegacyCamera
-PRODUCT_PACKAGES += \
+	Snap \
 	libcamera_parameters_ext
 
 PRODUCT_PACKAGES += \
@@ -40,9 +35,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES := \
 	SchedulePowerOnOff
-
-PRODUCT_PACKAGES := \
-	MiraVision
 
 
 # Charger
@@ -112,7 +104,7 @@ PRODUCT_COPY_FILES += \
 	frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
 	frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:system/etc/media_codecs_google_video_le.xml \
 	frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
-#	media.stagefright.legacyencoder=0
+	media.stagefright.legacyencoder=0
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
