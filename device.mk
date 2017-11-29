@@ -28,16 +28,10 @@ PRODUCT_PACKAGES += \
 # Camera
 PRODUCT_PACKAGES += \
 	Snap \
-	Camera2 \
-	LegacyCamera \
 	libcamera_parameters_ext
 
-PRODUCT_PACKAGES += CompassMi
-
-PRODUCT_PACKAGES := SchedulePowerOnOff
-
-PRODUCT_PACKAGES := MiraVision
-
+PRODUCT_PACKAGES += \
+	Camera2
 
 # Charger
 PRODUCT_PACKAGES += \
@@ -106,7 +100,6 @@ PRODUCT_COPY_FILES += \
 	frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
 	frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:system/etc/media_codecs_google_video_le.xml \
 	frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
-#	media.stagefright.legacyencoder=0
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
@@ -230,6 +223,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/configs/ril_conf/ecc_list.xml:system/etc/ecc_list.xml \
 	$(LOCAL_PATH)/configs/ril_conf/spn-conf.xml:system/etc/spn-conf.xml
+PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/configs/ril_conf/apns-conf.xml:system/etc/apns-conf.xml
 
 PRODUCT_COPY_FILES += \
@@ -330,4 +324,13 @@ PRODUCT_COPY_FILES += \
      persist.sys.isUsbOtgEnabled=true \
      persist.sys.usb.config=mtp,adb \
      ro.adb.secure=0
-	 
+
+# Camera
+PRODUCT_PROPERTY_OVERRIDES += \
+    media.stagefright.legacyencoder=true \
+    media.stagefright.less-secure=true
+
+# build.prop
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.service.adb.enable=1 \
+    persist.service.debuggable=1

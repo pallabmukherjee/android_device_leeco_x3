@@ -7,7 +7,7 @@
 # ==============================================
 
 type pq_exec , exec_type, file_type;
-type pq ,domain;
+type pq ,domain, domain_deprecated;
 
 # ==============================================
 # Android Policy Rule
@@ -51,6 +51,9 @@ binder_service(pq)
 allow pq graphics_device:dir search;
 allow pq pq_service:service_manager add;
 
+unix_socket_connect(pq, property, init)
+
+allow pq pq_conf_prop:property_service set;
 
 # Date : WK15.39
 # Operation : Migration

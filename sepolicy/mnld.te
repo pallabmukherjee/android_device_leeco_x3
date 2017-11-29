@@ -1,4 +1,4 @@
-type mnld, domain;
+type mnld, domain, domain_deprecated;
 type mnld_exec, exec_type, file_type;
 
 # STOPSHIP: Permissive is not allowed. CTS violation!
