@@ -5,8 +5,4 @@ int _ZN7android16MediaBufferGroupC1Ev() {
     // return _ZN7android16MediaBufferGroupC1Em(0);
     return _ZN7android16MediaBufferGroupC1Ej();
 }
-int _ZN7android16MediaBufferGroup14acquire_bufferEPPNS_11MediaBufferEb();
-int _ZN7android16MediaBufferGroup14acquire_bufferEPPNS_11MediaBufferEv() {
-    return _ZN7android16MediaBufferGroup14acquire_bufferEPPNS_11MediaBufferEb();
-}
 }

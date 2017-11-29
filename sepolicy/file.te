@@ -190,12 +190,6 @@ type atci_data_file, file_type, data_file_type;
 # factory data file
 type factory_data_file, file_type, data_file_type;
 
-#MSENSOR
-type msensord_daemon_sysfs, fs_type, sysfs_type;
-
-#GPS
-type sysfs_gps_file, fs_type, sysfs_type;
-
 # adbd config file
 type adbd_data_file, file_type, data_file_type;
 

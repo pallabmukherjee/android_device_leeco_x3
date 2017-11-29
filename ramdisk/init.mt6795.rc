@@ -53,8 +53,8 @@ export LD_PRELOAD "libmtk_symbols.so"
 
     mkdir /mnt/cd-rom 0000 system system
 
-    #write /proc/sys/net/core/wmem_max 1572864
-    #write /proc/sys/net/core/rmem_max 1572864
+    write /proc/sys/net/core/wmem_max 1572864
+    write /proc/sys/net/core/rmem_max 1572864
 
 # Change ION driver permission
     chmod 0666 /dev/ion
@@ -75,8 +75,6 @@ export LD_PRELOAD "libmtk_symbols.so"
 
 on charger
     mount ext4 /dev/block/platform/mtk-msdc.0/11230000.MSDC0/by-name/system /system ro
-        chmod 0666 /dev/kmsg
-        write /sys/devices/platform/battery_meter/FG_daemon_log_level 7
     start fuelgauged
     start kpoc_charger
     start servicemanager
@@ -255,10 +253,6 @@ on post-fs-data
     #set mlock limit to infinate (for m4u operation)
     setrlimit 8 -1 -1
 
-    # CMDQ
-    chmod 0640 /dev/mtk_cmdq
-    chown system system /dev/mtk_cmdq
-
     # Sensor
     chmod 0660 /dev/hwmsensor
     chmod 0660 /dev/msensor
@@ -366,9 +360,6 @@ on post-fs-data
 
     #Charging Battery
     chown radio radio /sys/devices/platform/battery/Charging_CallState
-    # PMIC property
-    chown radio system /sys/devices/platform/mt-pmic/low_battery_protect_stop
-    chown radio system /sys/devices/platform/mt-pmic/low_battery_protect_ut
 
     mkdir /data/amit/ 0770 system system
     mkdir /data/misc/sensors 0666 system system
@@ -399,15 +390,8 @@ on post-fs-data
     #EM eint
     chown root diag /sys/bus/platform/drivers/eint/current_eint
 
-    # Display
     chmod 0660 /dev/graphics/fb0
     chown system graphics /dev/graphics/fb0
-
-    chmod 0660 /dev/mtk_disp_mgr
-    chown system graphics /dev/mtk_disp_mgr
-
-    chmod 0660 /sys/devices/platform/mtk_disp_mgr.0/rgb
-    chown system system /sys/devices/platform/mtk_disp_mgr.0/rgb
 
     chmod 0660 /dev/mtkfb_vsync
     chown system graphics /dev/mtkfb_vsync
@@ -463,13 +447,8 @@ on post-fs-data
     # device apc settings
 
     # device info /proc interface
-    exec /system/bin/mknod /dev/devmap c 196 0;
-    chmod 0444 /dev/devmap
-    chown root media /dev/devmap
-
-    # device info /proc interface
-    #chmod 0440 /dev/devmap
-    #chown root system /dev/devmap
+    chmod 0440 /dev/devmap
+    chown root system /dev/devmap
 
     # bluetooth
     mkdir /data/@btmtk 0770 bluetooth net_bt
@@ -498,11 +477,11 @@ on post-fs-data
     chmod 0440 /dev/mtk_almk
 
     # DISP
-    chmod 0444 /dev/mtk_disp
+    chmod 0660 /dev/mtk_disp_mgr
+    chown system graphics /dev/mtk_disp_mgr
 
-    #VOW
-    chmod 0640 /dev/vow
-    chown media media /dev/vow
+    chmod 0660 /sys/devices/platform/mtk_disp_mgr.0/rgb
+    chown system system /sys/devices/platform/mtk_disp_mgr.0/rgb
 
     chmod 0660 /dev/mtkfb_vsync
     chown system graphics /dev/mtkfb_vsync
@@ -525,7 +504,6 @@ on post-fs-data
     chmod 0660 /dev/LC898122OFILMAF
     chmod 0660 /dev/BU6429AF
     chmod 0660 /dev/LC898217AF
-    chmod 0660 /dev/AD5820AF
 
     chown system camera /dev/camera-sysram
     chown system camera /dev/camera-isp
@@ -544,7 +522,6 @@ on post-fs-data
     chown system camera /dev/LC898122OFILMAF
     chown system camera /dev/BU6429AF
     chown system camera /dev/LC898217AF
-    chown system camera /dev/AD5820AF
 
     #MATV
     chmod 0660 /dev/MATV
@@ -564,9 +541,6 @@ on post-fs-data
     # SMI
     chmod 0666 /dev/MTK_SMI
     chown media media /dev/MTK_SMI
-
-    #for eng mode
-    chmod 0664 /dev/misc-sd
 
     # RRC
     chmod 0660 /dev/mtk_rrc
@@ -614,8 +588,8 @@ on post-fs-data
     # Recycle stuffs
     exec /system/bin/rm -f /cache/.ipoh.img
 
-    #Thermal
-    mkdir /data/.tp/ 0775 system system
+	#Thermal
+	mkdir /data/.tp/ 0775 system system
 
 # End of adding by MTK drivers
 # -----------------------
@@ -1241,9 +1215,9 @@ service s62xd /system/bin/s62xd
     group system
     class main
 service ami304d /system/bin/ami304d
-    disabled
     user system
     group system
+    disabled
     class main
 
 service memsicd /system/bin/memsicd
@@ -1390,8 +1364,8 @@ service thermald /system/bin/thermald
 
 service fuelgauged /system/bin/fuelgauged
     class main
-    user root
-    group root
+    user system
+    group system
 
 service sn /system/bin/sn
     class late_start
@@ -1425,13 +1399,13 @@ service batterywarning /system/bin/batterywarning
 service MtkCodecService /system/bin/MtkCodecService
     class main
     user system
-    group audio camera media sdcard_r
+    group audio media sdcard_r
 
 # GuiExt Server init
 service guiext-server /system/bin/guiext-server
     class main
     user system
-    group system graphics media
+    group system graphics
 
 service kpoc_charger /system/bin/kpoc_charger
     class charger

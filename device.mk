@@ -31,7 +31,11 @@ PRODUCT_PACKAGES += \
 	libcamera_parameters_ext
 
 PRODUCT_PACKAGES += \
-	Camera2
+	CompassMi
+
+PRODUCT_PACKAGES := \
+	SchedulePowerOnOff
+
 
 # Charger
 PRODUCT_PACKAGES += \
@@ -100,6 +104,7 @@ PRODUCT_COPY_FILES += \
 	frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
 	frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:system/etc/media_codecs_google_video_le.xml \
 	frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
+	media.stagefright.legacyencoder=0
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
@@ -324,13 +329,4 @@ PRODUCT_COPY_FILES += \
      persist.sys.isUsbOtgEnabled=true \
      persist.sys.usb.config=mtp,adb \
      ro.adb.secure=0
-
-# Camera
-PRODUCT_PROPERTY_OVERRIDES += \
-    media.stagefright.legacyencoder=true \
-    media.stagefright.less-secure=true
-
-# build.prop
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.service.adb.enable=1 \
-    persist.service.debuggable=1
+	 
