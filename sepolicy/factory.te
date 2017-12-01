@@ -50,7 +50,7 @@ allow factory camera_pipemgr_device:chr_file { read ioctl open };
 allow factory camera_sysram_device:chr_file { read ioctl open };
 allow factory camera_device:chr_file rw_file_perms;
 allow factory ccci_device:chr_file { read write ioctl open };
-allow factory devmap_device:chr_file r_file_perms;
+allow factory devmap_device:chr_file { read ioctl open };
 allow factory MT_pmic_cali_device:chr_file { read ioctl open };
 allow factory barometer_device:chr_file { read ioctl open };
 allow factory humidity_device:chr_file { read ioctl open };
