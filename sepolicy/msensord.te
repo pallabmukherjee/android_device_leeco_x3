@@ -1,5 +1,5 @@
 # ==============================================
-# Policy File of /system/bin/msensord Executable File
+# Policy File of /system/bin/msensord Executable File 
 
 
 # ==============================================
@@ -7,7 +7,7 @@
 # ==============================================
 
 type msensord_exec , exec_type, file_type;
-type msensord ,domain, domain_deprecated;
+type msensord ,domain;
 
 # ==============================================
 # Android Policy Rule

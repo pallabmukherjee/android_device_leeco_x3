@@ -1,4 +1,8 @@
-on post-fs-data
+on fs
+ 	setprop factory.composite.usb.pid 2035
+ 	setprop factory.composite.usb.func via_ets,adb,acm
+	
+	on post-fs-data
 #
 # Connectivity related modules and character device nodes (Begin)
 #
@@ -20,10 +24,16 @@ on post-fs-data
 
     chmod 0660 /dev/stpwmt
     chown system system /dev/stpwmt
+    chmod 0660 /dev/wmtdetect
+ 		chown system system /dev/wmtdetect
 
     mknod /dev/wmtWifi c 153 0
     chmod 0660 /dev/wmtWifi
     chown system system /dev/wmtWifi
+
+    # Load WiFi Driver
+    #insmod /system/lib/modules/wlan.ko
+
 #Camera
     chmod 0660 /dev/GAF001AF
     chown system camera /dev/GAF001AF
@@ -127,3 +137,6 @@ service 66xx_launcher /system/bin/6620_launcher -m 4 -p /system/etc/firmware/
 #
 # Connectivity related services (End)
 #
+#via_ets,adb,acm
+ on property:ro.boot.usbconfig=0
+     write /sys/class/usb_rawbulk/ets/enable 1

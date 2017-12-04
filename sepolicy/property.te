@@ -3,6 +3,12 @@
 # ==============================================
 type mtk_default_prop, property_type;
 
+# Date: W14.32
+# Operation: Migration
+# Purpose: don't allow to use default_prop
+#neverallow { domain -init -nvram_daemon } default_prop:property_service set;
+#neverallow { domain -init -system_app -system_server -recovery } ctl_default_prop:property_service set;
+
 #=============allow ccci_mdinit to start gsm0710muxd==============
 type ctl_gsm0710muxd_prop, property_type;
 type ctl_gsm0710muxd-s_prop, property_type;
@@ -170,7 +176,7 @@ type volte_prop, property_type;
 type hotknot_prop, property_type;
 type ctl_memsicd3416x_prop, property_type;
 type ctl_mxg2320d_prop, property_type;
-type serial_number_prop, property_type, mtk_property_type;
+type serial_number_prop, property_type, mtk_property_type; 
 type vold_encryption_type_prop, property_type;
 type nvram_prop, property_type, mtk_property_type;
 type pq_conf_prop, property_type, mtk_property_type;

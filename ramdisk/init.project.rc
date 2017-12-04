@@ -10,6 +10,19 @@ on init
 
 on post-fs-data
 
+#autok 
+       chown root system /sys/autok/debug 
+       chown root system /sys/autok/param_count 
+       chown root system /sys/autok/ready 
+       chown root system /sys/autok/ss_corner 
+       chown root system /sys/autok/suggest_vol 
+       chown root system /sys/autok/stage1/2/DONE 
+       chown root system /sys/autok/stage1/2/PARAMS 
+       chown root system /sys/autok/stage1/2/VOLTAGE 
+       chown root system /sys/autok/stage1/2/LOG 
+       chown root system /sys/autok/stage2/2
+
+
 #
 # Connectivity related device nodes & configuration (begin)
 #
@@ -103,6 +116,42 @@ on post-fs-data
 #    chmod 0660 /dev/stpbt
 #    chown bluetooth radio /dev/stpbt
 
+#Define device for ATCID
+    chmod 660 /dev/ttyGS0
+    chown system /dev/ttyGS0
+    chmod 660 /dev/ttyGS1
+    chown system /dev/ttyGS1
+
+
+# Connectivity related services (Begin)
+#
+
+service atci_service /system/bin/atci_service
+	socket atci-service stream 660 radio system
+	socket atci-serv-fw stream 660 radio system
+	user root
+        disabled
+	group radio system
+service atcid-daemon-u /system/bin/atcid
+	user system
+	group radio system media
+	disabled
+	oneshot
+
+service atcid-daemon-e /system/bin/atcid
+	user root
+	group radio system
+	disabled
+	oneshot
+
+on early_property:ro.build.type=eng
+start atci_service
+start atcid-daemon-e
+
+on property:persist.service.atci.autostart=1
+start atci_service
+start atcid-daemon-u
+
 # GPS
 #    chown gps gps /dev/stpgps
     chown gps gps /sys/class/gpsdrv/gps/pwrctl
@@ -111,6 +160,13 @@ on post-fs-data
     chown gps gps /sys/class/gpsdrv/gps/pwrsave
     chown gps gps /sys/class/gpsdrv/gps/status
 #    chmod 0660 /dev/stpgps
+
+#For WiFi High Speed calibration 
+       service autokd /system/bin/autokd 
+       class core 
+       user system 
+       group system
+
 
 # Add Wake Gestures
     chown system system /sys/bus/i2c/devices/i2c-2/2-004b/wake_gesture_enable

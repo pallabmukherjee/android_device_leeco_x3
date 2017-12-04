@@ -1,5 +1,5 @@
 # ==============================================
-# Policy File of /system/bin/fuelgauged Executable File
+# Policy File of /system/bin/fuelgauged Executable File 
 
 
 # ==============================================
@@ -31,7 +31,7 @@ init_daemon_domain(fuelgauged)
 # Purpose : Fuel Gauge daemon for access driver node
 allow fuelgauged input_device:dir { search open read write };
 allow fuelgauged input_device:file { open read };
-allow fuelgauged mtk-adc-cali_device:chr_file { open ioctl read write };
+#allow fuelgauged mtk-adc-cali_device:chr_file { open ioctl read write };
 
 #add by xiaoqin
 allow fuelgauged kmsg_device:chr_file { open write };

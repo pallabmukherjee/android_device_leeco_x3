@@ -1,5 +1,5 @@
 # ==============================================
-# Policy File of /system/bin/mtkmal Executable File
+# Policy File of /system/bin/mtkmal Executable File 
 
 # ==============================================
 # Type Declaration
@@ -14,7 +14,7 @@ type volte_imsm_md_exec, exec_type, file_type;
 init_daemon_domain(volte_imsm_md)
 
 # Date : WK15.33
-# Operation : Migration
+# Operation : Migration 
 # Purpose : for MTKMAL
 allow volte_imsm_md socket_device:sock_file write;
 
@@ -67,10 +67,10 @@ allow volte_imsm_md wpa_socket:dir rw_dir_perms;
 allow volte_imsm_md wpa_socket:sock_file create_file_perms;
 allow volte_imsm_md wifi_data_file:dir create_dir_perms;
 allow volte_imsm_md wifi_data_file:file create_file_perms;
-allow volte_imsm_md wpa:unix_dgram_socket sendto;
-allow wpa volte_imsm_md:unix_stream_socket connectto;
-allow wpa volte_imsm_md:unix_dgram_socket sendto;
-allow wpa init:unix_dgram_socket sendto;
+#allow volte_imsm_md wpa:unix_dgram_socket sendto;
+#allow wpa volte_imsm_md:unix_stream_socket connectto;
+#allow wpa volte_imsm_md:unix_dgram_socket sendto;
+#allow wpa init:unix_dgram_socket sendto;
 
 #for timer
 allow volte_imsm_md self:capability2 wake_alarm;

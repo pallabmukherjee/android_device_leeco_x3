@@ -1,6 +1,6 @@
 # Nougat Mediacodec policies
 allow mediacodec MTK_SMI_device:chr_file { ioctl read open };
-allow mediacodec Vcodec_device:chr_filerw_file_perms;
+allow mediacodec Vcodec_device:chr_file { read write open ioctl };
 allow mediacodec pq_service:service_manager { find };
 allow mediacodec proc:file { read open getattr ioctl };
 allow mediacodec sysfs:file { read write open };
@@ -19,11 +19,15 @@ allow mediacodec devmap_device:chr_file r_file_perms;
 allow mediacodec devmap_device:chr_file { ioctl };
 allow mediacodec sysfs_devinfo:file { open read write };
 
+# omx 
+allow mediacodec sysfs_ddr_type:file r_file_perms; 
+allow mediacodec sysfs_membw:file { open rw_file_perms }; 
+
 # M4U
 allow mediacodec M4U_device_device:chr_file rw_file_perms;
 
 #bootmode
-allow mediacodec sysfs_boot_mode:file r_file_perms;
+allow mediacodec sysfs_boot_mode:file rw_file_perms;
 
 # proc/meminfo
 allow mediacodec proc_meminfo:file { getattr open read };

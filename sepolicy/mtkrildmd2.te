@@ -52,7 +52,7 @@ auditallow mtkrildmd2 net_radio_prop:property_service set;
 auditallow mtkrildmd2 system_radio_prop:property_service set;
 
 # Read/Write to uart driver (for GPS)
-allow mtkrildmd2 gps_device:chr_file rw_file_perms;
+#allow mtkrildmd2 gps_device:chr_file rw_file_perms;
 
 allow mtkrildmd2 tty_device:chr_file rw_file_perms;
 
