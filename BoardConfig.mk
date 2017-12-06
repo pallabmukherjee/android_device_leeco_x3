@@ -140,6 +140,8 @@ WIFI_DRIVER_FW_PATH_PARAM := "/dev/wmtWifi"
 WIFI_DRIVER_FW_PATH_STA := STA
 WIFI_DRIVER_FW_PATH_AP := AP
 WIFI_DRIVER_FW_PATH_P2P := P2P
+WIFI_DRIVER_STATE_ON		 := 1
+WIFI_DRIVER_STATE_OFF		 := 0
 
 # Bluetooth
 MTK_BT_SUPPORT := yes
@@ -163,9 +165,32 @@ BOARD_FLASH_BLOCK_SIZE := 4096
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/ramdisk/recovery.fstab
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun/file
-
 BOARD_HAS_NO_SELECT_BUTTON := true
+RECOVERY_VARIANT := twrp
+# TWRP
+ifeq ($(RECOVERY_VARIANT), twrp)
+TW_USE_TOOLBOX := true
+TW_INCLUDE_NTFS_3G := true
+TW_EXCLUDE_SUPERSU := true
+TW_NO_EXFAT_FUSE := true
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBA_8888"
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun/file
+TARGET_RECOVERY_LCD_BACKLIGHT_PATH := \"/sys/class/leds/lcd-backlight/brightness\"
+TW_NO_REBOOT_BOOTLOADER := true
+TW_THEME := portrait_hdpi
+TW_CUSTOM_CPU_TEMP_PATH := /sys/devices/virtual/thermal/thermal_zone1/temp
+TW_USE_MODEL_HARDWARE_ID_FOR_DEVICE_ID := true
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+TW_MAX_BRIGHTNESS := 255
+BOARD_SUPPRESS_SECURE_ERASE := true
+TW_INCLUDE_CRYPTO := true
+TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
+TW_MAX_BRIGHTNESS := 255
+TW_NO_USB_STORAGE := true
+BOARD_USE_FRAMEBUFFER_ALPHA_CHANNEL := true
+TARGET_DISABLE_TRIPLE_BUFFERING := false
+TW_USE_TOOLBOX := true
+else
 
 # CWM
 BOARD_RECOVERY_SWIPE := true
@@ -200,3 +225,6 @@ BOARD_BLUE_LED_PATH := "/sys/class/leds/blue"
 
 # Tethering
 PRODUCT_PROPERTY_OVERRIDES += net.tethering.noprovisioning=true
+
+# Boot animation
+TARGET_BOOTANIMATION_MULTITHREAD_DECODE := true
