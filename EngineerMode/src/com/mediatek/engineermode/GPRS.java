@@ -229,16 +229,16 @@ public class GPRS extends Activity implements OnClickListener {
             mRaBtnSIM1Enabled.setVisibility(View.VISIBLE);
             mRaBtnSIM2Enabled.setVisibility(View.VISIBLE);
 
-            int defaultDataSub = SubscriptionManager.getDefaultDataSubId();
-            int defaultSim = SubscriptionManager.getSlotId(defaultDataSub);
-            if (defaultSim == SubscriptionManager.INVALID_SIM_SLOT_INDEX) {
-                defaultSim = PhoneConstants.SIM_ID_1;
-                mRaBtnSIM1Enabled.toggle();
-            } else if (defaultSim == PhoneConstants.SIM_ID_2) {
-                mRaBtnSIM2Enabled.toggle();
-            } else {
-                mRaBtnSIM1Enabled.toggle();
-            }
+//            int defaultDataSub = SubscriptionManager.getDefaultDataSubId();
+//            int defaultSim = SubscriptionManager.getSlotId(defaultDataSub);
+//            if (defaultSim == SubscriptionManager.INVALID_SIM_SLOT_INDEX) {
+//                defaultSim = PhoneConstants.SIM_ID_1;
+//                mRaBtnSIM1Enabled.toggle();
+//            } else if (defaultSim == PhoneConstants.SIM_ID_2) {
+//                mRaBtnSIM2Enabled.toggle();
+//            } else {
+//                mRaBtnSIM1Enabled.toggle();
+//            }
 
             mRaGpDefSIMSelect.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                 public void onCheckedChanged(RadioGroup arg0, int arg1) {

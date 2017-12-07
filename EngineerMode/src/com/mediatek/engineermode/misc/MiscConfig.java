@@ -109,7 +109,7 @@ public class MiscConfig extends PreferenceActivity {
         for (int i = 0; i < mPreferences.length; i++) {
             mPreferences[i].setChecked((mConfig & (1 << i)) != 0);
         }
-        querySmsSgsValue();
+//        querySmsSgsValue();
     }
 
     @Override
@@ -134,26 +134,26 @@ public class MiscConfig extends PreferenceActivity {
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
-    private void querySmsSgsValue() {
-        int subId = SubscriptionManager.getDefaultDataSubId();
-        Log.i("@M_" + TAG, "sub id " + subId);
-        int phoneId = SubscriptionManager.getPhoneId(subId);
-        Log.i("@M_" + TAG, "phone id " + phoneId);
-        int phoneCount = TelephonyManager.getDefault().getPhoneCount();
-        Log.i("@M_" + TAG, "phone count " + phoneCount);
-        mPhone = PhoneFactory.getPhone(phoneId >= 0 && phoneId < phoneCount ? phoneId : 0);
+//    private void querySmsSgsValue() {
+//        int subId = SubscriptionManager.getDefaultDataSubId();
+//        Log.i("@M_" + TAG, "sub id " + subId);
+//        int phoneId = SubscriptionManager.getPhoneId(subId);
+//        Log.i("@M_" + TAG, "phone id " + phoneId);
+//        int phoneCount = TelephonyManager.getDefault().getPhoneCount();
+//        Log.i("@M_" + TAG, "phone count " + phoneCount);
+//        mPhone = PhoneFactory.getPhone(phoneId >= 0 && phoneId < phoneCount ? phoneId : 0);
 
-        Message msg = mHandler.obtainMessage(MSG_QUERY);
-        if (mPhone != null) {
-            mPhone.invokeOemRilRequestStrings(new String[] {CMD_QUERY, "+ECFGGET:"}, msg);
-        }
-        Log.i("@M_" + TAG, "send " + CMD_QUERY + ", " + "+ECFGGET:");
+//        Message msg = mHandler.obtainMessage(MSG_QUERY);
+//        if (mPhone != null) {
+//            mPhone.invokeOemRilRequestStrings(new String[] {CMD_QUERY, "+ECFGGET:"}, msg);
+//        }
+//        Log.i("@M_" + TAG, "send " + CMD_QUERY + ", " + "+ECFGGET:");
 
-        mSmsSgsPreference = new CheckBoxPreference(this);
-        mSmsSgsPreference.setSummary(getString(R.string.misc_config_sgs));
-        mSmsSgsPreference.setPersistent(false);
-        getPreferenceScreen().addPreference(mSmsSgsPreference);
-    }
+//        mSmsSgsPreference = new CheckBoxPreference(this);
+//        mSmsSgsPreference.setSummary(getString(R.string.misc_config_sgs));
+//        mSmsSgsPreference.setPersistent(false);
+//        getPreferenceScreen().addPreference(mSmsSgsPreference);
+//    }
 
     private void setSgsValue(String value) {
         Message msg = mHandler.obtainMessage(MSG_SET);
