@@ -323,7 +323,8 @@ PRODUCT_COPY_FILES += \
      sys.usb.config=mtp,adb \
      persist.sys.isUsbOtgEnabled=true \
      persist.sys.usb.config=mtp,adb \
-     ro.adb.secure=0
+     ro.adb.secure=0 \
+	 ro.secure=0
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \

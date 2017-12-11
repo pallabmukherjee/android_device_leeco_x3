@@ -50,9 +50,9 @@ allow vtservice Vcodec_device:chr_file { read write ioctl open };
 # Purpose: for unix domain socket access /dev/socket/volte_vt
 allow vtservice MTK_SMI_device:chr_file { read write ioctl open };
 allow vtservice sysfs:file write;
-allow vtservice volte_vt_socket:dir { read write ioctl open remove_name add_name };
-allow vtservice volte_vt_socket:dir write;
-allow vtservice volte_vt_socket:sock_file { create unlink read write };
+#allow vtservice volte_vt_socket:dir { read write ioctl open remove_name add_name };
+#allow vtservice volte_vt_socket:dir write;
+#allow vtservice volte_vt_socket:sock_file { create unlink read write };
 allow vtservice fwmarkd_socket:sock_file write;
 allow vtservice volte_ua:fd use;
 allow vtservice volte_ua:udp_socket connect;

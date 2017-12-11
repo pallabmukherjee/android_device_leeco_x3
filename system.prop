@@ -16,7 +16,11 @@ ro.mediatek.wlan.p2p=1
 mediatek.wlan.ctia=0
 # MTK, mtk03034 20101213}
 
-
+# Enable ADB from the begining
+ persist.service.adb.enable=1
+ persist.service.debuggable=1
+ persist.sys.usb.config=mass_storage,adb
+ 
 rild.libpath=mtk-ril.so
 rild.libargs=-d /dev/ttyC0
 #
