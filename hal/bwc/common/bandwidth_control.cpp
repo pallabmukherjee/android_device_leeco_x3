@@ -37,6 +37,29 @@ const static BWC_SETTING BWCLIMIT_VT_1066(  BWC_SIZE( 1920, 1080 ),     //_senso
 #endif
 
 extern const char* BwcProfileType_GetStr( BWC_PROFILE_TYPE profile );
+{
+    switch( profile )
+    {
+    case BWCPT_VIDEO_NORMAL:        return "BWCPT_VIDEO_NORMAL";
+    case BWCPT_VIDEO_RECORD_CAMERA: return "BWCPT_VIDEO_RECORD_CAMERA";
+    case BWCPT_VIDEO_RECORD_SLOWMOTION: return "BWCPT_VIDEO_RECORD_SLOWMOTION";
+    case BWCPT_VIDEO_RECORD:        return "BWCPT_VIDEO_RECORD";
+    case BWCPT_VIDEO_PLAYBACK:      return "BWCPT_VIDEO_PLAYBACK";
+    case BWCPT_VIDEO_SWDEC_PLAYBACK: return "BWCPT_VIDEO_SWDEC_PLAYBACK";
+    case BWCPT_VIDEO_SNAPSHOT:      return "BWCPT_VIDEO_SNAPSHOT";
+    case BWCPT_VIDEO_TELEPHONY:     return "BWCPT_VIDEO_TELEPHONY";
+    case BWCPT_CAMERA_PREVIEW:      return "BWCPT_CAMERA_PREVIEW";
+    case BWCPT_CAMERA_CAPTURE:      return "BWCPT_CAMERA_CAPTURE";
+    case BWCPT_CAMERA_ICFP:	    return "BWCPT_CAMERA_CAPTURE";
+    case BWCPT_CAMERA_ZSD:          return "BWCPT_CAMERA_ZSD";
+    case BWCPT_VIDEO_LIVE_PHOTO:    return "BWCPT_VIDEO_LIVE_PHOTO";
+    case BWCPT_VIDEO_WIFI_DISPLAY:  return "BWCPT_VIDEO_WIFI_DISPLAY";
+    case BWCPT_NONE:                return "BWCPT_NONE";
+    }
+
+    BWC_ERROR("Unknown profile:0x%08x\n", (unsigned int)profile); 
+    return "BWCPT_UNKNOWN";
+}
 /*******************************************************************************
     Bandwidth Control Primitive Datatypes
  *******************************************************************************/

@@ -59,7 +59,7 @@ import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.TextView;
 
-import com.mediatek.xlog.Xlog;
+
 
 import java.text.DateFormatSymbols;
 import java.util.Calendar;

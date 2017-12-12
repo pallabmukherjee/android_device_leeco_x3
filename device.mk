@@ -329,4 +329,7 @@ PRODUCT_COPY_FILES += \
      persist.sys.isUsbOtgEnabled=true \
      persist.sys.usb.config=mtp,adb \
      ro.adb.secure=0
-	 
+
+#ISP_DRV
+PRODUCT_PACKAGES += \
+    libcamdrv_isp

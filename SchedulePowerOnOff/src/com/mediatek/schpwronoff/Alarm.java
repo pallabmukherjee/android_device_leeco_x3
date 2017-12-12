@@ -43,7 +43,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.provider.BaseColumns;
 
-import com.mediatek.xlog.Xlog;
+
 
 import java.text.DateFormatSymbols;
 import java.util.Calendar;
