@@ -14,7 +14,7 @@ LOCAL_PATH := device/leeco/x3
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Screen density
-PRODUCT_AAPT_CONFIG := normal xhdpi xxhdpi
+PRODUCT_AAPT_CONFIG := normal xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Recovery allowed devices
@@ -22,55 +22,52 @@ TARGET_OTA_ASSERT_DEVICE := x3,X500,X507,X509,X3,x500,x507,x509,X502,x502
 
 # Power
 PRODUCT_PACKAGES += \
-	power.default \
-	power.mt6795
+    power.default \
+    power.mt6795
 
 # Camera
 PRODUCT_PACKAGES += \
-	Snap \
-	libcamera_parameters_ext
-
-PRODUCT_PACKAGES += \
-	Camera2
+    Snap \
+    libcamera_parameters_ext
 
 # Charger
 PRODUCT_PACKAGES += \
-	charger \
-	charger_res_images
+    charger \
+    charger_res_images
 
 # Torch
 PRODUCT_PACKAGES += \
-	Torch
+    Torch
      
 # Other
 PRODUCT_PACKAGES += \
-	librs_jni \
-	libnl_2 \
-	com.android.future.usb.accessory
+    librs_jni \
+    libnl_2 \
+    com.android.future.usb.accessory
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-	ro.allow.mock.location=0 \
-	ro.debuggable=1 \
-	ro.zygote=zygote64_32 \
-	ro.dalvik.vm.native.bridge=0 \
-	persist.sys.usb.config=mtp \
-	persist.debug.xlog.enable=0 \
-	camera.disable_zsl_mode=1
+    ro.allow.mock.location=0 \
+    ro.debuggable=1 \
+    ro.zygote=zygote64_32 \
+    ro.dalvik.vm.native.bridge=0 \
+    persist.sys.usb.config=mtp \
+    persist.debug.xlog.enable=0 \
+    camera.disable_zsl_mode=1
 
 ifeq (lineage_x3,$(TARGET_PRODUCT))	#this is included only in lineage atm as some other roms have issue with this
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-	dalvik.vm.dex2oat-Xms=64m \
-	dalvik.vm.dex2oat-Xmx=64m \
-	dalvik.vm.image-dex2oat-Xms=64m \
-	dalvik.vm.image-dex2oat-Xmx=512m
+    dalvik.vm.dex2oat-Xms=64m \
+    dalvik.vm.dex2oat-Xmx=64m \
+    dalvik.vm.image-dex2oat-Xms=64m \
+    dalvik.vm.image-dex2oat-Xmx=512m
 endif
 
 # PRODUCT_PROPERTY_OVERRIDES
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.kernel.android.checkjni=0 \
-	ro.telephony.ril.config=fakeiccid \
-	persist.call_recording.enabled=true \
-	persist.call_recording.src=1
+    ro.kernel.android.checkjni=0 \
+    ro.telephony.ril.config=fakeiccid \
+    persist.call_recording.enabled=true \
+    persist.call_recording.src=1
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -291,14 +288,10 @@ PRODUCT_PACKAGES += \
 	
 # Mediaserver with system group
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/etc/init/mediaserver.rc:system/etc/init/mediaserver.rc
-PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/etc/init/cameraserver.rc:system/etc/init/cameraserver.rc
-PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/etc/init/drmserver.rc:system/etc/init/drmserver.rc
-PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/etc/init/mediacodec.rc:system/etc/init/mediacodec.rc
-PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/etc/init/mediaserver.rc:system/etc/init/mediaserver.rc \
+	$(LOCAL_PATH)/etc/init/cameraserver.rc:system/etc/init/cameraserver.rc \
+	$(LOCAL_PATH)/etc/init/drmserver.rc:system/etc/init/drmserver.rc \
+	$(LOCAL_PATH)/etc/init/mediacodec.rc:system/etc/init/mediacodec.rc \
 	$(LOCAL_PATH)/etc/init/mediadrmserver.rc:system/etc/init/mediadrmserver.rc
 
 # camera legacy
@@ -327,11 +320,15 @@ PRODUCT_COPY_FILES += \
 	 ro.secure=0
 
 # Camera
-PRODUCT_PROPERTY_OVERRIDES += \
-    media.stagefright.legacyencoder=true \
-    media.stagefright.less-secure=true
+#PRODUCT_PROPERTY_OVERRIDES += \
+#    media.stagefright.legacyencoder=true \
+#    media.stagefright.less-secure=true
 
 # build.prop
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.service.adb.enable=1 \
     persist.service.debuggable=1
+
+#ISP_DRV
+PRODUCT_PACKAGES += \
+    libcamdrv_isp

@@ -21,6 +21,7 @@ extern "C"
 #include    "bandwidth_control_private.h"
 #include    "BWCProfileAdapter.h"
 #include    "BWCConfiguration.h"
+#include    "refresh_rate_control.h"
 
 #ifdef FLAG_SUPPORT_MODEM_SCALE
 //modem speed change
@@ -54,15 +55,55 @@ BWC_MONITOR::~BWC_MONITOR(){
 }
 
 int BWC_MONITOR::start(){
-    return 0;
+    if( this->smi_fd == -1 ){
+        //BWC_INFO("Start BWC_NONITOR");
+        this->smi_fd = open("/dev/MTK_SMI", O_RDONLY);
+
+        if( this->smi_fd == -1 ){
+            BWC_ERROR("Open SMI(/dev/MTK_SMI) driver file failed.:%s\n",
+                strerror(errno));
+            return -1;
+        }else{
+            return 0;
+        }
+    }
+    return -1;
 }
 
 int BWC_MONITOR::stop(){
+    if( this->smi_fd != -1 ){
+        close( smi_fd);
+    }
+    //BWC_INFO("Stop BWC_NONITOR");
+    this->smi_fd = -1;
     return 0;
 }
 
 unsigned int BWC_MONITOR::get_smi_bw_state(){
-    return 1920 * 1080 * 4;
+    // To save the query result
+    MTK_SMI_BWC_MM_INFO_USER mm_info = { 0, 0, { 0, 0 }, { 0, 0 }, { 0, 0 }, {
+        0, 0 }, 0, 0, 0, 1092 * 1080 * 7};
+
+    if( this->smi_fd == -1 ){
+        // Open device again
+        this->smi_fd = open("/dev/MTK_SMI", O_RDWR);
+        // FD leak may happen 
+        if( this->smi_fd == -1 ){
+            BWC_INFO("get_smi_bw_state: Open SMI(/dev/MTK_SMI) failed.:%s\n",
+                strerror(errno));
+            return -1;
+        }
+    }
+
+    if( ioctl(smi_fd, MTK_IOC_SMI_BWC_INFO_GET, (void *)&mm_info) < 0 ){
+        BWC_ERROR("MTK_IOC_SMI_BWC_INFO_GET failed.:%s\n", strerror(errno));
+        return -1;
+    }
+
+    //BWC_INFO("get_bwc_mm_property success");
+
+    return mm_info.hw_ovl_limit;
+
 }
 
 const char* BwcProfileType_GetStr( BWC_PROFILE_TYPE profile ){
@@ -87,6 +128,46 @@ extern "C"
   
 static MTK_SMI_BWC_SCEN map_bwc_profile_to_smi(BWC_PROFILE_TYPE bwc_profile)
 {
+{
+    switch (bwc_profile)
+    {
+        case BWCPT_VIDEO_LIVE_PHOTO:
+            return SMI_BWC_SCEN_MM_GPU;
+
+        case BWCPT_VIDEO_WIFI_DISPLAY:
+            return SMI_BWC_SCEN_WFD;
+
+        case BWCPT_VIDEO_RECORD:
+            return SMI_BWC_SCEN_VENC;
+
+        case BWCPT_VIDEO_RECORD_SLOWMOTION:
+            return SMI_BWC_SCEN_VR_SLOW;
+
+        case BWCPT_VIDEO_RECORD_CAMERA:
+        case BWCPT_VIDEO_TELEPHONY:
+        case BWCPT_CAMERA_ZSD:
+        case BWCPT_CAMERA_PREVIEW:
+        case BWCPT_VIDEO_SNAPSHOT:
+        case BWCPT_CAMERA_CAPTURE:
+            return SMI_BWC_SCEN_VR;
+
+        case BWCPT_CAMERA_ICFP:
+            return SMI_BWC_SCEN_ICFP;
+            
+        case BWCPT_VIDEO_SWDEC_PLAYBACK:
+            return SMI_BWC_SCEN_SWDEC_VP;
+            
+        case BWCPT_VIDEO_PLAYBACK:      
+            return SMI_BWC_SCEN_VP;
+            
+        default:
+            return SMI_BWC_SCEN_NORMAL;
+    }   
+
+    return SMI_BWC_SCEN_NORMAL;
+}
+}
+
     int smi_profile_queried = profileHelper.getSMIProfile(bwc_profile);
 
     if(smi_profile_queried == -1)
@@ -154,6 +235,64 @@ static int emi_ctrl_str_generate(
     char* out_str ){
     char *p_cmdstr_profile = NULL;
     char *p_cmdstr_switch  = NULL;
+    switch( profile_type )
+    {
+    case BWCPT_VIDEO_NORMAL:
+    case BWCPT_VIDEO_WIFI_DISPLAY:
+    case BWCPT_VIDEO_LIVE_PHOTO:
+        p_cmdstr_profile = (char*)"CON_SCE_NORMAL";
+        break;
+    case BWCPT_VIDEO_RECORD_SLOWMOTION:
+    case BWCPT_VIDEO_RECORD_CAMERA:
+    case BWCPT_VIDEO_RECORD:
+        if( codec_type == BWCVT_MPEG4 ){
+            p_cmdstr_profile = (char*)"CON_SCE_VR_MP4";
+        }
+        else{
+            p_cmdstr_profile = (char*)"CON_SCE_VR_H264";
+        }
+        break;
+        
+    case BWCPT_VIDEO_PLAYBACK:
+    case BWCPT_VIDEO_SWDEC_PLAYBACK:
+        p_cmdstr_profile = (char*)"CON_SCE_VP";
+        break;
+                
+    case BWCPT_VIDEO_SNAPSHOT:
+        if( codec_type == BWCVT_MPEG4 ){   /*VSS use VR profile*/
+            p_cmdstr_profile = (char*)"CON_SCE_VR_MP4"; 
+        }
+        else{
+            p_cmdstr_profile = (char*)"CON_SCE_VR_H264";
+        }
+        break;
+        
+    case BWCPT_VIDEO_TELEPHONY:
+        p_cmdstr_profile = (char*)"CON_SCE_VC";
+        break;
+                
+    case BWCPT_CAMERA_PREVIEW:
+        p_cmdstr_profile = (char*)"CON_SCE_VR_H264"; /* Camera preview use VR */
+        break;
+        
+    case BWCPT_CAMERA_CAPTURE:
+    case BWCPT_CAMERA_ICFP:
+        p_cmdstr_profile = (char*)"CON_SCE_IC";
+        break;
+
+    case BWCPT_CAMERA_ZSD:
+        p_cmdstr_profile = (char*)"CON_SCE_ZSD";
+        break;
+        
+    case BWCPT_NONE:
+        p_cmdstr_profile = (char*)"CON_SCE_NORMAL";
+        break;
+
+    default:
+        BWC_ERROR("Invalid profile_type = %d\n", (int)profile_type );
+        return -1;
+        
+    }
 
     BWC_UNUSED(codec_type);
 
@@ -179,7 +318,7 @@ int BWC::emi_bw_ctrl_set(
     bool bOn ){
     const char  *con_sce_file    = "/sys/bus/platform/drivers/mem_bw_ctrl/concurrency_scenario";
     int         fd;
-    char emi_ctrl_str[MAX_EMI_CTRL_STR_SIZE];
+    char emi_ctrl_str[128];
 
     if( emi_ctrl_str_generate( profile_type, codec_type, bOn, emi_ctrl_str ) < 0 ){
         BWC_ERROR("emi_ctrl_str_generate failed!\n");
@@ -212,7 +351,7 @@ int BWC::emi_bw_ctrl_set(
 BWC::EMI_DDR_TYPE BWC::emi_ddr_type_get( void ){
     const char      *ddr_type_file    = "/sys/bus/platform/drivers/ddr_type/ddr_type";
     int             fd;
-    char ddr_type_str[MAX_EMI_CTRL_STR_SIZE];
+    char ddr_type_str[128];
     EMI_DDR_TYPE    ddr_type;
 
     fd = open(ddr_type_file, O_RDONLY);
@@ -242,19 +381,19 @@ BWC::EMI_DDR_TYPE BWC::emi_ddr_type_get( void ){
     close(fd);
 
     //Mapping DDR type
-    if( strncmp(ddr_type_str, "LPDDR2", MAX_EMI_CTRL_STR_SIZE) == 0 ){
+    if( strncmp(ddr_type_str, "LPDDR2" ) == 0 ){
         return EDT_LPDDR2;
     }
 
-    if( strncmp(ddr_type_str, "DDR3", MAX_EMI_CTRL_STR_SIZE) == 0 ){
+    if( strncmp(ddr_type_str, "DDR3" ) == 0 ){
         return EDT_DDR3;
     }
 
-    if( strncmp(ddr_type_str, "LPDDR3", MAX_EMI_CTRL_STR_SIZE) == 0 ){
+    if( strncmp(ddr_type_str, "LPDDR3" ) == 0 ){
         return EDT_LPDDR3;
     }
 
-    if( strncmp(ddr_type_str, "mDDR", MAX_EMI_CTRL_STR_SIZE) == 0 ){
+    if( strncmp(ddr_type_str, "mDDR" ) == 0 ){
         return EDT_mDDR;
     }
 
@@ -448,6 +587,13 @@ static void mmdvfs_parse_arg(va_list arg_ptr, MTK_MMDVFS_CMD *cmd)
                 if (value)
                 {
                     cmd->camera_mode |= MMDVFS_CAMERA_MODE_FLAG_IVHDR;
+                }                               
+                break;
+            case MMDVFS_CAMERA_MODE_STEREO:
+                cmd->camera_mode &= ~MMDVFS_CAMERA_MODE_FLAG_STEREO;
+                if (value)
+                {
+                    cmd->camera_mode |= MMDVFS_CAMERA_MODE_FLAG_STEREO;
                 }                               
                 break;
             case MMDVFS_VENC_SIZE:
