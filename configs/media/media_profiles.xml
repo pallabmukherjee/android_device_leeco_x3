@@ -45,7 +45,7 @@
 <!ELEMENT EncoderOutputFileFormat EMPTY>
 <!ATTLIST EncoderOutputFileFormat name (mp4|3gp) #REQUIRED>
 <!ELEMENT VideoEncoderCap EMPTY>
-<!ATTLIST VideoEncoderCap name (h264|h263|m4v|wmv) #REQUIRED>
+<!ATTLIST VideoEncoderCap name (h264|h263|m4v) #REQUIRED>
 <!ATTLIST VideoEncoderCap enabled (true|false) #REQUIRED>
 <!ATTLIST VideoEncoderCap minBitRate CDATA #REQUIRED>
 <!ATTLIST VideoEncoderCap maxBitRate CDATA #REQUIRED>
@@ -56,7 +56,7 @@
 <!ATTLIST VideoEncoderCap minFrameRate CDATA #REQUIRED>
 <!ATTLIST VideoEncoderCap maxFrameRate CDATA #REQUIRED>
 <!ELEMENT AudioEncoderCap EMPTY>
-<!ATTLIST AudioEncoderCap name (amrnb|amrwb|aac|wma) #REQUIRED>
+<!ATTLIST AudioEncoderCap name (amrnb|amrwb|aac) #REQUIRED>
 <!ATTLIST AudioEncoderCap enabled (true|false) #REQUIRED>
 <!ATTLIST AudioEncoderCap minBitRate CDATA #REQUIRED>
 <!ATTLIST AudioEncoderCap maxBitRate CDATA #REQUIRED>
@@ -68,7 +68,6 @@
 <!ATTLIST VideoDecoderCap name (wmv) #REQUIRED>
 <!ATTLIST VideoDecoderCap enabled (true|false) #REQUIRED>
 <!ELEMENT AudioDecoderCap EMPTY>
-<!ATTLIST AudioDecoderCap name (wma) #REQUIRED>
 <!ATTLIST AudioDecoderCap enabled (true|false) #REQUIRED>
 <!ELEMENT VideoEditorCap EMPTY>
 <!ATTLIST VideoEditorCap maxInputFrameWidth CDATA #REQUIRED>
@@ -404,13 +403,13 @@
     <!--
       Codec = h.264, Baseline profile, level 3.1
     -->
-    <ExportVideoProfile name="h264" profile= "1" level="512"/>
+    <ExportVideoProfile name="h264" profile= "1" level="16"/>
     <!--
       Codec = h.263, Baseline profile, level 70
     -->
-    <ExportVideoProfile name="h263" profile= "1" level="128"/>
+    <ExportVideoProfile name="h263" profile= "1" level="1"/>
     <!--
       Codec = mpeg4, Simple profile, level 5
     -->
-    <ExportVideoProfile name="m4v" profile= "1" level="128"/>
+    <ExportVideoProfile name="m4v" profile= "1" level="4"/>
 </MediaSettings>
