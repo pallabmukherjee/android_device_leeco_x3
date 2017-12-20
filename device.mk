@@ -30,13 +30,6 @@ PRODUCT_PACKAGES += \
 	Snap \
 	libcamera_parameters_ext
 
-PRODUCT_PACKAGES += \
-	CompassMi
-
-PRODUCT_PACKAGES := \
-	SchedulePowerOnOff
-
-
 # Charger
 PRODUCT_PACKAGES += \
 	charger \
