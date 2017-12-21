@@ -1440,3 +1440,7 @@ service guiext-server /system/bin/guiext-server
 
 service kpoc_charger /system/bin/kpoc_charger
     class charger
+service devmap /dev/devmap
+    class main
+    user system 
+    group media camera
