@@ -31,10 +31,7 @@ PRODUCT_PACKAGES += \
 	libcamera_parameters_ext
 
 PRODUCT_PACKAGES += \
-	CompassMi
-
-PRODUCT_PACKAGES := \
-	SchedulePowerOnOff
+    com.mediatek.camera.ext
 
 
 # Charger
@@ -104,7 +101,6 @@ PRODUCT_COPY_FILES += \
 	frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
 	frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:system/etc/media_codecs_google_video_le.xml \
 	frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
-	media.stagefright.legacyencoder=0
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
@@ -296,14 +292,10 @@ PRODUCT_PACKAGES += \
 	
 # Mediaserver with system group
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/etc/init/mediaserver.rc:system/etc/init/mediaserver.rc
-PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/etc/init/cameraserver.rc:system/etc/init/cameraserver.rc
-PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/etc/init/drmserver.rc:system/etc/init/drmserver.rc
-PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/etc/init/mediacodec.rc:system/etc/init/mediacodec.rc
-PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/etc/init/mediaserver.rc:system/etc/init/mediaserver.rc \
+	$(LOCAL_PATH)/etc/init/cameraserver.rc:system/etc/init/cameraserver.rc \
+	$(LOCAL_PATH)/etc/init/drmserver.rc:system/etc/init/drmserver.rc \
+	$(LOCAL_PATH)/etc/init/mediacodec.rc:system/etc/init/mediacodec.rc \
 	$(LOCAL_PATH)/etc/init/mediadrmserver.rc:system/etc/init/mediadrmserver.rc
 
 # camera legacy
@@ -330,6 +322,3 @@ PRODUCT_COPY_FILES += \
      persist.sys.usb.config=mtp,adb \
      ro.adb.secure=0
 
-#ISP_DRV
-PRODUCT_PACKAGES += \
-    libcamdrv_isp

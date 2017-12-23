@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="pref_camera_mute_shutter_sound_title">Mute</string>
+    <string name="pref_camera_mute_shutter_sound_default" translatable="false">off</string>
+    <string name="pref_camera_time_stamp_title">Time Stamp</string>
+    <string name="pref_camera_time_stamp_default" translatable="false">off</string>
+
+    <string name="pref_camera_continuous_number_small">20 shots</string>
+    <string name="pref_video_quality_entry_fine_4k">4K</string>
+    <string name="pref_camera_picturesize_entry_6144x3456">21M pixels</string>
+</resources>
