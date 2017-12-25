@@ -322,3 +322,6 @@ PRODUCT_COPY_FILES += \
      persist.sys.usb.config=mtp,adb \
      ro.adb.secure=0
 
+#HDR
+PRODUCT_PACKAGES += \
+     libcam.camadapter.scenario.shot.hdrshot
