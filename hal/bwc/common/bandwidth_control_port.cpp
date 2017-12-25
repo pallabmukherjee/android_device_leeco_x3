@@ -166,7 +166,7 @@ static MTK_SMI_BWC_SCEN map_bwc_profile_to_smi(BWC_PROFILE_TYPE bwc_profile)
 
     return SMI_BWC_SCEN_NORMAL;
 }
-}
+
 
     int smi_profile_queried = profileHelper.getSMIProfile(bwc_profile);
 
