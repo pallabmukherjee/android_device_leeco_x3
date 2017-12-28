@@ -320,15 +320,11 @@ PRODUCT_COPY_FILES += \
 	 ro.secure=0
 
 # Camera
-#PRODUCT_PROPERTY_OVERRIDES += \
-#    media.stagefright.legacyencoder=true \
-#    media.stagefright.less-secure=true
+PRODUCT_PROPERTY_OVERRIDES += \
+    media.stagefright.legacyencoder=true \
+    media.stagefright.less-secure=true
 
 # build.prop
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.service.adb.enable=1 \
     persist.service.debuggable=1
-
-#ISP_DRV
-PRODUCT_PACKAGES += \
-    libcamdrv_isp
